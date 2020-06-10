@@ -15,6 +15,18 @@
 		E129507324910FAE008E8B05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E129507124910FAE008E8B05 /* Main.storyboard */; };
 		E129507524910FB0008E8B05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E129507424910FB0008E8B05 /* Assets.xcassets */; };
 		E129507824910FB0008E8B05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E129507624910FB0008E8B05 /* LaunchScreen.storyboard */; };
+		E129510624913C13008E8B05 /* spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E129510524913C13008E8B05 /* spinner.swift */; };
+		E129510F24917DF2008E8B05 /* SparkleBlast.sks in Resources */ = {isa = PBXBuildFile; fileRef = E129510824917DF2008E8B05 /* SparkleBlast.sks */; };
+		E129511024917DF2008E8B05 /* sparkle.png in Resources */ = {isa = PBXBuildFile; fileRef = E129510924917DF2008E8B05 /* sparkle.png */; };
+		E129511124917DF2008E8B05 /* victory.aac in Resources */ = {isa = PBXBuildFile; fileRef = E129510B24917DF2008E8B05 /* victory.aac */; };
+		E129511224917DF2008E8B05 /* woosh.aac in Resources */ = {isa = PBXBuildFile; fileRef = E129510C24917DF2008E8B05 /* woosh.aac */; };
+		E129511324917DF2008E8B05 /* bubble_pop.aac in Resources */ = {isa = PBXBuildFile; fileRef = E129510D24917DF2008E8B05 /* bubble_pop.aac */; };
+		E129511424917DF2008E8B05 /* error.aac in Resources */ = {isa = PBXBuildFile; fileRef = E129510E24917DF2008E8B05 /* error.aac */; };
+		E129511724917E02008E8B05 /* SpinWheel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E129511624917E02008E8B05 /* SpinWheel.swift */; };
+		E129511C24917E1F008E8B05 /* PushButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E129511924917E1F008E8B05 /* PushButton.swift */; };
+		E129511D24917E1F008E8B05 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E129511A24917E1F008E8B05 /* Settings.swift */; };
+		E129511E24917E1F008E8B05 /* CGFloat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E129511B24917E1F008E8B05 /* CGFloat+Extensions.swift */; };
+		E129512324917E3A008E8B05 /* Context Rounded Black SSi Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E129512124917E3A008E8B05 /* Context Rounded Black SSi Black.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +40,18 @@
 		E129507424910FB0008E8B05 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E129507724910FB0008E8B05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E129507924910FB0008E8B05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E129510524913C13008E8B05 /* spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = spinner.swift; sourceTree = "<group>"; };
+		E129510824917DF2008E8B05 /* SparkleBlast.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SparkleBlast.sks; sourceTree = "<group>"; };
+		E129510924917DF2008E8B05 /* sparkle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sparkle.png; sourceTree = "<group>"; };
+		E129510B24917DF2008E8B05 /* victory.aac */ = {isa = PBXFileReference; lastKnownFileType = file; path = victory.aac; sourceTree = "<group>"; };
+		E129510C24917DF2008E8B05 /* woosh.aac */ = {isa = PBXFileReference; lastKnownFileType = file; path = woosh.aac; sourceTree = "<group>"; };
+		E129510D24917DF2008E8B05 /* bubble_pop.aac */ = {isa = PBXFileReference; lastKnownFileType = file; path = bubble_pop.aac; sourceTree = "<group>"; };
+		E129510E24917DF2008E8B05 /* error.aac */ = {isa = PBXFileReference; lastKnownFileType = file; path = error.aac; sourceTree = "<group>"; };
+		E129511624917E02008E8B05 /* SpinWheel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpinWheel.swift; sourceTree = "<group>"; };
+		E129511924917E1F008E8B05 /* PushButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushButton.swift; sourceTree = "<group>"; };
+		E129511A24917E1F008E8B05 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		E129511B24917E1F008E8B05 /* CGFloat+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extensions.swift"; sourceTree = "<group>"; };
+		E129512124917E3A008E8B05 /* Context Rounded Black SSi Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Context Rounded Black SSi Black.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +84,7 @@
 		E129506624910FAE008E8B05 /* gameOfLife2d */ = {
 			isa = PBXGroup;
 			children = (
+				E129512424918834008E8B05 /* spinnerWheel */,
 				E129506724910FAE008E8B05 /* AppDelegate.swift */,
 				E129506924910FAE008E8B05 /* GameScene.sks */,
 				E129506B24910FAE008E8B05 /* Actions.sks */,
@@ -69,8 +94,67 @@
 				E129507424910FB0008E8B05 /* Assets.xcassets */,
 				E129507624910FB0008E8B05 /* LaunchScreen.storyboard */,
 				E129507924910FB0008E8B05 /* Info.plist */,
+				E129510524913C13008E8B05 /* spinner.swift */,
 			);
 			path = gameOfLife2d;
+			sourceTree = "<group>";
+		};
+		E129510724917DF2008E8B05 /* Particles */ = {
+			isa = PBXGroup;
+			children = (
+				E129510824917DF2008E8B05 /* SparkleBlast.sks */,
+				E129510924917DF2008E8B05 /* sparkle.png */,
+			);
+			path = Particles;
+			sourceTree = "<group>";
+		};
+		E129510A24917DF2008E8B05 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				E129510B24917DF2008E8B05 /* victory.aac */,
+				E129510C24917DF2008E8B05 /* woosh.aac */,
+				E129510D24917DF2008E8B05 /* bubble_pop.aac */,
+				E129510E24917DF2008E8B05 /* error.aac */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
+		E129511524917E02008E8B05 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				E129511624917E02008E8B05 /* SpinWheel.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		E129511824917E1F008E8B05 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				E129511924917E1F008E8B05 /* PushButton.swift */,
+				E129511A24917E1F008E8B05 /* Settings.swift */,
+				E129511B24917E1F008E8B05 /* CGFloat+Extensions.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		E129511F24917E3A008E8B05 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				E129512124917E3A008E8B05 /* Context Rounded Black SSi Black.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		E129512424918834008E8B05 /* spinnerWheel */ = {
+			isa = PBXGroup;
+			children = (
+				E129511F24917E3A008E8B05 /* Fonts */,
+				E129511824917E1F008E8B05 /* Utils */,
+				E129511524917E02008E8B05 /* Scenes */,
+				E129510724917DF2008E8B05 /* Particles */,
+				E129510A24917DF2008E8B05 /* Sounds */,
+			);
+			path = spinnerWheel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -132,9 +216,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				E129507324910FAE008E8B05 /* Main.storyboard in Resources */,
+				E129511424917DF2008E8B05 /* error.aac in Resources */,
+				E129510F24917DF2008E8B05 /* SparkleBlast.sks in Resources */,
+				E129512324917E3A008E8B05 /* Context Rounded Black SSi Black.ttf in Resources */,
 				E129506A24910FAE008E8B05 /* GameScene.sks in Resources */,
+				E129511024917DF2008E8B05 /* sparkle.png in Resources */,
+				E129511224917DF2008E8B05 /* woosh.aac in Resources */,
 				E129507524910FB0008E8B05 /* Assets.xcassets in Resources */,
 				E129507824910FB0008E8B05 /* LaunchScreen.storyboard in Resources */,
+				E129511324917DF2008E8B05 /* bubble_pop.aac in Resources */,
+				E129511124917DF2008E8B05 /* victory.aac in Resources */,
 				E129506C24910FAE008E8B05 /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -149,6 +240,11 @@
 				E129506E24910FAE008E8B05 /* GameScene.swift in Sources */,
 				E129507024910FAE008E8B05 /* GameViewController.swift in Sources */,
 				E129506824910FAE008E8B05 /* AppDelegate.swift in Sources */,
+				E129511724917E02008E8B05 /* SpinWheel.swift in Sources */,
+				E129511D24917E1F008E8B05 /* Settings.swift in Sources */,
+				E129510624913C13008E8B05 /* spinner.swift in Sources */,
+				E129511E24917E1F008E8B05 /* CGFloat+Extensions.swift in Sources */,
+				E129511C24917E1F008E8B05 /* PushButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
