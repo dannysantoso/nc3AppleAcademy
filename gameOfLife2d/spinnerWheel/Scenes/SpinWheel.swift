@@ -265,7 +265,12 @@ class SpinWheel: SKSpriteNode {
                 if (degree >= CGFloat(Int(slots[x][2])!)) && (degree <= CGFloat(Int(slots[x][3])!)) {
 //                    print("You landed on \(slots[x][0]) slot and won \(slots[x][0])")
                     value = Int(slots[x][0]) ?? 0
-                    spinDone = true
+                    run(wonSound)
+//                    sleep(10)
+                    
+                    let timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { (timer) in
+                        self.spinDone = true
+                    }
 //
 //                    won(prizeTitle: String(describing: slots[x][0]))
                     
