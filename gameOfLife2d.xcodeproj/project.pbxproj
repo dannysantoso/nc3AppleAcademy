@@ -16,8 +16,6 @@
 		E129507524910FB0008E8B05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E129507424910FB0008E8B05 /* Assets.xcassets */; };
 		E129507824910FB0008E8B05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E129507624910FB0008E8B05 /* LaunchScreen.storyboard */; };
 		E129510624913C13008E8B05 /* spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E129510524913C13008E8B05 /* spinner.swift */; };
-		E129510F24917DF2008E8B05 /* SparkleBlast.sks in Resources */ = {isa = PBXBuildFile; fileRef = E129510824917DF2008E8B05 /* SparkleBlast.sks */; };
-		E129511024917DF2008E8B05 /* sparkle.png in Resources */ = {isa = PBXBuildFile; fileRef = E129510924917DF2008E8B05 /* sparkle.png */; };
 		E129511124917DF2008E8B05 /* victory.aac in Resources */ = {isa = PBXBuildFile; fileRef = E129510B24917DF2008E8B05 /* victory.aac */; };
 		E129511224917DF2008E8B05 /* woosh.aac in Resources */ = {isa = PBXBuildFile; fileRef = E129510C24917DF2008E8B05 /* woosh.aac */; };
 		E129511324917DF2008E8B05 /* bubble_pop.aac in Resources */ = {isa = PBXBuildFile; fileRef = E129510D24917DF2008E8B05 /* bubble_pop.aac */; };
@@ -41,8 +39,6 @@
 		E129507724910FB0008E8B05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E129507924910FB0008E8B05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E129510524913C13008E8B05 /* spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = spinner.swift; sourceTree = "<group>"; };
-		E129510824917DF2008E8B05 /* SparkleBlast.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SparkleBlast.sks; sourceTree = "<group>"; };
-		E129510924917DF2008E8B05 /* sparkle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sparkle.png; sourceTree = "<group>"; };
 		E129510B24917DF2008E8B05 /* victory.aac */ = {isa = PBXFileReference; lastKnownFileType = file; path = victory.aac; sourceTree = "<group>"; };
 		E129510C24917DF2008E8B05 /* woosh.aac */ = {isa = PBXFileReference; lastKnownFileType = file; path = woosh.aac; sourceTree = "<group>"; };
 		E129510D24917DF2008E8B05 /* bubble_pop.aac */ = {isa = PBXFileReference; lastKnownFileType = file; path = bubble_pop.aac; sourceTree = "<group>"; };
@@ -99,15 +95,6 @@
 			path = gameOfLife2d;
 			sourceTree = "<group>";
 		};
-		E129510724917DF2008E8B05 /* Particles */ = {
-			isa = PBXGroup;
-			children = (
-				E129510824917DF2008E8B05 /* SparkleBlast.sks */,
-				E129510924917DF2008E8B05 /* sparkle.png */,
-			);
-			path = Particles;
-			sourceTree = "<group>";
-		};
 		E129510A24917DF2008E8B05 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
@@ -151,7 +138,6 @@
 				E129511F24917E3A008E8B05 /* Fonts */,
 				E129511824917E1F008E8B05 /* Utils */,
 				E129511524917E02008E8B05 /* Scenes */,
-				E129510724917DF2008E8B05 /* Particles */,
 				E129510A24917DF2008E8B05 /* Sounds */,
 			);
 			path = spinnerWheel;
@@ -217,10 +203,8 @@
 			files = (
 				E129507324910FAE008E8B05 /* Main.storyboard in Resources */,
 				E129511424917DF2008E8B05 /* error.aac in Resources */,
-				E129510F24917DF2008E8B05 /* SparkleBlast.sks in Resources */,
 				E129512324917E3A008E8B05 /* Context Rounded Black SSi Black.ttf in Resources */,
 				E129506A24910FAE008E8B05 /* GameScene.sks in Resources */,
-				E129511024917DF2008E8B05 /* sparkle.png in Resources */,
 				E129511224917DF2008E8B05 /* woosh.aac in Resources */,
 				E129507524910FB0008E8B05 /* Assets.xcassets in Resources */,
 				E129507824910FB0008E8B05 /* LaunchScreen.storyboard in Resources */,

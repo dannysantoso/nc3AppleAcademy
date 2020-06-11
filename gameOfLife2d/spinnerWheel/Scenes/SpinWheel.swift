@@ -30,6 +30,8 @@ class SpinWheel: SKSpriteNode {
     var pivotPin: SKSpriteNode!
     var springPin: SKSpriteNode!
     
+    var value = 0
+    var spinDone = false
     var wheelState: WheelState = .waiting
     var slots = [[String]]()
 //    var images = [SKSpriteNode]()
@@ -261,9 +263,11 @@ class SpinWheel: SKSpriteNode {
             for x in 0..<slots.count {
                 
                 if (degree >= CGFloat(Int(slots[x][2])!)) && (degree <= CGFloat(Int(slots[x][3])!)) {
-                    print("You landed on \(slots[x][0]) slot and won \(slots[x][0])")
-                    
-                    won(prizeTitle: String(describing: slots[x][0]))
+//                    print("You landed on \(slots[x][0]) slot and won \(slots[x][0])")
+                    value = Int(slots[x][0]) ?? 0
+                    spinDone = true
+//
+//                    won(prizeTitle: String(describing: slots[x][0]))
                     
 //                    highlightWin(x)
                     break
