@@ -20,7 +20,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var turn = 1
     var player : SKSpriteNode?
     var value = 0
-    var floor = 1
+    var floor = 0
+    
+    //nanti apus kalo udah ada object
+    var isCollege = false
+    var isFirstMove = true
     
     private var spinWheel: SpinWheel!
     
@@ -176,6 +180,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                         let timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { (timer) in
                             self.spinWheel.spinDone = true
 
+                            
+                            
+                        if self.isCollege == false {
+                            
+                            
                             if self.floor + self.value > 25 {
                                 
                                 if self.floor > 25{
@@ -201,9 +210,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 
                                                 let moveX = SKAction.moveTo(x: CGFloat(CGFloat((newPositionX)) - CGFloat(valueSubstract * 120)), duration: TimeInterval(valueSubstract / 2))
                                                 
-//                                                let movePos = SKAction.move(to: CGPoint(x: CGFloat(newPositionX), y: CGFloat(newPositionY)), duration: 1)
-                                                
-//                                                let moveY = SKAction.move(to: CGPoint(x: CGFloat(CGFloat((newPositionX)) - CGFloat(valueSubstract * 60)), y: CGFloat(CGFloat((newPositionY)) - CGFloat(valueSubstract * 100))), duration: TimeInterval(valueSubstract / 2))
 
                                                 let sequenceAction = SKAction.sequence([moveY, movePos, moveX])
                                                 self.player?.run(sequenceAction)
@@ -265,17 +271,39 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                             }else{
                                 
                                 // jalan horizontal biasa dari floor 1-25
-                                self.player?.run(SKAction.moveTo(x: CGFloat((self.player?.position.x)! + CGFloat(self.value * 120)), duration: TimeInterval(duration)))
-                                self.floor += self.value
+                                if self.value == 1 && self.floor == 0{
+                                    self.player?.run(SKAction.move(to: CGPoint(x: 770, y: 705), duration: 1))
+                                    self.floor += self.value
+                                    
+                                }else if self.value > 1 && self.floor == 0 {
+                                    let initialMove = SKAction.move(to: CGPoint(x: 770, y: 705), duration: 1)
+                                    let moveValue = SKAction.moveTo(x: CGFloat(770 + CGFloat((self.value - 1) * 120)), duration: TimeInterval(duration))
+                                    self.player?.run(SKAction.sequence([initialMove,moveValue]))
+                                    self.floor += self.value
+                                    
+                                }else{
+                                    self.player?.run(SKAction.moveTo(x: CGFloat((self.player?.position.x)! + CGFloat(self.value * 120)), duration: TimeInterval(duration)))
+                                    self.floor += self.value
+                                }
                             }
+                        
+                            
+                        }else{
+                            print("college")
+                        }
+                        
+                        
+                        
                         }
                         print(floor)
+                            
                         
                         break
                     }
                 }
             }
         }
+    
     
     
     
