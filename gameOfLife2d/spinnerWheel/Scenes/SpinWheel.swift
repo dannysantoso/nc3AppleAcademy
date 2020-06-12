@@ -247,39 +247,40 @@ class SpinWheel: SKSpriteNode {
     
     //MARK: - Game Loop
     
-    func updateWheel(_ currentTime: TimeInterval) {
-        
-        if wheel.physicsBody!.isResting && wheelState == .spinning {
-            
-            wheelState = .stopped
-            var degree = CGFloat.radiansToDegrees(wheel.zRotation)()
-            //print("resting rad? \(wheel.zRotation)")
-            //print("resting degree ? \(degree)")
-            
-            if degree < 0 {
-                degree = 360 + degree
-            }
-            
-            for x in 0..<slots.count {
-                
-                if (degree >= CGFloat(Int(slots[x][2])!)) && (degree <= CGFloat(Int(slots[x][3])!)) {
-//                    print("You landed on \(slots[x][0]) slot and won \(slots[x][0])")
-                    value = Int(slots[x][0]) ?? 0
-                    run(wonSound)
-//                    sleep(10)
-                    
-                    let timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { (timer) in
-                        self.spinDone = true
-                    }
-//
-//                    won(prizeTitle: String(describing: slots[x][0]))
-                    
-//                    highlightWin(x)
-                    break
-                }
-            }
-        }
-    }
+//    func updateWheel(_ currentTime: TimeInterval) {
+//        
+//        if wheel.physicsBody!.isResting && wheelState == .spinning {
+//            
+//            wheelState = .stopped
+//            var degree = CGFloat.radiansToDegrees(wheel.zRotation)()
+//            //print("resting rad? \(wheel.zRotation)")
+//            //print("resting degree ? \(degree)")
+//            
+//            if degree < 0 {
+//                degree = 360 + degree
+//            }
+//            
+//            for x in 0..<slots.count {
+//                
+//                if (degree >= CGFloat(Int(slots[x][2])!)) && (degree <= CGFloat(Int(slots[x][3])!)) {
+////                    print("You landed on \(slots[x][0]) slot and won \(slots[x][0])")
+//                    value = Int(slots[x][0]) ?? 0
+//                    run(wonSound)
+////                    sleep(10)
+//                    
+//                    let timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { (timer) in
+//                        self.spinDone = true
+//                    }
+//                    
+////
+////                    won(prizeTitle: String(describing: slots[x][0]))
+//                    
+////                    highlightWin(x)
+//                    break
+//                }
+//            }
+//        }
+//    }
     
     func won(prizeTitle: String) {
         
