@@ -170,69 +170,107 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                             duration = value / 2
                         }
                         
-                        print(floor)
+                        
+                        
+                        
                         let timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { (timer) in
                             self.spinWheel.spinDone = true
+
                             if self.floor + self.value > 25 {
+                                
                                 if self.floor > 25{
-//                                    self.player?.run(SKAction.moveTo(y: CGFloat((self.player?.position.y)! - CGFloat(self.value * 100)), duration: TimeInterval(self.value / 2)))
-                                    self.player?.run(SKAction.move(to: CGPoint(x: CGFloat((self.player?.position.x)! - CGFloat(self.value * 59)), y: CGFloat((self.player?.position.y)! - CGFloat(self.value * 100))), duration: TimeInterval(self.value / 2)))
-                                    self.floor += self.value
+                                    
+                                    if self.floor + self.value > 44 {
+                                        if self.floor > 44 {
+                                        // jalan horizontal biasa dari 44 - finish
+                                            self.player?.run(SKAction.moveTo(x: CGFloat(CGFloat((self.player?.position.x)!) - CGFloat(self.value * 120)), duration: TimeInterval(duration)))
+                                            
+                                        }else{
+                                            // ngatur player bisa belok ketika berada di floor 44----------------------------------------------------
+                                            
+                                            
+                                            let moveSpecific = 44 - self.floor
+                                            if self.value > moveSpecific {
+                                                let newPositionX = 2560
+                                                let newPositionY = -1395
+                                                let valueSubstract = self.value - moveSpecific
+                                                
+                                                let moveY = SKAction.moveTo(y: CGFloat((self.player?.position.y)! - CGFloat(moveSpecific * 59)), duration: TimeInterval(duration))
+                                                
+                                                let movePos = SKAction.move(to: CGPoint(x: CGFloat(newPositionX), y: CGFloat(newPositionY)), duration: 1)
+
+                                                let moveX = SKAction.moveTo(x: CGFloat(CGFloat((newPositionX)) - CGFloat(valueSubstract * 120)), duration: TimeInterval(valueSubstract / 2))
+                                                
+//                                                let movePos = SKAction.move(to: CGPoint(x: CGFloat(newPositionX), y: CGFloat(newPositionY)), duration: 1)
+                                                
+//                                                let moveY = SKAction.move(to: CGPoint(x: CGFloat(CGFloat((newPositionX)) - CGFloat(valueSubstract * 60)), y: CGFloat(CGFloat((newPositionY)) - CGFloat(valueSubstract * 100))), duration: TimeInterval(valueSubstract / 2))
+
+                                                let sequenceAction = SKAction.sequence([moveY, movePos, moveX])
+                                                self.player?.run(sequenceAction)
+                                                
+                                                self.floor += self.value
+                                            }else{
+                                                self.player?.run(SKAction.moveTo(y: CGFloat((self.player?.position.y)! - CGFloat(self.value * 59)), duration: TimeInterval(duration)))
+                                                self.floor += self.value
+                                                
+                                                if self.floor == 44 {
+                                                    let newPositionX = 2560
+                                                    let newPositionY = -1395
+                                                    
+                                                    self.player?.run(SKAction.move(to: CGPoint(x: CGFloat(newPositionX), y: CGFloat(newPositionY)), duration: 1))
+                                                }
+                                            }
+                                            
+                                            
+                                        }
+                                    }else{
+                                        // jalan vertical biasa dari floor 26 - 44
+                                        self.player?.run(SKAction.move(to: CGPoint(x: CGFloat((self.player?.position.x)! - CGFloat(self.value * 59)), y: CGFloat((self.player?.position.y)! - CGFloat(self.value * 100))), duration: TimeInterval(duration)))
+                                        self.floor += self.value
+                                    }
                                     
                                 }else {
-                                    var moveSpecific = 26 - self.floor
-                                    if self.value > moveSpecific {
-                                        var newPositionX = 3810
-                                        var newPositionY = 600
-                                        
-                                        var valueSubstract = self.value - moveSpecific
-//                                        self.player?.run(SKAction.moveTo(x: CGFloat((self.player?.position.x)! + CGFloat(moveSpecific * 120)), duration: TimeInterval(duration)))
-                                        let moveX = SKAction.moveTo(x: CGFloat((self.player?.position.x)! + CGFloat(moveSpecific * 120)), duration: TimeInterval(duration))
-                                        let movePos = SKAction.move(to: CGPoint(x: CGFloat(newPositionX), y: CGFloat(newPositionY)), duration: 1)
-                                        let moveY = SKAction.move(to: CGPoint(x: CGFloat(CGFloat((newPositionX)) - CGFloat(valueSubstract * 60)), y: CGFloat(CGFloat((newPositionY)) - CGFloat(valueSubstract * 100))), duration: TimeInterval(valueSubstract / 2))
-//                                        let moveY = SKAction.moveTo(y: CGFloat((self.player?.position.y)! - CGFloat(valueSubstract * 100)), duration: TimeInterval(valueSubstract / 2))
-                                        
-                                        
-//                                        var positionNew = CGFloat((self.player?.position.x)! + CGFloat(moveSpecific * 120))
-//
-//                                        if self.player?.position.x == positionNew {
-//
-//
-//                                            self.player?.run(SKAction.moveBy(x: CGFloat(newPositionX), y: CGFloat(newPositionY), duration: 1))
-//
-//
-//                                            if self.player?.position.x == CGFloat(newPositionX) && self.player?.position.y == CGFloat(newPositionY) {
-//                                                self.player?.run(SKAction.moveTo(y: CGFloat((self.player?.position.y)! + CGFloat(valueSubstract * 100)), duration: TimeInterval(valueSubstract / 2)))
-//
-//                                            }
-                                        let sequenceAction = SKAction.sequence([moveX, movePos, moveY])
-                                        self.player?.run(sequenceAction)
-                                        
-                                        self.floor += self.value
-                                    }else{
-                                        self.player?.run(SKAction.moveTo(x: CGFloat((self.player?.position.x)! + CGFloat(self.value * 120)), duration: TimeInterval(duration)))
-                                        self.floor += self.value
-                                        
-                                        if self.floor == 26 {
-                                            var newPositionX = 3810
-                                            var newPositionY = 600
+                                    //ngatur player bisa belok ketika berada di floor 26----------------------------------------------------------
+                                    
+                                        let moveSpecific = 26 - self.floor
+                                        if self.value > moveSpecific {
+                                            let newPositionX = 3810
+                                            let newPositionY = 600
+                                            let valueSubstract = self.value - moveSpecific
+
+                                            let moveX = SKAction.moveTo(x: CGFloat((self.player?.position.x)! + CGFloat(moveSpecific * 120)), duration: TimeInterval(duration))
+                                            
                                             let movePos = SKAction.move(to: CGPoint(x: CGFloat(newPositionX), y: CGFloat(newPositionY)), duration: 1)
+                                            
+                                            let moveY = SKAction.move(to: CGPoint(x: CGFloat(CGFloat((newPositionX)) - CGFloat(valueSubstract * 60)), y: CGFloat(CGFloat((newPositionY)) - CGFloat(valueSubstract * 100))), duration: TimeInterval(valueSubstract / 2))
+
+                                            let sequenceAction = SKAction.sequence([moveX, movePos, moveY])
+                                            self.player?.run(sequenceAction)
+                                            
+                                            self.floor += self.value
+                                        }else{
+                                            self.player?.run(SKAction.moveTo(x: CGFloat((self.player?.position.x)! + CGFloat(self.value * 120)), duration: TimeInterval(duration)))
+                                            self.floor += self.value
+                                            
+                                            if self.floor == 26 {
+                                                let newPositionX = 3810
+                                                let newPositionY = 600
+                                                
+                                                self.player?.run(SKAction.move(to: CGPoint(x: CGFloat(newPositionX), y: CGFloat(newPositionY)), duration: 1))
+                                            }
                                         }
-                                    }
-                                    print(moveSpecific)
+//                                    print(moveSpecific)
                                 }
+                                
                             }else{
+                                
+                                // jalan horizontal biasa dari floor 1-25
                                 self.player?.run(SKAction.moveTo(x: CGFloat((self.player?.position.x)! + CGFloat(self.value * 120)), duration: TimeInterval(duration)))
                                 self.floor += self.value
                             }
                         }
+                        print(floor)
                         
-                        
-                        
-    //
-    //                    won(prizeTitle: String(describing: slots[x][0]))
-                        
-    //                    highlightWin(x)
                         break
                     }
                 }
