@@ -10,13 +10,19 @@ import UIKit
 import SpriteKit
 import GameplayKit
 
-class GameViewController: UIViewController {
+protocol reloadData{
+    func onReload(index: Int, players: [Players])
+}
+
+class GameViewController: UIViewController, reloadData {
     
     var players:[Players] = [
         Players(name: "Danny", job: "CEO", money: 10000, House: "Mansion", isMarried: false, child: 2, color: "red", insurance: [insurancePlayer(name: "car insurance")], isFinish: false, isCollege: true, floor: 0),
-        Players(name: "Danny", job: "CEO", money: 10000, House: "Mansion", isMarried: false, child: 2, color: "red", insurance: [insurancePlayer(name: "car insurance")], isFinish: false, isCollege: true, floor: 0),
-        Players(name: "Danny", job: "CEO", money: 10000, House: "Mansion", isMarried: false, child: 2, color: "red", insurance: [insurancePlayer(name: "car insurance")], isFinish: false, isCollege: true, floor: 0)
+        Players(name: "Kevin", job: "CEO", money: 8000, House: "Mansion", isMarried: false, child: 2, color: "red", insurance: [insurancePlayer(name: "car insurance")], isFinish: false, isCollege: true, floor: 0),
+        Players(name: "Alex", job: "CEO", money: 6000, House: "Mansion", isMarried: false, child: 2, color: "red", insurance: [insurancePlayer(name: "car insurance")], isFinish: false, isCollege: false, floor: 0)
         ]
+    
+    var index = 0
 
     @IBOutlet weak var playerCollectionView: UICollectionView!
     @IBOutlet weak var shopBtn: UIButton!
@@ -37,7 +43,9 @@ class GameViewController: UIViewController {
             if let scene = SKScene(fileNamed: "GameScene") {
                 // Set the scale mode to scale to fit the window
                 scene.scaleMode = .aspectFill
-                
+                scene.userData = NSMutableDictionary()
+                scene.userData?.setObject(self, forKey: "delegate" as NSCopying)
+                scene.userData?.setObject(players, forKey: "modelPlayer" as NSCopying)
                 // Present the scene
                 view.presentScene(scene)
             }
@@ -68,11 +76,19 @@ class GameViewController: UIViewController {
     
     
     @IBAction func shopButton(_ sender: Any) {
-        print("tes")
+
         let destination = ShopViewController(nibName: "ShopViewController", bundle: nil)
-        destination.modalPresentationStyle = .custom
+//        destination.modalPresentationStyle = .custom
+        destination.name = players[index].name
+        destination.money = players[index].money
         self.present(destination, animated: true, completion: nil)
         
+    }
+    
+    func onReload(index: Int, players: [Players]) {
+        self.index = index
+        self.players = players
+        playerCollectionView.reloadData()
     }
 }
 
@@ -87,6 +103,9 @@ extension GameViewController: UICollectionViewDataSource {
         cell.namePlayer.text = players[indexPath.row].name
         cell.jobPlayer.text = players[indexPath.row].job
         cell.moneyPlayer.text = String(players[indexPath.row].money)
+        
+        //ini buat ngetes doang kalo datanya masuk apa kaga
+        cell.moneyPlayer.text = String(players[indexPath.row].floor)
         
         
         return cell

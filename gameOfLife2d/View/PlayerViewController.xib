@@ -9,6 +9,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PlayerViewController" customModule="gameOfLife2d" customModuleProvider="target">
             <connections>
+                <outlet property="backButton" destination="mQA-ye-Ka1" id="EYl-UQ-rb0"/>
+                <outlet property="name" destination="Z1M-B3-LJb" id="rY9-jG-E3Y"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

@@ -14,6 +14,8 @@ class ShopViewController: UIViewController {
     @IBOutlet weak var moneyLabel: UILabel!
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var insuranceTableView: UITableView!
+    var name: String?
+    var money: Int?
     
     var insurance:[Insurance] = [Insurance(name: "Car Insurance", price: 1000),
                                  Insurance(name: "House Insurance", price: 1000),
@@ -22,6 +24,9 @@ class ShopViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        nameLabel.text = name
+        moneyLabel.text = String(money!)
+        
         
         insuranceTableView.dataSource = self
         
