@@ -329,7 +329,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 //                                self.floor += self.value
                                 gameVC.players[index].floor += self.value
                                 
-                                if self.floor == 45 {
+                                if gameVC.players[index].floor == 45 {
                                     let newPositionX = 2560
                                     let newPositionY = -1395
                                     
@@ -385,7 +385,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                         gameVC.players[index].floor += self.value
 
                                                     
-                        if self.floor == 26 {
+                        if gameVC.players[index].floor == 26 {
                             let newPositionX = 3810
                             let newPositionY = 600
                             
@@ -485,7 +485,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     gameVC.players[index].floor += self.value
                     
                             
-                    if self.floor == 16 {
+                    if gameVC.players[index].floor == 16 {
                         let newPositionX = 2570
                         let newPositionY = 705
                         
@@ -510,6 +510,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 
                 if self.floor + self.value > 16{
                     //floor 9 dapet 8
+                    
                     let moveSpecific = 11 - self.floor
                     let newPositionX = 2260
                     let newPositionY = 205
@@ -520,7 +521,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     let movePos = SKAction.move(to: CGPoint(x: CGFloat(newPositionX), y: CGFloat(newPositionY)), duration: 1)
                                                                                                         
                     
-                    let valueSubstract = 16 - self.floor + moveSpecific
+                    let valueSubstract = 16 - (self.floor + moveSpecific)
                                                                                                         
                     
                     let move2 = CGFloat((newPositionX)) + CGFloat(valueSubstract * 60)
@@ -567,7 +568,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 //                        self.floor += self.value
                         gameVC.players[index].floor += self.value
                         
-                        if self.floor == 11 {
+                        if gameVC.players[index].floor == 11 {
                             let newPositionX = 2260
                             let newPositionY = 205
                                                                                                                     
