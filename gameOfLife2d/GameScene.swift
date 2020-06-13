@@ -12,16 +12,19 @@ import GameplayKit
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var cameraNode: SKCameraNode!
-    var player1 : SKSpriteNode?
-    var player2 : SKSpriteNode?
-    var player3 : SKSpriteNode?
-    var player4 : SKSpriteNode?
+    var player1 = SKSpriteNode(color: SKColor.black, size: CGSize(width: 100, height: 80))
+    var player2 = SKSpriteNode(color: SKColor.blue, size: CGSize(width: 100, height: 80))
+    var player3 = SKSpriteNode(color: SKColor.red, size: CGSize(width: 100, height: 80))
+    var player4 = SKSpriteNode(color: SKColor.yellow, size: CGSize(width: 100, height: 80))
     var isTouched2 = false
     var turn = 1
     var player : SKSpriteNode?
     var value = 0
     var floor = 0
     var duration = 0
+    
+    
+    var gameVC = GameViewController()
     
     //nanti apus kalo udah ada object
     var isCollege = true
@@ -35,8 +38,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         setupCamera()
         setupPlayer()
         
-        cameraNode.position.x = player1?.position.x as! CGFloat
-        cameraNode.position.y = player1?.position.y as! CGFloat
+        print(gameVC.players[1].name)
+        
+        cameraNode.position.x = player1.position.x as! CGFloat
+        cameraNode.position.y = player1.position.y as! CGFloat
         
         self.physicsWorld.contactDelegate = self
         displaySpinWheel()
@@ -44,10 +49,74 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func setupPlayer(){
-        player1 = childNode(withName: "player1") as? SKSpriteNode
-        player2 = childNode(withName: "player2") as? SKSpriteNode
-        player3 = childNode(withName: "player3") as? SKSpriteNode
-        player4 = childNode(withName: "player4") as? SKSpriteNode
+//        let player1 = SKSpriteNode()
+//        let player2 = SKSpriteNode()
+//        let player3 = SKSpriteNode()
+//        let player4 = SKSpriteNode()
+        switch gameVC.players.count {
+        case 2:
+            player1.zPosition = 500
+            player1.position = CGPoint(x: 640, y: 340)
+            
+            player2.zPosition = 500
+            player2.position = CGPoint(x: 640, y: 240)
+            
+            addChild(player1)
+            addChild(player2)
+        case 3:
+            player1.zPosition = 500
+            player1.position = CGPoint(x: 640, y: 340)
+            
+            player2.zPosition = 500
+            player2.position = CGPoint(x: 640, y: 240)
+            
+            player3.zPosition = 500
+            player3.position = CGPoint(x: 640, y: 140)
+            
+            addChild(player1)
+            addChild(player2)
+            addChild(player3)
+        case 4:
+            player1.zPosition = 500
+            player1.position = CGPoint(x: 640, y: 340)
+            
+            player2.zPosition = 500
+            player2.position = CGPoint(x: 640, y: 240)
+            
+            player3.zPosition = 500
+            player3.position = CGPoint(x: 640, y: 140)
+            
+            player4.zPosition = 500
+            player4.position = CGPoint(x: 640, y: 40)
+            
+            addChild(player1)
+            addChild(player2)
+            addChild(player3)
+            addChild(player4)
+        default:
+            player1.zPosition = 500
+            player1.position = CGPoint(x: 640, y: 340)
+            
+            player2.zPosition = 500
+            player2.position = CGPoint(x: 640, y: 240)
+            
+            player3.zPosition = 500
+            player3.position = CGPoint(x: 640, y: 140)
+            
+            player4.zPosition = 500
+            player4.position = CGPoint(x: 640, y: 40)
+            
+            addChild(player1)
+            addChild(player2)
+            addChild(player3)
+            addChild(player4)
+        }
+        
+        
+//        player1 = childNode(withName: "player1") as? SKSpriteNode
+//        player2 = childNode(withName: "player2") as? SKSpriteNode
+//        player3 = childNode(withName: "player3") as? SKSpriteNode
+//        player4 = childNode(withName: "player4") as? SKSpriteNode
     }
     
     func setupCamera(){
@@ -91,23 +160,23 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
             if spinWheel.spinDone == true {
                 if turn == 1{
-                    cameraNode.position.x = player2?.position.x as! CGFloat
-                    cameraNode.position.y = player2?.position.y as! CGFloat
+                    cameraNode.position.x = player2.position.x as! CGFloat
+                    cameraNode.position.y = player2.position.y as! CGFloat
                     spinWheel.spinDone = false
                     turn = 2
                 }else if turn == 2{
-                    cameraNode.position.x = player3?.position.x as! CGFloat
-                    cameraNode.position.y = player3?.position.y as! CGFloat
+                    cameraNode.position.x = player3.position.x as! CGFloat
+                    cameraNode.position.y = player3.position.y as! CGFloat
                     spinWheel.spinDone = false
                     turn = 3
                 }else if turn == 3{
-                    cameraNode.position.x = player4?.position.x as! CGFloat
-                    cameraNode.position.y = player4?.position.y as! CGFloat
+                    cameraNode.position.x = player4.position.x as! CGFloat
+                    cameraNode.position.y = player4.position.y as! CGFloat
                     spinWheel.spinDone = false
                     turn = 4
                 }else if turn == 4{
-                    cameraNode.position.x = player1?.position.x as! CGFloat
-                    cameraNode.position.y = player1?.position.y as! CGFloat
+                    cameraNode.position.x = player1.position.x as! CGFloat
+                    cameraNode.position.y = player1.position.y as! CGFloat
                     spinWheel.spinDone = false
                     turn = 1
                 }
@@ -191,7 +260,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                         if self.floor + self.value > 60 {
                             
                             let lastMove = 60 - self.floor
-                            let lastDuration = lastMove / 2
+                            var lastDuration = 1
+                            
+                            if lastMove > 1 {
+                                lastDuration = lastMove / 2
+                            }
                             
                             // jalan horizontal biasa dari 44 - finish
                             self.player?.run(SKAction.moveTo(x: 590, duration: TimeInterval(lastDuration)))
