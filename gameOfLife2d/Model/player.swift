@@ -25,3 +25,18 @@ struct Players{
     var isCollege: Bool
     var floor: Int
 }
+
+
+//init(name: String, job: String, money: Int, House: String, isMarried: Bool, child: Int, color: String, insurance: [insurancePlayer], isFinish: Bool, isCollege: Bool, floor: Int) {
+//    self.name = name
+//    self.job = job
+//    self.money = money
+//    self.House = House
+//    self.isMarried = isMarried
+//    self.child = child
+//    self.color = color
+//    self.insurance = insurance
+//    self.isFinish = isFinish
+//    self.isCollege = isCollege
+//    self.floor = floor
+//}
