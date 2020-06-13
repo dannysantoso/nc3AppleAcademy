@@ -275,7 +275,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 if self.floor + self.value > 44 {
                     if self.floor > 44 {
                         
-                        if self.floor + self.value > 60 {
+                        if self.floor + self.value >= 60 {
                             
                             let lastMove = 60 - self.floor
                             var lastDuration = 1
