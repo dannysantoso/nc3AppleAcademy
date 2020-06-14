@@ -38,9 +38,9 @@
 /* Begin PBXFileReference section */
 		E129506424910FAE008E8B05 /* gameOfLife2d.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gameOfLife2d.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E129506724910FAE008E8B05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E129506924910FAE008E8B05 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		E129506924910FAE008E8B05 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = GameScene.sks; path = View/GameScene.sks; sourceTree = "<group>"; };
 		E129506D24910FAE008E8B05 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
-		E129506F24910FAE008E8B05 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		E129506F24910FAE008E8B05 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameViewController.swift; path = Controller/GameViewController.swift; sourceTree = "<group>"; };
 		E129507224910FAE008E8B05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E129507424910FB0008E8B05 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E129507724910FB0008E8B05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -54,16 +54,16 @@
 		E129511A24917E1F008E8B05 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		E129511B24917E1F008E8B05 /* CGFloat+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extensions.swift"; sourceTree = "<group>"; };
 		E129512124917E3A008E8B05 /* Context Rounded Black SSi Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Context Rounded Black SSi Black.ttf"; sourceTree = "<group>"; };
-		E1EF1D192494C18100CBEB0E /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
-		E1EF1D1A2494C18100CBEB0E /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
-		E1EF1D1D2494D3F800CBEB0E /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
-		E1EF1D1E2494D3F800CBEB0E /* ShopViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShopViewController.xib; sourceTree = "<group>"; };
-		E1EF1D212494D8DB00CBEB0E /* Insurance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Insurance.swift; sourceTree = "<group>"; };
-		E1EF1D232494DAE600CBEB0E /* InsuranceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsuranceTableViewCell.swift; sourceTree = "<group>"; };
-		E1EF1D242494DAE600CBEB0E /* InsuranceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InsuranceTableViewCell.xib; sourceTree = "<group>"; };
-		E1EF1D272494E4E200CBEB0E /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
-		E1EF1D282494E4E200CBEB0E /* PlayerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerViewController.xib; sourceTree = "<group>"; };
-		E1EF1D302494F70500CBEB0E /* player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = player.swift; sourceTree = "<group>"; };
+		E1EF1D192494C18100CBEB0E /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CollectionViewCell.swift; path = Controller/CollectionViewCell.swift; sourceTree = "<group>"; };
+		E1EF1D1A2494C18100CBEB0E /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CollectionViewCell.xib; path = "View/Collection Cell/CollectionViewCell.xib"; sourceTree = "<group>"; };
+		E1EF1D1D2494D3F800CBEB0E /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ShopViewController.swift; path = Controller/ShopViewController.swift; sourceTree = "<group>"; };
+		E1EF1D1E2494D3F800CBEB0E /* ShopViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ShopViewController.xib; path = View/ShopViewController.xib; sourceTree = "<group>"; };
+		E1EF1D212494D8DB00CBEB0E /* Insurance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Insurance.swift; path = Model/Insurance.swift; sourceTree = "<group>"; };
+		E1EF1D232494DAE600CBEB0E /* InsuranceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InsuranceTableViewCell.swift; path = Controller/InsuranceTableViewCell.swift; sourceTree = "<group>"; };
+		E1EF1D242494DAE600CBEB0E /* InsuranceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = InsuranceTableViewCell.xib; path = "View/Table Cell/InsuranceTableViewCell.xib"; sourceTree = "<group>"; };
+		E1EF1D272494E4E200CBEB0E /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlayerViewController.swift; path = Controller/PlayerViewController.swift; sourceTree = "<group>"; };
+		E1EF1D282494E4E200CBEB0E /* PlayerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = PlayerViewController.xib; path = View/PlayerViewController.xib; sourceTree = "<group>"; };
+		E1EF1D302494F70500CBEB0E /* player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = player.swift; path = Model/player.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,9 +102,19 @@
 				E129507424910FB0008E8B05 /* Assets.xcassets */,
 				E129507624910FB0008E8B05 /* LaunchScreen.storyboard */,
 				E129507924910FB0008E8B05 /* Info.plist */,
-				E1EF1D2B2494E6F800CBEB0E /* View */,
-				E1EF1D2F2494E76900CBEB0E /* Model */,
-				E1EF1D2E2494E74200CBEB0E /* Controller */,
+				E1EF1D212494D8DB00CBEB0E /* Insurance.swift */,
+				E1EF1D302494F70500CBEB0E /* player.swift */,
+				E1EF1D272494E4E200CBEB0E /* PlayerViewController.swift */,
+				E1EF1D232494DAE600CBEB0E /* InsuranceTableViewCell.swift */,
+				E1EF1D1D2494D3F800CBEB0E /* ShopViewController.swift */,
+				E1EF1D192494C18100CBEB0E /* CollectionViewCell.swift */,
+				E129506F24910FAE008E8B05 /* GameViewController.swift */,
+				E1EF1D242494DAE600CBEB0E /* InsuranceTableViewCell.xib */,
+				E1EF1D1A2494C18100CBEB0E /* CollectionViewCell.xib */,
+				E129506924910FAE008E8B05 /* GameScene.sks */,
+				E129507124910FAE008E8B05 /* Main.storyboard */,
+				E1EF1D282494E4E200CBEB0E /* PlayerViewController.xib */,
+				E1EF1D1E2494D3F800CBEB0E /* ShopViewController.xib */,
 			);
 			path = gameOfLife2d;
 			sourceTree = "<group>";
@@ -155,56 +165,6 @@
 				E129510A24917DF2008E8B05 /* Sounds */,
 			);
 			path = spinnerWheel;
-			sourceTree = "<group>";
-		};
-		E1EF1D2B2494E6F800CBEB0E /* View */ = {
-			isa = PBXGroup;
-			children = (
-				E129506924910FAE008E8B05 /* GameScene.sks */,
-				E129507124910FAE008E8B05 /* Main.storyboard */,
-				E1EF1D282494E4E200CBEB0E /* PlayerViewController.xib */,
-				E1EF1D1E2494D3F800CBEB0E /* ShopViewController.xib */,
-				E1EF1D2D2494E72700CBEB0E /* Collection Cell */,
-				E1EF1D2C2494E71400CBEB0E /* Table Cell */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		E1EF1D2C2494E71400CBEB0E /* Table Cell */ = {
-			isa = PBXGroup;
-			children = (
-				E1EF1D242494DAE600CBEB0E /* InsuranceTableViewCell.xib */,
-			);
-			path = "Table Cell";
-			sourceTree = "<group>";
-		};
-		E1EF1D2D2494E72700CBEB0E /* Collection Cell */ = {
-			isa = PBXGroup;
-			children = (
-				E1EF1D1A2494C18100CBEB0E /* CollectionViewCell.xib */,
-			);
-			path = "Collection Cell";
-			sourceTree = "<group>";
-		};
-		E1EF1D2E2494E74200CBEB0E /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				E1EF1D272494E4E200CBEB0E /* PlayerViewController.swift */,
-				E1EF1D232494DAE600CBEB0E /* InsuranceTableViewCell.swift */,
-				E1EF1D1D2494D3F800CBEB0E /* ShopViewController.swift */,
-				E1EF1D192494C18100CBEB0E /* CollectionViewCell.swift */,
-				E129506F24910FAE008E8B05 /* GameViewController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		E1EF1D2F2494E76900CBEB0E /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				E1EF1D212494D8DB00CBEB0E /* Insurance.swift */,
-				E1EF1D302494F70500CBEB0E /* player.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
