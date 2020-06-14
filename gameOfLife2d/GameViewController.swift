@@ -12,15 +12,15 @@ import GameplayKit
 
 class GameViewController: UIViewController {
 
+    var players = [Player]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         if let view = self.view as! SKView? {
             // Load the SKScene from 'GameScene.sks'
-            if let scene = SKScene(fileNamed: "GameScene") {
+            if let scene = SKScene(fileNamed: "GameScene") as? GameScene {
                 // Set the scale mode to scale to fit the window
                 scene.scaleMode = .aspectFill
-                
                 // Present the scene
                 view.presentScene(scene)
             }
@@ -30,6 +30,7 @@ class GameViewController: UIViewController {
             view.showsFPS = true
             view.showsNodeCount = true
         }
+        
     }
 
     override var shouldAutorotate: Bool {
@@ -47,4 +48,17 @@ class GameViewController: UIViewController {
     override var prefersStatusBarHidden: Bool {
         return true
     }
+}
+
+extension GameViewController {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+
 }
