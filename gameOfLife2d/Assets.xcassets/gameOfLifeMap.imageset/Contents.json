@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "gameOfLifeMap.png",
+      "filename" : "fixmap.png",
       "idiom" : "universal",
       "scale" : "1x"
     },

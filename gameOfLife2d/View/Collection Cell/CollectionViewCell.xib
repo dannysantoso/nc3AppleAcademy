@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Context Rounded Black SSi Black.ttf">
+            <string>ContextRoundedBlackSSiBlack</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CollectionViewCell" customModule="gameOfLife2d" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="139" height="80"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="139" height="80"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view alpha="0.75" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rht-j8-BiQ">
+                        <rect key="frame" x="0.0" y="0.0" width="139" height="80"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Job" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DzC-1F-TfE">
+                                <rect key="frame" x="20" y="34" width="109" height="14"/>
+                                <fontDescription key="fontDescription" name="ContextRoundedBlackSSiBlack" family="Context Rounded Black SSi" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KGN-0P-rC8">
+                                <rect key="frame" x="20" y="10" width="109" height="14"/>
+                                <fontDescription key="fontDescription" name="ContextRoundedBlackSSiBlack" family="Context Rounded Black SSi" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Money" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Wa-eB-IFL">
+                                <rect key="frame" x="20" y="58" width="109" height="14"/>
+                                <fontDescription key="fontDescription" name="ContextRoundedBlackSSiBlack" family="Context Rounded Black SSi" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="KGN-0P-rC8" firstAttribute="leading" secondItem="Rht-j8-BiQ" secondAttribute="leading" constant="20" id="F7O-Ct-Sb9"/>
+                            <constraint firstAttribute="trailing" secondItem="KGN-0P-rC8" secondAttribute="trailing" constant="10" id="LVx-LU-liy"/>
+                            <constraint firstItem="2Wa-eB-IFL" firstAttribute="leading" secondItem="Rht-j8-BiQ" secondAttribute="leading" constant="20" id="OZ1-2Z-dbw"/>
+                            <constraint firstItem="2Wa-eB-IFL" firstAttribute="top" secondItem="DzC-1F-TfE" secondAttribute="bottom" constant="10" id="WES-vW-DZ4"/>
+                            <constraint firstAttribute="trailing" secondItem="2Wa-eB-IFL" secondAttribute="trailing" constant="10" id="XQP-dJ-9Y3"/>
+                            <constraint firstAttribute="trailing" secondItem="DzC-1F-TfE" secondAttribute="trailing" constant="10" id="Zaq-1S-UDL"/>
+                            <constraint firstItem="DzC-1F-TfE" firstAttribute="top" secondItem="KGN-0P-rC8" secondAttribute="bottom" constant="10" id="bgU-R3-bsz"/>
+                            <constraint firstItem="KGN-0P-rC8" firstAttribute="top" secondItem="Rht-j8-BiQ" secondAttribute="top" constant="10" id="lJC-qx-EUH"/>
+                            <constraint firstItem="DzC-1F-TfE" firstAttribute="leading" secondItem="Rht-j8-BiQ" secondAttribute="leading" constant="20" id="zwV-4v-GOC"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="Rht-j8-BiQ" secondAttribute="bottom" id="LLt-Nd-A2T"/>
+                <constraint firstItem="Rht-j8-BiQ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="LOl-Vy-Ay2"/>
+                <constraint firstItem="Rht-j8-BiQ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="R7Y-uK-QCl"/>
+                <constraint firstAttribute="trailing" secondItem="Rht-j8-BiQ" secondAttribute="trailing" id="tb5-2b-lKz"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="139" height="80"/>
+            <connections>
+                <outlet property="jobPlayer" destination="DzC-1F-TfE" id="8Y9-kR-p5z"/>
+                <outlet property="moneyPlayer" destination="2Wa-eB-IFL" id="IsQ-12-mZW"/>
+                <outlet property="namePlayer" destination="KGN-0P-rC8" id="ah6-wJ-3e9"/>
+            </connections>
+            <point key="canvasLocation" x="202.17391304347828" y="125.89285714285714"/>
+        </collectionViewCell>
+    </objects>
+</document>

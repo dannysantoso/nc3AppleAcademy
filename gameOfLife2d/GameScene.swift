@@ -12,31 +12,42 @@ import GameplayKit
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var cameraNode: SKCameraNode!
-    var player1 : SKSpriteNode?
-    var player2 : SKSpriteNode?
-    var player3 : SKSpriteNode?
-    var player4 : SKSpriteNode?
+    var player1 = SKSpriteNode(color: SKColor.black, size: CGSize(width: 100, height: 80))
+    var player2 = SKSpriteNode(color: SKColor.blue, size: CGSize(width: 100, height: 80))
+    var player3 = SKSpriteNode(color: SKColor.red, size: CGSize(width: 100, height: 80))
+    var player4 = SKSpriteNode(color: SKColor.yellow, size: CGSize(width: 100, height: 80))
     var isTouched2 = false
     var turn = 1
     var player : SKSpriteNode?
     var value = 0
     var floor = 0
     var duration = 0
+    var index = 0
+    var delegateVC: reloadData?
+    var playersScene: [Players] = []
+    
+//    var gameVC = GameViewController()
     
     //nanti apus kalo udah ada object
     var isCollege = true
-    var isFirstMove = true
     
     private var spinWheel: SpinWheel!
     
     //punya spritekit dimana didmove udah dimasukin ke scene, didload punya uikit
     override func didMove(to view: SKView) {
+        delegateVC = self.userData?.value(forKey: "delegate") as! reloadData
+        playersScene = self.userData?.value(forKey: "modelPlayer") as! [Players]
+        
+        
         setupMap()
         setupCamera()
         setupPlayer()
         
-        cameraNode.position.x = player1?.position.x as! CGFloat
-        cameraNode.position.y = player1?.position.y as! CGFloat
+        
+        print(playersScene[1].name)
+        
+        cameraNode.position.x = player1.position.x as! CGFloat
+        cameraNode.position.y = player1.position.y as! CGFloat
         
         self.physicsWorld.contactDelegate = self
         displaySpinWheel()
@@ -44,10 +55,74 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func setupPlayer(){
-        player1 = childNode(withName: "player1") as? SKSpriteNode
-        player2 = childNode(withName: "player2") as? SKSpriteNode
-        player3 = childNode(withName: "player3") as? SKSpriteNode
-        player4 = childNode(withName: "player4") as? SKSpriteNode
+//        let player1 = SKSpriteNode()
+//        let player2 = SKSpriteNode()
+//        let player3 = SKSpriteNode()
+//        let player4 = SKSpriteNode()
+        switch playersScene.count {
+        case 2:
+            player1.zPosition = 500
+            player1.position = CGPoint(x: 640, y: 340)
+            
+            player2.zPosition = 500
+            player2.position = CGPoint(x: 640, y: 240)
+            
+            addChild(player1)
+            addChild(player2)
+        case 3:
+            player1.zPosition = 500
+            player1.position = CGPoint(x: 640, y: 340)
+            
+            player2.zPosition = 500
+            player2.position = CGPoint(x: 640, y: 240)
+            
+            player3.zPosition = 500
+            player3.position = CGPoint(x: 640, y: 140)
+            
+            addChild(player1)
+            addChild(player2)
+            addChild(player3)
+        case 4:
+            player1.zPosition = 500
+            player1.position = CGPoint(x: 640, y: 340)
+            
+            player2.zPosition = 500
+            player2.position = CGPoint(x: 640, y: 240)
+            
+            player3.zPosition = 500
+            player3.position = CGPoint(x: 640, y: 140)
+            
+            player4.zPosition = 500
+            player4.position = CGPoint(x: 640, y: 40)
+            
+            addChild(player1)
+            addChild(player2)
+            addChild(player3)
+            addChild(player4)
+        default:
+            player1.zPosition = 500
+            player1.position = CGPoint(x: 640, y: 340)
+            
+            player2.zPosition = 500
+            player2.position = CGPoint(x: 640, y: 240)
+            
+            player3.zPosition = 500
+            player3.position = CGPoint(x: 640, y: 140)
+            
+            player4.zPosition = 500
+            player4.position = CGPoint(x: 640, y: 40)
+            
+            addChild(player1)
+            addChild(player2)
+            addChild(player3)
+            addChild(player4)
+        }
+        
+        
+//        player1 = childNode(withName: "player1") as? SKSpriteNode
+//        player2 = childNode(withName: "player2") as? SKSpriteNode
+//        player3 = childNode(withName: "player3") as? SKSpriteNode
+//        player4 = childNode(withName: "player4") as? SKSpriteNode
     }
     
     func setupCamera(){
@@ -80,6 +155,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if spinWheel.spinDone == true{
             cameraNode.position.x = player?.position.x as! CGFloat
             cameraNode.position.y = player?.position.y as! CGFloat
+            delegateVC?.onReload(index: index, players: playersScene)
         }
     }
     
@@ -91,25 +167,24 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
             if spinWheel.spinDone == true {
                 if turn == 1{
-                    cameraNode.position.x = player2?.position.x as! CGFloat
-                    cameraNode.position.y = player2?.position.y as! CGFloat
+                    cameraNode.position.x = player1.position.x as! CGFloat
+                    cameraNode.position.y = player1.position.y as! CGFloat
                     spinWheel.spinDone = false
-                    turn = 2
                 }else if turn == 2{
-                    cameraNode.position.x = player3?.position.x as! CGFloat
-                    cameraNode.position.y = player3?.position.y as! CGFloat
+                    cameraNode.position.x = player2.position.x as! CGFloat
+                    cameraNode.position.y = player2.position.y as! CGFloat
                     spinWheel.spinDone = false
-                    turn = 3
+
+                    
                 }else if turn == 3{
-                    cameraNode.position.x = player4?.position.x as! CGFloat
-                    cameraNode.position.y = player4?.position.y as! CGFloat
+                    cameraNode.position.x = player3.position.x as! CGFloat
+                    cameraNode.position.y = player3.position.y as! CGFloat
                     spinWheel.spinDone = false
-                    turn = 4
+                    
                 }else if turn == 4{
-                    cameraNode.position.x = player1?.position.x as! CGFloat
-                    cameraNode.position.y = player1?.position.y as! CGFloat
+                    cameraNode.position.x = player4.position.x as! CGFloat
+                    cameraNode.position.y = player4.position.y as! CGFloat
                     spinWheel.spinDone = false
-                    turn = 1
                 }
 
             }else{
@@ -118,16 +193,37 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 
                 if turn == 1 {
                     player = player1
-                    
+                    index = 0
+                    floor = playersScene[index].floor
+                    isCollege = playersScene[index].isCollege
+                    turn += 1
                 }else if turn == 2 {
-//                    player = player2
-                    
+                    player = player2
+                    index = 1
+                    floor = playersScene[index].floor
+                    isCollege = playersScene[index].isCollege
+                    if playersScene.count > 2{
+                        turn += 1
+                    }else{
+                        turn = 1
+                    }
                 }else if turn == 3 {
-//                    player = player3
-                    
+                    player = player3
+                    index = 2
+                    floor = playersScene[index].floor
+                    isCollege = playersScene[index].isCollege
+                    turn += 1
+                    if playersScene.count > 3{
+                        turn += 1
+                    }else{
+                        turn = 1
+                    }
                 }else if turn == 4 {
-//                    player = player4
-                    
+                    player = player4
+                    index = 3
+                    floor = playersScene[index].floor
+                    isCollege = playersScene[index].isCollege
+                    turn = 1
                 }
         }
     }
@@ -188,21 +284,27 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 if self.floor + self.value > 44 {
                     if self.floor > 44 {
                         
-                        if self.floor + self.value > 60 {
+                        if self.floor + self.value >= 60 {
                             
                             let lastMove = 60 - self.floor
-                            let lastDuration = lastMove / 2
+                            var lastDuration = 1
+                            
+                            if lastMove > 1 {
+                                lastDuration = lastMove / 2
+                            }
                             
                             // jalan horizontal biasa dari 44 - finish
                             self.player?.run(SKAction.moveTo(x: 590, duration: TimeInterval(lastDuration)))
-                            self.floor = 60
+//                            self.floor = 60
+                            playersScene[index].floor = 60
                             
                             
                         }else{
                         
                             // jalan horizontal biasa dari 44 - finish
                             self.player?.run(SKAction.moveTo(x: CGFloat(CGFloat((self.player?.position.x)!) - CGFloat(self.value * 120)), duration: TimeInterval(duration)))
-                            self.floor += self.value
+//                            self.floor += self.value
+                            playersScene[index].floor += self.value
                         }
                                                     
                     }else{
@@ -226,15 +328,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                                 let sequenceAction = SKAction.sequence([moveY, movePos, moveX])
                                 self.player?.run(sequenceAction)
                                                         
-                                self.floor += self.value
+//                                self.floor += self.value
+                                playersScene[index].floor += self.value
                             
                             }else{
                                 //belokin di line 44
                                 //kalo pas dibelokannya
                                 
-                                self.floor += self.value
+//                                self.floor += self.value
+                                playersScene[index].floor += self.value
                                 
-                                if self.floor == 45 {
+                                if playersScene[index].floor == 45 {
                                     let newPositionX = 2560
                                     let newPositionY = -1395
                                     
@@ -257,7 +361,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     // jalan vertical biasa dari floor 26 - 44
                     self.player?.run(SKAction.move(to: CGPoint(x: CGFloat((self.player?.position.x)! - CGFloat(self.value * 60)), y: CGFloat((self.player?.position.y)! - CGFloat(self.value * 100))), duration: TimeInterval(duration)))
                     
-                    self.floor += self.value
+//                    self.floor += self.value
+                    playersScene[index].floor += self.value
                 }
                                             
             }else {
@@ -278,16 +383,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                         let sequenceAction = SKAction.sequence([moveX, movePos, moveY])
                         self.player?.run(sequenceAction)
                                                     
-                        self.floor += self.value
+//                        self.floor += self.value
+                        playersScene[index].floor += self.value
                         
                     }else{
                         //belokin player di line 26 pas
                         
                         
-                        self.floor += self.value
+//                        self.floor += self.value
+                        playersScene[index].floor += self.value
 
                                                     
-                        if self.floor == 26 {
+                        if playersScene[index].floor == 26 {
                             let newPositionX = 3810
                             let newPositionY = 600
                             
@@ -311,19 +418,22 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             if self.value == 1 && self.floor == 0{
                 
                 self.player?.run(SKAction.move(to: CGPoint(x: 770, y: 705), duration: 1))
-                self.floor += self.value
+//                self.floor += self.value
+                playersScene[index].floor += self.value
                                             
             }else if self.value > 1 && self.floor == 0 {
                 
                 let initialMove = SKAction.move(to: CGPoint(x: 770, y: 705), duration: 1)
                 let moveValue = SKAction.moveTo(x: CGFloat(770 + CGFloat((self.value - 1) * 120)), duration: TimeInterval(self.duration))
                 self.player?.run(SKAction.sequence([initialMove,moveValue]))
-                self.floor += self.value
+//                self.floor += self.value
+                playersScene[index].floor += self.value
                                             
             }else{
                 
                 self.player?.run(SKAction.moveTo(x: CGFloat((self.player?.position.x)! + CGFloat(self.value * 120)), duration: TimeInterval(self.duration)))
-                self.floor += self.value
+//                self.floor += self.value
+                playersScene[index].floor += self.value
             }
         }
     }
@@ -362,13 +472,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                             
                             self.player?.run(sequenceAction)
 
-                            self.floor += self.value
+//                            self.floor += self.value
+                            playersScene[index].floor += self.value
                         
                         }else{
                             
                             self.player?.run(SKAction.move(to: CGPoint(x: (player?.position.x)! + CGFloat(moveSpecific * 60), y: (player?.position.y)! + CGFloat(moveSpecific * 100)), duration: TimeInterval(moveSpecific / 2)))
                             
-                            self.floor += self.value
+//                            self.floor += self.value
+                            playersScene[index].floor += self.value
 
                         }
 
@@ -378,10 +490,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 }else{
                     
                     //belokin player di floor 16 pas
-                    self.floor += self.value
+//                    self.floor += self.value
+                    playersScene[index].floor += self.value
                     
                             
-                    if self.floor == 16 {
+                    if playersScene[index].floor == 16 {
                         let newPositionX = 2570
                         let newPositionY = 705
                         
@@ -406,6 +519,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 
                 if self.floor + self.value > 16{
                     //floor 9 dapet 8
+                    
                     let moveSpecific = 11 - self.floor
                     let newPositionX = 2260
                     let newPositionY = 205
@@ -416,7 +530,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     let movePos = SKAction.move(to: CGPoint(x: CGFloat(newPositionX), y: CGFloat(newPositionY)), duration: 1)
                                                                                                         
                     
-                    let valueSubstract = 16 - self.floor + moveSpecific
+                    let valueSubstract = 16 - (self.floor + moveSpecific)
                                                                                                         
                     
                     let move2 = CGFloat((newPositionX)) + CGFloat(valueSubstract * 60)
@@ -433,7 +547,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     
                     self.player?.run(sequenceAction)
                                                                                                         
-                    self.floor += self.value
+//                    self.floor += self.value
+                    playersScene[index].floor += self.value
                                                                                                                                                             
                 }else{
                     let moveSpecific = 11 - self.floor
@@ -453,14 +568,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                         
                         self.player?.run(sequenceAction)
                                                                                                                 
-                        self.floor += self.value
+//                        self.floor += self.value
+                        playersScene[index].floor += self.value
                 
                     }else{
                         //buat belokin di floor 11
                                                                                                                 
-                        self.floor += self.value
+//                        self.floor += self.value
+                        playersScene[index].floor += self.value
                         
-                        if self.floor == 11 {
+                        if playersScene[index].floor == 11 {
                             let newPositionX = 2260
                             let newPositionY = 205
                                                                                                                     
@@ -488,7 +605,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             // jalan horizontal biasa dari floor 1-10
             if self.value == 1 && self.floor == 0{
                 self.player?.run(SKAction.move(to: CGPoint(x: 910, y: 115), duration: 1))
-                self.floor += self.value
+                playersScene[index].floor += self.value
                                                 
             }else if self.value > 1 && self.floor == 0 {
                 
@@ -496,11 +613,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 let moveValue = SKAction.moveTo(x: CGFloat(910 + CGFloat((self.value - 1) * 120)), duration: TimeInterval(self.duration))
                 
                 self.player?.run(SKAction.sequence([initialMove,moveValue]))
-                self.floor += self.value
+//                print("ini index\(index)")
+                playersScene[index].floor += self.value
+                
                                                 
             }else{
                 self.player?.run(SKAction.moveTo(x: CGFloat((self.player?.position.x)! + CGFloat(self.value * 120)), duration: TimeInterval(self.duration)))
-                self.floor += self.value
+                playersScene[index].floor += self.value
             }
         }
 
