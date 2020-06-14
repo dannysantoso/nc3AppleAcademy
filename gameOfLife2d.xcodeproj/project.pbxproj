@@ -189,11 +189,11 @@
 		E1EF1D2E2494E74200CBEB0E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				E129506F24910FAE008E8B05 /* GameViewController.swift */,
 				E1EF1D272494E4E200CBEB0E /* PlayerViewController.swift */,
 				E1EF1D232494DAE600CBEB0E /* InsuranceTableViewCell.swift */,
 				E1EF1D1D2494D3F800CBEB0E /* ShopViewController.swift */,
 				E1EF1D192494C18100CBEB0E /* CollectionViewCell.swift */,
+				E129506F24910FAE008E8B05 /* GameViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
