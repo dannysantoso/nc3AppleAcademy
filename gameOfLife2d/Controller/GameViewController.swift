@@ -16,11 +16,12 @@ protocol reloadData{
 
 class GameViewController: UIViewController, reloadData {
     
-    var players:[Players] = [
-        Players(name: "Danny", job: "CEO", money: 10000, House: "Mansion", isMarried: false, child: 2, color: "red", insurance: [insurancePlayer(name: "car insurance")], isFinish: false, isCollege: true, floor: 0),
-        Players(name: "Kevin", job: "CEO", money: 8000, House: "Mansion", isMarried: false, child: 2, color: "red", insurance: [insurancePlayer(name: "car insurance")], isFinish: false, isCollege: true, floor: 0),
-        Players(name: "Alex", job: "CEO", money: 6000, House: "Mansion", isMarried: false, child: 2, color: "red", insurance: [insurancePlayer(name: "car insurance")], isFinish: false, isCollege: false, floor: 0)
-        ]
+    var players = [Players]()
+//    var players:[Players] = [
+//        Players(name: "Danny", job: "CEO", money: 10000, House: "Mansion", isMarried: false, child: 2, color: "red", insurance: [insurancePlayer(name: "car insurance")], isFinish: false, isCollege: true, floor: 0),
+//        Players(name: "Kevin", job: "CEO", money: 8000, House: "Mansion", isMarried: false, child: 2, color: "red", insurance: [insurancePlayer(name: "car insurance")], isFinish: false, isCollege: true, floor: 0),
+//        Players(name: "Alex", job: "CEO", money: 6000, House: "Mansion", isMarried: false, child: 2, color: "red", insurance: [insurancePlayer(name: "car insurance")], isFinish: false, isCollege: false, floor: 0)
+//        ]
     
     var index = 0
 
@@ -123,4 +124,18 @@ extension GameViewController: UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 110, height: 80)
     }
+}
+
+//HIDE NAV BAR
+extension GameViewController {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+
 }
