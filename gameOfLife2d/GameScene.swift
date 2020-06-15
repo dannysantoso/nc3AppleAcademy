@@ -25,6 +25,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var index = 0
     var delegateVC: reloadData?
     var playersScene: [Players] = []
+    var mysteryTiles = surprise
     
 //    var gameVC = GameViewController()
     

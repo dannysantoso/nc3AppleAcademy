@@ -33,6 +33,7 @@ class GameViewController: UIViewController, reloadData {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        MusicHelper.sharedHelper.playBackgroundMusic()
         
         playerCollectionView.dataSource = self
         playerCollectionView.delegate = self
