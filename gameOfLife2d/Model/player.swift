@@ -24,6 +24,7 @@ struct Players{
     var isFinish: Bool
     var isCollege: Bool
     var floor: Int
+    var isFirstTurn: Bool
 }
 
 

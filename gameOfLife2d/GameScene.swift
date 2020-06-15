@@ -12,10 +12,16 @@ import GameplayKit
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var cameraNode: SKCameraNode!
-    var player1 = SKSpriteNode(color: SKColor.black, size: CGSize(width: 100, height: 80))
-    var player2 = SKSpriteNode(color: SKColor.blue, size: CGSize(width: 100, height: 80))
-    var player3 = SKSpriteNode(color: SKColor.red, size: CGSize(width: 100, height: 80))
-    var player4 = SKSpriteNode(color: SKColor.yellow, size: CGSize(width: 100, height: 80))
+    var player1 = SKSpriteNode()
+    var player2 = SKSpriteNode()
+    var player3 = SKSpriteNode()
+    var player4 = SKSpriteNode()
+    var jobLabel = SKLabelNode()
+    var card = SKSpriteNode()
+    var job1 = SKSpriteNode()
+    var job2 = SKSpriteNode()
+    var job3 = SKSpriteNode()
+    var job4 = SKSpriteNode()
     var isTouched2 = false
     var turn = 1
     var player : SKSpriteNode?
@@ -26,6 +32,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var delegateVC: reloadData?
     var playersScene: [Players] = []
     var mysteryTiles = surprise
+    var careerChosen = 0
     
 //    var gameVC = GameViewController()
     
@@ -62,15 +69,68 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 //        let player4 = SKSpriteNode()
         switch playersScene.count {
         case 2:
+            
+            if playersScene[0].color == "Red" {
+                player1 = SKSpriteNode(texture: SKTexture(image: UIImage(named: "charRed")!))
+            }else if playersScene[0].color == "Blue"{
+                player1 = SKSpriteNode(texture: SKTexture(image: UIImage(named: "charBlue")!))
+            }else if playersScene[0].color == "Yellow"{
+                player1 = SKSpriteNode(texture: SKTexture(image: UIImage(named: "charYellow")!))
+            }else if playersScene[0].color == "Green"{
+                player1 = SKSpriteNode(texture: SKTexture(image: UIImage(named: "charGreen")!))
+            }
+            
+            if playersScene[1].color == "Red" {
+                player2 = SKSpriteNode(texture: SKTexture(image: UIImage(named: "charRed")!))
+            }else if playersScene[1].color == "Blue"{
+                player2 = SKSpriteNode(texture: SKTexture(image: UIImage(named: "charBlue")!))
+            }else if playersScene[1].color == "Yellow"{
+                player2 = SKSpriteNode(texture: SKTexture(image: UIImage(named: "charYellow")!))
+            }else if playersScene[1].color == "Green"{
+                player2 = SKSpriteNode(texture: SKTexture(image: UIImage(named: "charGreen")!))
+            }
+            
             player1.zPosition = 500
             player1.position = CGPoint(x: 640, y: 340)
             
             player2.zPosition = 500
             player2.position = CGPoint(x: 640, y: 240)
             
+            
             addChild(player1)
             addChild(player2)
         case 3:
+            
+            if playersScene[0].color == "Red" {
+                player1 = SKSpriteNode(texture: SKTexture(image: UIImage(named: "charRed")!))
+            }else if playersScene[0].color == "Blue"{
+                player1 = SKSpriteNode(texture: SKTexture(image: UIImage(named: "charBlue")!))
+            }else if playersScene[0].color == "Yellow"{
+                player1 = SKSpriteNode(texture: SKTexture(image: UIImage(named: "charYellow")!))
+            }else if playersScene[0].color == "Green"{
+                player1 = SKSpriteNode(texture: SKTexture(image: UIImage(named: "charGreen")!))
+            }
+            
+            if playersScene[1].color == "Red" {
+                player2 = SKSpriteNode(texture: SKTexture(image: UIImage(named: "charRed")!))
+            }else if playersScene[1].color == "Blue"{
+                player2 = SKSpriteNode(texture: SKTexture(image: UIImage(named: "charBlue")!))
+            }else if playersScene[1].color == "Yellow"{
+                player2 = SKSpriteNode(texture: SKTexture(image: UIImage(named: "charYellow")!))
+            }else if playersScene[1].color == "Green"{
+                player2 = SKSpriteNode(texture: SKTexture(image: UIImage(named: "charGreen")!))
+            }
+            
+            if playersScene[2].color == "Red" {
+                player3 = SKSpriteNode(texture: SKTexture(image: UIImage(named: "charRed")!))
+            }else if playersScene[2].color == "Blue"{
+                player3 = SKSpriteNode(texture: SKTexture(image: UIImage(named: "charBlue")!))
+            }else if playersScene[2].color == "Yellow"{
+                player3 = SKSpriteNode(texture: SKTexture(image: UIImage(named: "charYellow")!))
+            }else if playersScene[2].color == "Green"{
+                player3 = SKSpriteNode(texture: SKTexture(image: UIImage(named: "charGreen")!))
+            }
+            
             player1.zPosition = 500
             player1.position = CGPoint(x: 640, y: 340)
             
@@ -84,6 +144,46 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             addChild(player2)
             addChild(player3)
         case 4:
+            if playersScene[0].color == "Red" {
+                player1 = SKSpriteNode(texture: SKTexture(image: UIImage(named: "charRed")!))
+            }else if playersScene[0].color == "Blue"{
+                player1 = SKSpriteNode(texture: SKTexture(image: UIImage(named: "charBlue")!))
+            }else if playersScene[0].color == "Yellow"{
+                player1 = SKSpriteNode(texture: SKTexture(image: UIImage(named: "charYellow")!))
+            }else if playersScene[0].color == "Green"{
+                player1 = SKSpriteNode(texture: SKTexture(image: UIImage(named: "charGreen")!))
+            }
+            
+            if playersScene[1].color == "Red" {
+                player2 = SKSpriteNode(texture: SKTexture(image: UIImage(named: "charRed")!))
+            }else if playersScene[1].color == "Blue"{
+                player2 = SKSpriteNode(texture: SKTexture(image: UIImage(named: "charBlue")!))
+            }else if playersScene[1].color == "Yellow"{
+                player2 = SKSpriteNode(texture: SKTexture(image: UIImage(named: "charYellow")!))
+            }else if playersScene[1].color == "Green"{
+                player2 = SKSpriteNode(texture: SKTexture(image: UIImage(named: "charGreen")!))
+            }
+            
+            if playersScene[2].color == "Red" {
+                player3 = SKSpriteNode(texture: SKTexture(image: UIImage(named: "charRed")!))
+            }else if playersScene[2].color == "Blue"{
+                player3 = SKSpriteNode(texture: SKTexture(image: UIImage(named: "charBlue")!))
+            }else if playersScene[2].color == "Yellow"{
+                player3 = SKSpriteNode(texture: SKTexture(image: UIImage(named: "charYellow")!))
+            }else if playersScene[2].color == "Green"{
+                player3 = SKSpriteNode(texture: SKTexture(image: UIImage(named: "charGreen")!))
+            }
+            
+            if playersScene[3].color == "Red" {
+                player4 = SKSpriteNode(texture: SKTexture(image: UIImage(named: "charRed")!))
+            }else if playersScene[3].color == "Blue"{
+                player4 = SKSpriteNode(texture: SKTexture(image: UIImage(named: "charBlue")!))
+            }else if playersScene[3].color == "Yellow"{
+                player4 = SKSpriteNode(texture: SKTexture(image: UIImage(named: "charYellow")!))
+            }else if playersScene[3].color == "Green"{
+                player4 = SKSpriteNode(texture: SKTexture(image: UIImage(named: "charGreen")!))
+            }
+            
             player1.zPosition = 500
             player1.position = CGPoint(x: 640, y: 340)
             
@@ -101,6 +201,47 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             addChild(player3)
             addChild(player4)
         default:
+            if playersScene[0].color == "Red" {
+                player1 = SKSpriteNode(texture: SKTexture(image: UIImage(named: "charRed")!))
+            }else if playersScene[0].color == "Blue"{
+                player1 = SKSpriteNode(texture: SKTexture(image: UIImage(named: "charBlue")!))
+            }else if playersScene[0].color == "Yellow"{
+                player1 = SKSpriteNode(texture: SKTexture(image: UIImage(named: "charYellow")!))
+            }else if playersScene[0].color == "Green"{
+                player1 = SKSpriteNode(texture: SKTexture(image: UIImage(named: "charGreen")!))
+            }
+            
+            if playersScene[1].color == "Red" {
+                player2 = SKSpriteNode(texture: SKTexture(image: UIImage(named: "charRed")!))
+            }else if playersScene[1].color == "Blue"{
+                player2 = SKSpriteNode(texture: SKTexture(image: UIImage(named: "charBlue")!))
+            }else if playersScene[1].color == "Yellow"{
+                player2 = SKSpriteNode(texture: SKTexture(image: UIImage(named: "charYellow")!))
+            }else if playersScene[1].color == "Green"{
+                player2 = SKSpriteNode(texture: SKTexture(image: UIImage(named: "charGreen")!))
+            }
+            
+            if playersScene[2].color == "Red" {
+                player3 = SKSpriteNode(texture: SKTexture(image: UIImage(named: "charRed")!))
+            }else if playersScene[2].color == "Blue"{
+                player3 = SKSpriteNode(texture: SKTexture(image: UIImage(named: "charBlue")!))
+            }else if playersScene[2].color == "Yellow"{
+                player3 = SKSpriteNode(texture: SKTexture(image: UIImage(named: "charYellow")!))
+            }else if playersScene[2].color == "Green"{
+                player3 = SKSpriteNode(texture: SKTexture(image: UIImage(named: "charGreen")!))
+            }
+            
+            if playersScene[3].color == "Red" {
+                player4 = SKSpriteNode(texture: SKTexture(image: UIImage(named: "charRed")!))
+            }else if playersScene[3].color == "Blue"{
+                player4 = SKSpriteNode(texture: SKTexture(image: UIImage(named: "charBlue")!))
+            }else if playersScene[3].color == "Yellow"{
+                player4 = SKSpriteNode(texture: SKTexture(image: UIImage(named: "charYellow")!))
+            }else if playersScene[3].color == "Green"{
+                player4 = SKSpriteNode(texture: SKTexture(image: UIImage(named: "charGreen")!))
+            }
+            
+            
             player1.zPosition = 500
             player1.position = CGPoint(x: 640, y: 340)
             
@@ -158,6 +299,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             cameraNode.position.y = player?.position.y as! CGFloat
             delegateVC?.onReload(index: index, players: playersScene)
         }
+        
+
     }
     
     
@@ -166,66 +309,326 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-            if spinWheel.spinDone == true {
-                if turn == 1{
-                    cameraNode.position.x = player1.position.x as! CGFloat
-                    cameraNode.position.y = player1.position.y as! CGFloat
-                    spinWheel.spinDone = false
-                }else if turn == 2{
-                    cameraNode.position.x = player2.position.x as! CGFloat
-                    cameraNode.position.y = player2.position.y as! CGFloat
-                    spinWheel.spinDone = false
+        guard let touch = touches.first else { return }
 
-                    
-                }else if turn == 3{
-                    cameraNode.position.x = player3.position.x as! CGFloat
-                    cameraNode.position.y = player3.position.y as! CGFloat
-                    spinWheel.spinDone = false
-                    
-                }else if turn == 4{
-                    cameraNode.position.x = player4.position.x as! CGFloat
-                    cameraNode.position.y = player4.position.y as! CGFloat
-                    spinWheel.spinDone = false
-                }
-
-            }else{
-                cameraNode.position.x = spinWheel?.position.x as! CGFloat
-                cameraNode.position.y = spinWheel?.position.y as! CGFloat
+        if let node = self.nodes(at: touch.location(in: self)).first as? SKSpriteNode {
+        
+            if node == card {
+                card.removeFromParent()
+            }else if node == job1{
+                print("job1")
                 
-                if turn == 1 {
-                    player = player1
-                    index = 0
-                    floor = playersScene[index].floor
-                    isCollege = playersScene[index].isCollege
-                    turn += 1
-                }else if turn == 2 {
-                    player = player2
-                    index = 1
-                    floor = playersScene[index].floor
-                    isCollege = playersScene[index].isCollege
+                if index == 0 {
+                    
+                    playersScene[index].isFirstTurn = false
+                    playersScene[index].job = Mahasiswa.init()
+                    playersScene[index].isCollege = true
+                    print("index:\(index)")
+                    index += 1
+                    
+                }else if index == 1 {
+                    
+                    playersScene[index].isFirstTurn = false
+                    playersScene[index].job = Mahasiswa.init()
+                    playersScene[index].isCollege = true
+                    print("index:\(index)")
                     if playersScene.count > 2{
-                        turn += 1
+                        index += 1
                     }else{
-                        turn = 1
+                        index = 0
                     }
-                }else if turn == 3 {
-                    player = player3
-                    index = 2
-                    floor = playersScene[index].floor
-                    isCollege = playersScene[index].isCollege
+                    
+                }else if index == 2 {
+                    
+                    playersScene[index].isFirstTurn = false
+                    playersScene[index].job = Mahasiswa.init()
+                    playersScene[index].isCollege = true
+                    print("index:\(index)")
                     if playersScene.count > 3{
-                        turn += 1
+                        index += 1
                     }else{
-                        turn = 1
+                        index = 0
                     }
-                }else if turn == 4 {
-                    player = player4
-                    index = 3
-                    floor = playersScene[index].floor
-                    isCollege = playersScene[index].isCollege
-                    turn = 1
+                }else if index == 3 {
+                    playersScene[index].isFirstTurn = false
+                    playersScene[index].job = Mahasiswa.init()
+                    playersScene[index].isCollege = true
+                    print("index:\(index)")
+                    index = 0
                 }
+                
+                jobLabel.removeFromParent()
+                job1.removeFromParent()
+                job2.removeFromParent()
+                job3.removeFromParent()
+                job4.removeFromParent()
+//                careerChosen += 1
+                
+            }else if node == job2 {
+                
+                                
+                if index == 0 {
+                                    
+                    playersScene[index].isFirstTurn = false
+                    playersScene[index].job = Mekanik.init()
+                                    
+                    index += 1
+                                    
+                }else if index == 1 {
+                    
+                    playersScene[index].isFirstTurn = false
+                    playersScene[index].job = Mekanik.init()
+                                    
+                        if playersScene.count > 2{
+                            index += 1
+                        }else{
+                            index = 0
+                        }
+                                    
+                }else if index == 2 {
+                                    
+                    playersScene[index].isFirstTurn = false
+                    playersScene[index].job = Mekanik.init()
+                                    
+                        if playersScene.count > 3{
+                            index += 1
+                        }else{
+                            index = 0
+                        }
+                    
+                }else if index == 3 {
+                        
+                    playersScene[index].isFirstTurn = false
+                    playersScene[index].job = Mekanik.init()
+                                        
+                    index = 0
+                    
+                }
+                                
+                    jobLabel.removeFromParent()
+                    job1.removeFromParent()
+                    job2.removeFromParent()
+                    job3.removeFromParent()
+                    job4.removeFromParent()
+//                careerChosen += 1
+                
+                
+
+            }else if node == job3 {
+                
+                if index == 0 {
+                                    
+                    playersScene[index].isFirstTurn = false
+                    playersScene[index].job = Police.init()
+                                    
+                    index += 1
+                                    
+                }else if index == 1 {
+                    
+                    playersScene[index].isFirstTurn = false
+                    playersScene[index].job = Police.init()
+                                    
+                        if playersScene.count > 2{
+                            index += 1
+                        }else{
+                            index = 0
+                        }
+                                    
+                    }else if index == 2 {
+                                    
+                        playersScene[index].isFirstTurn = false
+                        playersScene[index].job = Police.init()
+                                    
+                        if playersScene.count > 3{
+                            index += 1
+                        }else{
+                            index = 0
+                        }
+                    
+                    }else if index == 3 {
+                        
+                        playersScene[index].isFirstTurn = false
+                        playersScene[index].job = Police.init()
+                                        
+                        index = 0
+                    
+                    }
+                                
+                    jobLabel.removeFromParent()
+                    job1.removeFromParent()
+                    job2.removeFromParent()
+                    job3.removeFromParent()
+                    job4.removeFromParent()
+//                careerChosen += 1
+                
+            }else if node == job4 {
+                
+                if index == 0 {
+                                    
+                    playersScene[index].isFirstTurn = false
+                    playersScene[index].job = Youtuber.init()
+                                    
+                    index += 1
+                                    
+                }else if index == 1 {
+                    
+                    playersScene[index].isFirstTurn = false
+                    playersScene[index].job = Youtuber.init()
+                                    
+                        if playersScene.count > 2{
+                            index += 1
+                        }else{
+                            index = 0
+                        }
+                                    
+                    }else if index == 2 {
+                                    
+                        playersScene[index].isFirstTurn = false
+                    playersScene[index].job = Youtuber.init()
+                                    
+                        if playersScene.count > 3{
+                            index += 1
+                        }else{
+                            index = 0
+                        }
+                    
+                    }else if index == 3 {
+                        
+                        playersScene[index].isFirstTurn = false
+                    playersScene[index].job = Youtuber.init()
+                                        
+                        index = 0
+                    
+                    }
+                                
+                    jobLabel.removeFromParent()
+                    job1.removeFromParent()
+                    job2.removeFromParent()
+                    job3.removeFromParent()
+                    job4.removeFromParent()
+//                careerChosen += 1
+
+                
+            }else{
+                
+                card.removeFromParent()
+                        if playersScene[index].isFirstTurn == true{
+                            jobLabel.removeFromParent()
+                            job1.removeFromParent()
+                            job2.removeFromParent()
+                            job3.removeFromParent()
+                            job4.removeFromParent()
+                            jobLabel = SKLabelNode(text: playersScene[index].name + " please choose your Career : ")
+                            jobLabel.position = CGPoint(x: 700, y: 540)
+                            jobLabel.fontSize = 60
+                            jobLabel.fontName = kGameFont
+//                            jobLabel.fontColor = UIColor.black
+                            jobLabel.zPosition = 501
+                            addChild(jobLabel)
+                            
+                            job1 = SKSpriteNode(texture: SKTexture(image: UIImage(named: "CollegeStudent(1)")!))
+                            job1.zPosition = 501
+                            job1.setScale(0.7)
+                            job1.position = CGPoint(x: 50, y: 240)
+                            addChild(job1)
+                            
+                            job2 = SKSpriteNode(texture: SKTexture(image: UIImage(named: "Mechanic(1)")!))
+                            job2.zPosition = 501
+                            job2.setScale(0.7)
+                            job2.position = CGPoint(x: 450, y: 240)
+                            addChild(job2)
+                            
+                            
+                            job3 = SKSpriteNode(texture: SKTexture(image: UIImage(named: "Police(1)")!))
+                            job3.zPosition = 501
+                            job3.setScale(0.7)
+                            job3.position = CGPoint(x: 850, y: 240)
+                            addChild(job3)
+                            
+                            job4 = SKSpriteNode(texture: SKTexture(image: UIImage(named: "Youtuber(1)")!))
+                            job4.zPosition = 501
+                            job4.setScale(0.7)
+                            job4.position = CGPoint(x: 1250, y: 240)
+                            addChild(job4)
+                            
+                            
+                                        
+                        }else{
+                            
+                            if spinWheel.spinDone == true {
+                                if turn == 1{
+                                    cameraNode.position.x = player1.position.x as! CGFloat
+                                    cameraNode.position.y = player1.position.y as! CGFloat
+                                    spinWheel.spinDone = false
+                                }else if turn == 2{
+                                    cameraNode.position.x = player2.position.x as! CGFloat
+                                    cameraNode.position.y = player2.position.y as! CGFloat
+                                    spinWheel.spinDone = false
+
+                                    
+                                }else if turn == 3{
+                                    cameraNode.position.x = player3.position.x as! CGFloat
+                                    cameraNode.position.y = player3.position.y as! CGFloat
+                                    spinWheel.spinDone = false
+                                    
+                                }else if turn == 4{
+                                    cameraNode.position.x = player4.position.x as! CGFloat
+                                    cameraNode.position.y = player4.position.y as! CGFloat
+                                    spinWheel.spinDone = false
+                                }
+
+                            }else{
+                //                if playersScene[index].isFirstTurn == true{
+                //                playersScene[index].isFirstTurn = false
+                //                print("index:\(index)")
+                                    
+                                    if turn == 1 {
+                                        player = player1
+                                        index = 0
+                                        floor = playersScene[index].floor
+                                        isCollege = playersScene[index].isCollege
+                                        turn += 1
+                                        
+                                    }else if turn == 2 {
+                                        player = player2
+                                        index = 1
+                                        floor = playersScene[index].floor
+                                        isCollege = playersScene[index].isCollege
+                                        if playersScene.count > 2{
+                                            turn += 1
+                                        }else{
+                                            turn = 1
+                                        }
+                                        
+                                    }else if turn == 3 {
+                                        player = player3
+                                        index = 2
+                                        floor = playersScene[index].floor
+                                        isCollege = playersScene[index].isCollege
+                                        if playersScene.count > 3{
+                                            turn += 1
+                                        }else{
+                                            turn = 1
+                                        }
+                                    }else if turn == 4 {
+                                        player = player4
+                                        index = 3
+                                        floor = playersScene[index].floor
+                                        isCollege = playersScene[index].isCollege
+                                        turn = 1
+                                    }
+                                
+                                cameraNode.position.x = spinWheel?.position.x as! CGFloat
+                                cameraNode.position.y = spinWheel?.position.y as! CGFloat
+                            }
+                        }
+                
+            }
         }
+        
+        
+        
+
     }
     
     
@@ -267,6 +670,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                                 self.moveFromCollege()
                             }
                         }
+                        
+                        displayCard()
+//
+//                        if playersScene[index].floor > 4 {
+//                            playersScene[index].money += playersScene[index].job.salary
+//                            print(playersScene[index].money)
+//                        }
+                        
                         
                         
                         
@@ -312,13 +723,23 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     let newPositionX = 2560
                     let newPositionY = -1395
                     let valueSubstract = self.value - moveSpecific
+                    var duration2 = 1
+                    var duration3 = 1
+                    
+                    if moveSpecific > 1{
+                        duration2 = moveSpecific / 2
+                    }
+                    
+                    if valueSubstract > 1{
+                        duration3 = valueSubstract / 2
+                    }
                                                                 
         //                                let moveY = SKAction.moveTo(y: CGFloat((self.player?.position.y)! - CGFloat(moveSpecific * 60)), duration: TimeInterval(duration))
-                    let moveY = SKAction.move(to: CGPoint(x: CGFloat((self.player?.position.x)! - CGFloat(moveSpecific * 60)), y: CGFloat((self.player?.position.y)! - CGFloat(moveSpecific * 100))), duration: TimeInterval(duration))
+                    let moveY = SKAction.move(to: CGPoint(x: CGFloat((self.player?.position.x)! - CGFloat(moveSpecific * 60)), y: CGFloat((self.player?.position.y)! - CGFloat(moveSpecific * 100))), duration: TimeInterval(duration2))
                                                                 
                     let movePos = SKAction.move(to: CGPoint(x: CGFloat(newPositionX), y: CGFloat(newPositionY)), duration: 1)
 
-                    let moveX = SKAction.moveTo(x: CGFloat(CGFloat((newPositionX)) - CGFloat(valueSubstract * 120)), duration: TimeInterval(valueSubstract / 2))
+                    let moveX = SKAction.moveTo(x: CGFloat(CGFloat((newPositionX)) - CGFloat(valueSubstract * 120)), duration: TimeInterval(duration3))
                                                                 
 
                     let sequenceAction = SKAction.sequence([moveY, movePos, moveX])
@@ -400,15 +821,20 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
             }else if self.floor == 25{
                 
-                    let newPositionX = 3810
-                    let newPositionY = 600
-                    let valueSubstract = self.value - 1
+                let newPositionX = 3810
+                let newPositionY = 600
+                let valueSubstract = self.value - 1
+                var duration2 = 1
+                
+                if valueSubstract > 1{
+                    duration2 = valueSubstract / 2
+                }
 
 //                    let moveX = SKAction.moveTo(x: CGFloat((self.player?.position.x)! + CGFloat(moveSpecific * 120)), duration: TimeInterval(self.duration))
                                                                             
                 let movePos = SKAction.move(to: CGPoint(x: CGFloat(newPositionX), y: CGFloat(newPositionY)), duration: 1)
                 
-                let moveY = SKAction.move(to: CGPoint(x: CGFloat(CGFloat((newPositionX)) - CGFloat(valueSubstract * 60)), y: CGFloat(CGFloat((newPositionY)) - CGFloat(valueSubstract * 100))), duration: TimeInterval(valueSubstract / 2))
+                let moveY = SKAction.move(to: CGPoint(x: CGFloat(CGFloat((newPositionX)) - CGFloat(valueSubstract * 60)), y: CGFloat(CGFloat((newPositionY)) - CGFloat(valueSubstract * 100))), duration: TimeInterval(duration2))
 
                 let sequenceAction = SKAction.sequence([movePos, moveY])
                 self.player?.run(sequenceAction)
@@ -470,9 +896,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                         let newPositionX = 2570
                         let newPositionY = 705
                         let valueSubstract = self.value - 1
+                        var duration2 = 1
+                        
+
+                        if valueSubstract > 1{
+                            duration2 = valueSubstract / 2
+                        }
                         
                         let movePos = SKAction.move(to: CGPoint(x: CGFloat(newPositionX), y: CGFloat(newPositionY)), duration: 1)
-                        let moveX = SKAction.moveTo(x: CGFloat(CGFloat((newPositionX)) + CGFloat(valueSubstract * 120)), duration: TimeInterval(self.duration))
+                        let moveX = SKAction.moveTo(x: CGFloat(CGFloat((newPositionX)) + CGFloat(valueSubstract * 120)), duration: TimeInterval(duration2))
 
                         let sequenceAction = SKAction.sequence([movePos,moveX])
                                                             
@@ -529,20 +961,30 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     let moveSpecific = 11 - self.floor
                     let newPositionX = 2260
                     let newPositionY = 205
-                                                
+                    var duration2 = 1
+                    var duration3 = 1
+                    
+                    if moveSpecific > 1{
+                        duration2 = moveSpecific / 2
+                    }
+                    
                                                                                                 
-                    let moveX = SKAction.moveTo(x: CGFloat((self.player?.position.x)! + CGFloat(moveSpecific * 120)), duration: TimeInterval(self.duration))
+                    let moveX = SKAction.moveTo(x: CGFloat((self.player?.position.x)! + CGFloat(moveSpecific * 120)), duration: TimeInterval(duration2))
 
                     let movePos = SKAction.move(to: CGPoint(x: CGFloat(newPositionX), y: CGFloat(newPositionY)), duration: 1)
                                                                                                         
                     
                     let valueSubstract = 15 - (self.floor + moveSpecific)
+                    
+                    if valueSubstract > 1{
+                        duration3 = valueSubstract / 2
+                    }
                                                                                                         
                     
 //                    let move2 = CGFloat((newPositionX)) + CGFloat(valueSubstract * 60)
                                                                                                         
                     
-                    let moveY = SKAction.move(to: CGPoint(x: CGFloat(CGFloat((newPositionX)) + CGFloat(valueSubstract * 60)), y: CGFloat(CGFloat((newPositionY)) + CGFloat(valueSubstract * 100))), duration: TimeInterval(valueSubstract / 2))
+                    let moveY = SKAction.move(to: CGPoint(x: CGFloat(CGFloat((newPositionX)) + CGFloat(valueSubstract * 60)), y: CGFloat(CGFloat((newPositionY)) + CGFloat(valueSubstract * 100))), duration: TimeInterval(duration3))
                                                                                                         
 //                    let valueSubstract2 = (self.floor + self.value) - 16
                                                                                                         
@@ -568,12 +1010,21 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                         
                         if self.floor + self.value >= 15{
                             let valueSubstract = 15 - 11
+                            var duration2 = 1
+                            var duration3 = 1
+                            if moveSpecific > 1{
+                                duration2 = moveSpecific / 2
+                            }
+                            
+                            if valueSubstract > 1{
+                                duration3 = valueSubstract / 2
+                            }
                                                                                                                                                 
-                            let moveX = SKAction.moveTo(x: CGFloat((self.player?.position.x)! + CGFloat(moveSpecific * 120)), duration: TimeInterval(self.duration))
+                            let moveX = SKAction.moveTo(x: CGFloat((self.player?.position.x)! + CGFloat(moveSpecific * 120)), duration: TimeInterval(duration2))
                                                                                                                                                 
                             let movePos = SKAction.move(to: CGPoint(x: CGFloat(newPositionX), y: CGFloat(newPositionY)), duration: 1)
                                                                                                                                                 
-                            let moveY = SKAction.move(to: CGPoint(x: CGFloat(CGFloat((newPositionX)) + CGFloat(valueSubstract * 60)), y: CGFloat(CGFloat((newPositionY)) + CGFloat(valueSubstract * 100))), duration: TimeInterval(valueSubstract / 2))
+                            let moveY = SKAction.move(to: CGPoint(x: CGFloat(CGFloat((newPositionX)) + CGFloat(valueSubstract * 60)), y: CGFloat(CGFloat((newPositionY)) + CGFloat(valueSubstract * 100))), duration: TimeInterval(duration3))
 
                             let sequenceAction = SKAction.sequence([moveX, movePos, moveY])
                                                         
@@ -586,12 +1037,22 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                             //INSERT CARD HERE
                         }else{
                             let valueSubstract = self.value - moveSpecific
+                            var duration2 = 1
+                            var duration3 = 1
+                            if moveSpecific > 1{
+                                duration2 = moveSpecific / 2
+                            }
+                            
+                            if valueSubstract > 1{
+                                duration3 = valueSubstract / 2
+                            }
+                            
                                                                                                                     
-                            let moveX = SKAction.moveTo(x: CGFloat((self.player?.position.x)! + CGFloat(moveSpecific * 120)), duration: TimeInterval(self.duration))
+                            let moveX = SKAction.moveTo(x: CGFloat((self.player?.position.x)! + CGFloat(moveSpecific * 120)), duration: TimeInterval(duration2))
                                                                                                                     
                             let movePos = SKAction.move(to: CGPoint(x: CGFloat(newPositionX), y: CGFloat(newPositionY)), duration: 1)
                                                                                                                     
-                            let moveY = SKAction.move(to: CGPoint(x: CGFloat(CGFloat((newPositionX)) + CGFloat(valueSubstract * 60)), y: CGFloat(CGFloat((newPositionY)) + CGFloat(valueSubstract * 100))), duration: TimeInterval(valueSubstract / 2))
+                            let moveY = SKAction.move(to: CGPoint(x: CGFloat(CGFloat((newPositionX)) + CGFloat(valueSubstract * 60)), y: CGFloat(CGFloat((newPositionY)) + CGFloat(valueSubstract * 100))), duration: TimeInterval(duration3))
 
                             let sequenceAction = SKAction.sequence([moveX, movePos, moveY])
                             
@@ -663,9 +1124,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                                 
 //        if self.value > moveSpecific {
         //kalo lebih dari 15 berenti
+            var duration2 = 1
+            
+            if moveSpecific > 1{
+                duration2 = moveSpecific / 2
+            }
 
 
-            let moveY = SKAction.move(to: CGPoint(x: (player?.position.x)! + CGFloat(moveSpecific * 60), y: (player?.position.y)! + CGFloat(moveSpecific * 100)), duration: TimeInterval(moveSpecific / 2))
+
+            let moveY = SKAction.move(to: CGPoint(x: (player?.position.x)! + CGFloat(moveSpecific * 60), y: (player?.position.y)! + CGFloat(moveSpecific * 100)), duration: TimeInterval(duration2))
 
         
                                     
@@ -690,12 +1157,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func stopAt25(){
         let moveSpecific = 25 - self.floor
+        var duration2 = 1
+        
+        if moveSpecific > 1{
+            duration2 = moveSpecific / 2
+        }
 //                            if self.value > moveSpecific {
 //                                let newPositionX = 3810
 //                                let newPositionY = 600
 //                                let valueSubstract = self.value - moveSpecific
 
-        let moveX = SKAction.moveTo(x: CGFloat((self.player?.position.x)! + CGFloat(moveSpecific * 120)), duration: TimeInterval(self.duration))
+        let moveX = SKAction.moveTo(x: CGFloat((self.player?.position.x)! + CGFloat(moveSpecific * 120)), duration: TimeInterval(duration2))
                                                             
 //                                let movePos = SKAction.move(to: CGPoint(x: CGFloat(newPositionX), y: CGFloat(newPositionY)), duration: 1)
 //
@@ -734,5 +1206,28 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         //INSERT CARD HERE
     }
+    
+    
+    func displayCard(){
+        let timer = Timer.scheduledTimer(withTimeInterval: Double(self.duration) + 1.0, repeats: false) { (timer) in
+            for (i,_) in self.mysteryTiles.enumerated() {
+                if self.playersScene[self.index].floor == self.mysteryTiles[i].floor
+                    && self.playersScene[self.index].job.name == self.mysteryTiles[i].job{
+                    self.card = SKSpriteNode(texture: SKTexture(image: UIImage(named: self.mysteryTiles[i].image)!))
+                        self.card.zPosition = 500
+                        self.card.position = CGPoint(x: CGFloat((self.player?.position.x)!), y: CGFloat((self.player?.position.y)!))
+                        self.addChild(self.card)
+                        print(self.mysteryTiles[i].name)
+                    
+                }
+            }
+            
+            
+            
+        }
+    }
+    
+    
+
     
 }

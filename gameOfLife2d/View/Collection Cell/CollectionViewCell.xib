@@ -67,6 +67,7 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="139" height="80"/>
             <connections>
+                <outlet property="bgColor" destination="Rht-j8-BiQ" id="Rkk-oe-pfx"/>
                 <outlet property="jobPlayer" destination="DzC-1F-TfE" id="8Y9-kR-p5z"/>
                 <outlet property="moneyPlayer" destination="2Wa-eB-IFL" id="IsQ-12-mZW"/>
                 <outlet property="namePlayer" destination="KGN-0P-rC8" id="ah6-wJ-3e9"/>
