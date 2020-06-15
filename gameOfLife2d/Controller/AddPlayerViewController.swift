@@ -52,6 +52,8 @@ class AddPlayerViewController: UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: "GameViewController") as! GameViewController
         vc.players = players
+//        let storyboard = UIStoryboard(name: "FinishScreenStoryboard", bundle: nil)
+//        let vc = storyboard.instantiateViewController(identifier: "FinishViewController") as! FinishViewController
         self.navigationController?.pushViewController(vc, animated: true)
         
     }

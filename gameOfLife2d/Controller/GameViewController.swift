@@ -110,7 +110,7 @@ extension GameViewController: UICollectionViewDataSource {
         cell.moneyPlayer.text = String(players[indexPath.row].money)
         
         //ini buat ngetes doang kalo datanya masuk apa kaga
-        cell.moneyPlayer.text = String(players[indexPath.row].floor)
+        //cell.moneyPlayer.text = String(players[indexPath.row].floor)
         
         
         return cell

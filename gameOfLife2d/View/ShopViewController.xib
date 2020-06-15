@@ -47,7 +47,7 @@
                         <constraint firstAttribute="width" constant="110" id="lfl-lT-Mp5"/>
                     </constraints>
                     <color key="tintColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <state key="normal" title="Button"/>
+                    <state key="normal" title="Back"/>
                     <connections>
                         <action selector="dismiss:" destination="-1" eventType="touchUpInside" id="LXB-Z2-Fba"/>
                     </connections>
