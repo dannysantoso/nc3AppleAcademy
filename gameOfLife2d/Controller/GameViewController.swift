@@ -12,6 +12,7 @@ import GameplayKit
 
 protocol reloadData{
     func onReload(index: Int, players: [Players])
+    func reloadPlayer(players: [Players])
 }
 
 class GameViewController: UIViewController, reloadData {
@@ -79,9 +80,9 @@ class GameViewController: UIViewController, reloadData {
     @IBAction func shopButton(_ sender: Any) {
 
         let destination = ShopViewController(nibName: "ShopViewController", bundle: nil)
-//        destination.modalPresentationStyle = .custom
-        destination.name = players[index].name
-        destination.money = players[index].money
+        destination.players = players
+        destination.playerIndex = index
+        destination.delegate = self
         self.present(destination, animated: true, completion: nil)
         
     }
@@ -90,6 +91,9 @@ class GameViewController: UIViewController, reloadData {
         self.index = index
         self.players = players
         playerCollectionView.reloadData()
+    }
+    func reloadPlayer(players: [Players]) {
+        self.players = players
     }
 }
 
@@ -102,7 +106,7 @@ extension GameViewController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "playerCell", for: indexPath) as! CollectionViewCell
         
         cell.namePlayer.text = players[indexPath.row].name
-        cell.jobPlayer.text = players[indexPath.row].job
+        cell.jobPlayer.text = players[indexPath.row].job.name
         cell.moneyPlayer.text = String(players[indexPath.row].money)
         
         //ini buat ngetes doang kalo datanya masuk apa kaga
@@ -112,7 +116,22 @@ extension GameViewController: UICollectionViewDataSource {
         return cell
     }
     
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let playerView = PlayerViewController(nibName: "PlayerViewController", bundle: nil)
+        
+        playerView.nameTemp = players[indexPath.row].name
+        playerView.moneyTemp = "$ \(players[indexPath.row].money)"
+        if players[indexPath.row].isMarried {
+            playerView.statusTemp = "Married"
+        }
+        else {
+            playerView.statusTemp = "Single"
+        }
+        playerView.currJobtemp = players[indexPath.row].job.name
+        playerView.childTemp = "\(players[indexPath.row].child)"
+        
+        self.present(playerView, animated: true, completion: nil)
+    }
 }
 
 extension GameViewController: UICollectionViewDelegateFlowLayout{

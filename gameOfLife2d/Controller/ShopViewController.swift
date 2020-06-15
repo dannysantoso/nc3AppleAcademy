@@ -8,14 +8,20 @@
 
 import UIKit
 
-class ShopViewController: UIViewController {
+protocol reloadShop{
+    func onReloadShop(players: [Players])
+}
+
+class ShopViewController: UIViewController, reloadShop{
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var moneyLabel: UILabel!
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var insuranceTableView: UITableView!
-    var name: String?
-    var money: Int?
+    
+    var playerIndex: Int = 0
+    var players = [Players]()
+    var delegate: reloadData?
     
     var insurance:[Insurance] = [Insurance(name: "Car Insurance", price: 1000),
                                  Insurance(name: "House Insurance", price: 1000),
@@ -24,8 +30,8 @@ class ShopViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        nameLabel.text = name
-        moneyLabel.text = String(money!)
+        nameLabel.text = players[playerIndex].name
+        moneyLabel.text = "\(players[playerIndex].money)"
         
         
         insuranceTableView.dataSource = self
@@ -37,7 +43,18 @@ class ShopViewController: UIViewController {
     }
 
     @IBAction func dismiss(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "GameViewController") as! GameViewController
+        vc.players = players
+        self.delegate?.reloadPlayer(players: players)
+        print(vc.players)
         dismiss(animated: true, completion: nil)
+    }
+    
+    func onReloadShop(players: [Players]) {
+        nameLabel.text = players[playerIndex].name
+        moneyLabel.text = "\(players[playerIndex].money)"
+        self.players = players
     }
 }
 
@@ -50,6 +67,10 @@ extension ShopViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "insuranceCell", for: indexPath) as! InsuranceTableViewCell
         
+        cell.players = players
+        cell.tempPrice = insurance[indexPath.row].price
+        cell.playerIndex = playerIndex
+        cell.delegate = self
         cell.insuranceName.text = insurance[indexPath.row].name
         cell.insurancePrice.text = String(insurance[indexPath.row].price)
         

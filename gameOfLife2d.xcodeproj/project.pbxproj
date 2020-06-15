@@ -33,6 +33,7 @@
 		E1EF1D292494E4E200CBEB0E /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EF1D272494E4E200CBEB0E /* PlayerViewController.swift */; };
 		E1EF1D2A2494E4E200CBEB0E /* PlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1EF1D282494E4E200CBEB0E /* PlayerViewController.xib */; };
 		E1EF1D312494F70500CBEB0E /* player.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EF1D302494F70500CBEB0E /* player.swift */; };
+		EB1E7D2A24978E4600EC0B05 /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1E7D2924978E4600EC0B05 /* Job.swift */; };
 		EB9E9FAA2496480200B45C26 /* StartScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9E9FA72496480200B45C26 /* StartScreenViewController.swift */; };
 		EB9E9FAB2496480200B45C26 /* AddPlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9E9FA82496480200B45C26 /* AddPlayerTableViewCell.swift */; };
 		EB9E9FAC2496480200B45C26 /* AddPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9E9FA92496480200B45C26 /* AddPlayerViewController.swift */; };
@@ -68,6 +69,7 @@
 		E1EF1D272494E4E200CBEB0E /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 		E1EF1D282494E4E200CBEB0E /* PlayerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerViewController.xib; sourceTree = "<group>"; };
 		E1EF1D302494F70500CBEB0E /* player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = player.swift; sourceTree = "<group>"; };
+		EB1E7D2924978E4600EC0B05 /* Job.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
 		EB9E9FA72496480200B45C26 /* StartScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartScreenViewController.swift; sourceTree = "<group>"; };
 		EB9E9FA82496480200B45C26 /* AddPlayerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPlayerTableViewCell.swift; sourceTree = "<group>"; };
 		EB9E9FA92496480200B45C26 /* AddPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPlayerViewController.swift; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 		E1EF1D2F2494E76900CBEB0E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				EB1E7D2924978E4600EC0B05 /* Job.swift */,
 				E1EF1D212494D8DB00CBEB0E /* Insurance.swift */,
 				E1EF1D302494F70500CBEB0E /* player.swift */,
 			);
@@ -315,6 +318,7 @@
 				E1EF1D312494F70500CBEB0E /* player.swift in Sources */,
 				E1EF1D252494DAE600CBEB0E /* InsuranceTableViewCell.swift in Sources */,
 				EB9E9FAC2496480200B45C26 /* AddPlayerViewController.swift in Sources */,
+				EB1E7D2A24978E4600EC0B05 /* Job.swift in Sources */,
 				EB9E9FAB2496480200B45C26 /* AddPlayerTableViewCell.swift in Sources */,
 				E129511C24917E1F008E8B05 /* PushButton.swift in Sources */,
 			);
