@@ -8,6 +8,7 @@
 
 import SpriteKit
 import GameplayKit
+import AVFoundation
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
@@ -24,7 +25,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     private var spinWheel: SpinWheel!
     
-    
 
     
     //punya spritekit dimana didmove udah dimasukin ke scene, didload punya uikit
@@ -38,6 +38,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         self.physicsWorld.contactDelegate = self
         displaySpinWheel()
+        //MusicHelper.sharedHelper.playBackgroundMusic()
+        
+        
         
     }
     

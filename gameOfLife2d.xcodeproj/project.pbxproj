@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3D561CFD24977E6F006B3923 /* StructCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D561CFC24977E6F006B3923 /* StructCard.swift */; };
+		3D561D042497BD4C006B3923 /* BackgroundMusic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D561D032497BD4C006B3923 /* BackgroundMusic.swift */; };
+		3D561D072497BE4D006B3923 /* bensound-ukulele.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3D561D062497BE4D006B3923 /* bensound-ukulele.mp3 */; };
 		E129506824910FAE008E8B05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E129506724910FAE008E8B05 /* AppDelegate.swift */; };
 		E129506A24910FAE008E8B05 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = E129506924910FAE008E8B05 /* GameScene.sks */; };
 		E129506C24910FAE008E8B05 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = E129506B24910FAE008E8B05 /* Actions.sks */; };
@@ -30,6 +32,8 @@
 
 /* Begin PBXFileReference section */
 		3D561CFC24977E6F006B3923 /* StructCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructCard.swift; sourceTree = "<group>"; };
+		3D561D032497BD4C006B3923 /* BackgroundMusic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundMusic.swift; sourceTree = "<group>"; };
+		3D561D062497BE4D006B3923 /* bensound-ukulele.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "bensound-ukulele.mp3"; sourceTree = "<group>"; };
 		E129506424910FAE008E8B05 /* gameOfLife2d.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gameOfLife2d.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E129506724910FAE008E8B05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E129506924910FAE008E8B05 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -63,6 +67,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D561D052497BE4D006B3923 /* backgroundMusic */ = {
+			isa = PBXGroup;
+			children = (
+				3D561D062497BE4D006B3923 /* bensound-ukulele.mp3 */,
+			);
+			path = backgroundMusic;
+			sourceTree = "<group>";
+		};
 		E129505B24910FAE008E8B05 = {
 			isa = PBXGroup;
 			children = (
@@ -87,9 +99,11 @@
 				3D561CFC24977E6F006B3923 /* StructCard.swift */,
 				E129506924910FAE008E8B05 /* GameScene.sks */,
 				E129506B24910FAE008E8B05 /* Actions.sks */,
+				3D561D032497BD4C006B3923 /* BackgroundMusic.swift */,
 				E129506D24910FAE008E8B05 /* GameScene.swift */,
 				E129506F24910FAE008E8B05 /* GameViewController.swift */,
 				E129507124910FAE008E8B05 /* Main.storyboard */,
+				3D561D052497BE4D006B3923 /* backgroundMusic */,
 				E129507424910FB0008E8B05 /* Assets.xcassets */,
 				E129507624910FB0008E8B05 /* LaunchScreen.storyboard */,
 				E129507924910FB0008E8B05 /* Info.plist */,
@@ -214,6 +228,7 @@
 				E129511324917DF2008E8B05 /* bubble_pop.aac in Resources */,
 				E129511124917DF2008E8B05 /* victory.aac in Resources */,
 				E129506C24910FAE008E8B05 /* Actions.sks in Resources */,
+				3D561D072497BE4D006B3923 /* bensound-ukulele.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,6 +248,7 @@
 				E129511E24917E1F008E8B05 /* CGFloat+Extensions.swift in Sources */,
 				3D561CFD24977E6F006B3923 /* StructCard.swift in Sources */,
 				E129511C24917E1F008E8B05 /* PushButton.swift in Sources */,
+				3D561D042497BD4C006B3923 /* BackgroundMusic.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
