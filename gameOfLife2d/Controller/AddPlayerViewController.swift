@@ -26,6 +26,9 @@ class AddPlayerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        dismissKeyboard()
+        returnKeyboard()
+        
         addBtn.layer.cornerRadius = 10
         startBtn.layer.cornerRadius = 10
         
@@ -106,6 +109,21 @@ class AddPlayerViewController: UIViewController {
         yellow.layer.borderColor = UIColor.clear.cgColor
     }
     
+    //ketika return diketik maka akan close keypad, fungsi lainnya ada diextension
+    func returnKeyboard(){
+        nameTextArea.delegate = self
+    }
+    
+    //ketika view ditap close keypad
+    func dismissKeyboard(){
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func handleTap(){
+        self.view.endEditing(true)
+    }
+    
 
 }
 
@@ -153,6 +171,16 @@ extension AddPlayerViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 65
+    }
+    
+}
+
+
+extension UIViewController: UITextFieldDelegate {
+    
+    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
 }

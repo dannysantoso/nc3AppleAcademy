@@ -41,6 +41,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var mysteryTiles = surprise
     var careerChosen = 0
     var isDisable = false
+    var isAllFinish = false
     var houseList: [House] = [House(name: "House(1)", price: 100000),
                           House(name: "House(2)", price: 200000),
                           House(name: "House(3)", price: 300000),
@@ -65,7 +66,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         setupPlayer()
         
         
-        print(playersScene[1].name)
+//        playersScene[0].isFinish = true
         
         cameraNode.position.x = player1.position.x as! CGFloat
         cameraNode.position.y = player1.position.y as! CGFloat
@@ -313,7 +314,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             delegateVC?.onReload(index: index, players: playersScene)
         }
         
-
+        if isAllFinish == true {
+            delegateVC?.reloadFinish(isAllFinish: true)
+            isPaused = true
+        }
     }
     
     
@@ -818,11 +822,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                         
                         let timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { (timer) in
                             self.spinWheel.spinDone = true
-                    
-                            if self.isCollege == false {
-                                self.movement()
+                            
+                            if self.playersScene[self.index].isFinish == false{
+                                if self.isCollege == false {
+                                    self.movement()
+                                }else{
+                                    self.moveFromCollege()
+                                }
                             }else{
-                                self.moveFromCollege()
+                                print("your turn is over")
                             }
                         }
                         
@@ -859,6 +867,19 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                         self.player?.run(SKAction.moveTo(x: 590, duration: TimeInterval(lastDuration)))
         //                            self.floor = 60
                         playersScene[index].floor = 60
+                        playersScene[index].isFinish = true
+                    
+                        var i = 0
+                        for (index,_) in playersScene.enumerated() {
+                            if playersScene[index].isFinish == true {
+                                i += 1
+                            }
+                        }
+                        if i == playersScene.count {
+                            isAllFinish = true
+                        }
+                        
+                        
                                     
                                     
                 }else{
@@ -964,6 +985,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                             
         //                    self.floor += self.value
             playersScene[index].floor += self.value
+            if self.playersScene[index].floor == 35{
+                let timer = Timer.scheduledTimer(withTimeInterval: Double(duration) + 1.0, repeats: false) { (timer) in
+                    self.buyHouse()
+                }
+            }
+            
             }
         }
     }
@@ -1423,6 +1450,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                             self.playersScene[self.index].money -= self.mysteryTiles[i].value
                         }
                         
+                        self.run(SKAction.playSoundFileNamed("money.mp3", waitForCompletion: false))
                         self.isDisable = true
                     
                 }else if self.playersScene[self.index].floor == self.mysteryTiles[i].floor && self.mysteryTiles[i].job == ""{
@@ -1501,6 +1529,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                         }
                     }
                     
+                    self.run(SKAction.playSoundFileNamed("money.mp3", waitForCompletion: false))
                     self.isDisable = true
                     
                 }
@@ -1510,9 +1539,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             if self.playersScene[self.index].floor >= 4 && self.playersScene[self.index].isPayyed == 0{
                 self.playersScene[self.index].money += self.playersScene[self.index].job.salary
                 self.playersScene[self.index].isPayyed += 1
-                if self.playersScene[self.index].isCollege == false{
-                    self.run(SKAction.playSoundFileNamed("money.mp3", waitForCompletion: false))
-                }
+//                if self.playersScene[self.index].isCollege == false{
+//                    self.run(SKAction.playSoundFileNamed("money.mp3", waitForCompletion: false))
+//                }
                 
                 
                 
@@ -1521,102 +1550,102 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             if self.playersScene[self.index].floor >= 8 && self.playersScene[self.index].isPayyed == 1{ //gajian kedua
                 self.playersScene[self.index].money += self.playersScene[self.index].job.salary
                 self.playersScene[self.index].isPayyed += 1
-                if self.playersScene[self.index].isCollege == false{
-                    self.run(SKAction.playSoundFileNamed("money.mp3", waitForCompletion: false))
-                }
+//                if self.playersScene[self.index].isCollege == false{
+//                    self.run(SKAction.playSoundFileNamed("money.mp3", waitForCompletion: false))
+//                }
             
             }
             
             if self.playersScene[self.index].floor >= 12 && self.playersScene[self.index].isPayyed == 2{
                 self.playersScene[self.index].money += self.playersScene[self.index].job.salary
                 self.playersScene[self.index].isPayyed += 1
-                if self.playersScene[self.index].isCollege == false{
-                    self.run(SKAction.playSoundFileNamed("money.mp3", waitForCompletion: false))
-                }
+//                if self.playersScene[self.index].isCollege == false{
+//                    self.run(SKAction.playSoundFileNamed("money.mp3", waitForCompletion: false))
+//                }
             
             }
             
             if self.playersScene[self.index].floor >= 16 && self.playersScene[self.index].isPayyed == 3{
                 self.playersScene[self.index].money += self.playersScene[self.index].job.salary
                 self.playersScene[self.index].isPayyed += 1
-                self.run(SKAction.playSoundFileNamed("money.mp3", waitForCompletion: false))
+//                self.run(SKAction.playSoundFileNamed("money.mp3", waitForCompletion: false))
                 
             }
             
             if self.playersScene[self.index].floor >= 20 && self.playersScene[self.index].isPayyed == 4{
                 self.playersScene[self.index].money += self.playersScene[self.index].job.salary
                 self.playersScene[self.index].isPayyed += 1
-                self.run(SKAction.playSoundFileNamed("money.mp3", waitForCompletion: false))
+//                self.run(SKAction.playSoundFileNamed("money.mp3", waitForCompletion: false))
                 
             }
             
             if self.playersScene[self.index].floor >= 24 && self.playersScene[self.index].isPayyed == 5{
                 self.playersScene[self.index].money += self.playersScene[self.index].job.salary
                 self.playersScene[self.index].isPayyed += 1
-                self.run(SKAction.playSoundFileNamed("money.mp3", waitForCompletion: false))
+//                self.run(SKAction.playSoundFileNamed("money.mp3", waitForCompletion: false))
                 
             }
             
             if self.playersScene[self.index].floor >= 28 && self.playersScene[self.index].isPayyed == 6{
                 self.playersScene[self.index].money += self.playersScene[self.index].job.salary
                 self.playersScene[self.index].isPayyed += 1
-                self.run(SKAction.playSoundFileNamed("money.mp3", waitForCompletion: false))
+//                self.run(SKAction.playSoundFileNamed("money.mp3", waitForCompletion: false))
                 
             }
             
             if self.playersScene[self.index].floor >= 32 && self.playersScene[self.index].isPayyed == 7{
                 self.playersScene[self.index].money += self.playersScene[self.index].job.salary
                 self.playersScene[self.index].isPayyed += 1
-                self.run(SKAction.playSoundFileNamed("money.mp3", waitForCompletion: false))
+//                self.run(SKAction.playSoundFileNamed("money.mp3", waitForCompletion: false))
                 
             }
             
             if self.playersScene[self.index].floor >= 36 && self.playersScene[self.index].isPayyed == 8{
                 self.playersScene[self.index].money += self.playersScene[self.index].job.salary
                 self.playersScene[self.index].isPayyed += 1
-                self.run(SKAction.playSoundFileNamed("money.mp3", waitForCompletion: false))
+//                self.run(SKAction.playSoundFileNamed("money.mp3", waitForCompletion: false))
             
             }
             
             if self.playersScene[self.index].floor >= 40 && self.playersScene[self.index].isPayyed == 9{
                 self.playersScene[self.index].money += self.playersScene[self.index].job.salary
                 self.playersScene[self.index].isPayyed += 1
-                self.run(SKAction.playSoundFileNamed("money.mp3", waitForCompletion: false))
+//                self.run(SKAction.playSoundFileNamed("money.mp3", waitForCompletion: false))
             
             }
             
             if self.playersScene[self.index].floor >= 44 && self.playersScene[self.index].isPayyed == 10{
                 self.playersScene[self.index].money += self.playersScene[self.index].job.salary
                 self.playersScene[self.index].isPayyed += 1
-                self.run(SKAction.playSoundFileNamed("money.mp3", waitForCompletion: false))
+//                self.run(SKAction.playSoundFileNamed("money.mp3", waitForCompletion: false))
             
             }
             
             if self.playersScene[self.index].floor >= 48 && self.playersScene[self.index].isPayyed == 11{
                 self.playersScene[self.index].money += self.playersScene[self.index].job.salary
                 self.playersScene[self.index].isPayyed += 1
-                self.run(SKAction.playSoundFileNamed("money.mp3", waitForCompletion: false))
+//                self.run(SKAction.playSoundFileNamed("money.mp3", waitForCompletion: false))
             
             }
             
             if self.playersScene[self.index].floor >= 52 && self.playersScene[self.index].isPayyed == 12{
                 self.playersScene[self.index].money += self.playersScene[self.index].job.salary
                 self.playersScene[self.index].isPayyed += 1
-                self.run(SKAction.playSoundFileNamed("money.mp3", waitForCompletion: false))
+//                self.run(SKAction.playSoundFileNamed("money.mp3", waitForCompletion: false))
             
             }
             
             if self.playersScene[self.index].floor >= 56 && self.playersScene[self.index].isPayyed == 13{
                 self.playersScene[self.index].money += self.playersScene[self.index].job.salary
                 self.playersScene[self.index].isPayyed += 1
-                self.run(SKAction.playSoundFileNamed("money.mp3", waitForCompletion: false))
+//                self.run(SKAction.playSoundFileNamed("money.mp3", waitForCompletion: false))
             
             }
             
             if self.playersScene[self.index].floor >= 60 && self.playersScene[self.index].isPayyed == 14{
                 self.playersScene[self.index].money += self.playersScene[self.index].job.salary
                 self.playersScene[self.index].isPayyed += 1
-                self.run(SKAction.playSoundFileNamed("money.mp3", waitForCompletion: false))
+                
             }
             
             
@@ -1639,7 +1668,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                                     job7.removeFromParent()
                                     
                                     jobLabel = SKLabelNode(text: playersScene[index].name + " please choose your next Career : ")
-                                    jobLabel.position = CGPoint(x: CGFloat((self.player?.position.x)!), y: CGFloat((self.player?.position.y)! + 100))
+                                    jobLabel.position = CGPoint(x: CGFloat((self.player?.position.x)!), y: CGFloat((self.player?.position.y)! + 150))
                                     jobLabel.fontSize = 60
                                     jobLabel.fontName = kGameFont
         //                            jobLabel.fontColor = UIColor.black
@@ -1699,7 +1728,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                                     job7.removeFromParent()
                                     
                                     jobLabel = SKLabelNode(text: "hey it's time for you to choose your comfy place ")
-                                    jobLabel.position = CGPoint(x: CGFloat((self.player?.position.x)!), y: CGFloat((self.player?.position.y)! + 100))
+                                    jobLabel.position = CGPoint(x: CGFloat((self.player?.position.x)!), y: CGFloat((self.player?.position.y)! + 150))
                                     jobLabel.fontSize = 60
                                     jobLabel.fontName = kGameFont
         //                            jobLabel.fontColor = UIColor.black

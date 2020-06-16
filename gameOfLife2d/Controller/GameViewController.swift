@@ -12,7 +12,7 @@ import GameplayKit
 
 protocol reloadData{
     func onReload(index: Int, players: [Players])
-    func reloadPlayer(players: [Players])
+    func reloadFinish(isAllFinish: Bool)
 }
 
 class GameViewController: UIViewController, reloadData {
@@ -25,6 +25,7 @@ class GameViewController: UIViewController, reloadData {
 //        ]
     
     var index = 0
+    var isAllFinish = false
 
     @IBOutlet weak var playerCollectionView: UICollectionView!
     @IBOutlet weak var shopBtn: UIButton!
@@ -93,18 +94,23 @@ class GameViewController: UIViewController, reloadData {
         self.index = index
         self.players = players
         playerCollectionView.reloadData()
-        onFinish()
     }
-    func reloadPlayer(players: [Players]) {
-        self.players = players
+    
+    func reloadFinish(isAllFinish: Bool) {
+        self.isAllFinish = isAllFinish
+        if isAllFinish == true{
+            onFinish()
+            
+        }
     }
     
     func onFinish() {
-        if players[index].floor >= 60 {
+        
             let storyboard = UIStoryboard(name: "FinishScreenStoryboard", bundle: nil)
             let vc = storyboard.instantiateViewController(identifier: "FinishViewController") as! FinishViewController
+            vc.players = players
             self.navigationController?.pushViewController(vc, animated: true)
-        }
+        
     }
 }
 
@@ -142,6 +148,7 @@ extension GameViewController: UICollectionViewDataSource {
         playerView.currJobtemp = players[indexPath.row].job.name
         playerView.childTemp = "\(players[indexPath.row].child)"
         playerView.color = players[indexPath.row].color
+        playerView.getImage = players[indexPath.row].House
         
         self.present(playerView, animated: true, completion: nil)
     }

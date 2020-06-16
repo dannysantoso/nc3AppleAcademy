@@ -16,6 +16,7 @@ class PlayerViewController: UIViewController {
     @IBOutlet weak var status: UILabel!
     @IBOutlet weak var currJob: UILabel!
     @IBOutlet weak var child: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
     
     var nameTemp: String = ""
     var moneyTemp: String = ""
@@ -23,6 +24,8 @@ class PlayerViewController: UIViewController {
     var currJobtemp: String = ""
     var childTemp: String = ""
     var color: String = ""
+    var getImage: String = ""
+    var defaultImage:UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +34,10 @@ class PlayerViewController: UIViewController {
         status.text = statusTemp
         currJob.text = currJobtemp
         child.text = childTemp
+        imageView.image = UIImage(named: getImage)
+        
+        
+        
         
         
         switch color {
