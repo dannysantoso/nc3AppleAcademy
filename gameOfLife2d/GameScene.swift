@@ -18,10 +18,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var player4 = SKSpriteNode()
     var jobLabel = SKLabelNode()
     var card = SKSpriteNode()
+    var graduation = SKSpriteNode()
     var job1 = SKSpriteNode()
     var job2 = SKSpriteNode()
     var job3 = SKSpriteNode()
     var job4 = SKSpriteNode()
+    var job5 = SKSpriteNode()
+    var job6 = SKSpriteNode()
+    var job7 = SKSpriteNode()
     var isTouched2 = false
     var turn = 1
     var player : SKSpriteNode?
@@ -33,6 +37,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var playersScene: [Players] = []
     var mysteryTiles = surprise
     var careerChosen = 0
+    var isDisable = false
+    
     
 //    var gameVC = GameViewController()
     
@@ -314,7 +320,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if let node = self.nodes(at: touch.location(in: self)).first as? SKSpriteNode {
         
             if node == card {
+                isDisable = false
                 card.removeFromParent()
+            }else if node == graduation {
+                isDisable = false
+                graduation.removeFromParent()
+                displayJob2()
             }else if node == job1{
                 print("job1")
                 
@@ -322,6 +333,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     
                     playersScene[index].isFirstTurn = false
                     playersScene[index].job = Mahasiswa.init()
+                    playersScene[index].money -= 8000
                     playersScene[index].isCollege = true
                     print("index:\(index)")
                     index += 1
@@ -330,6 +342,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     
                     playersScene[index].isFirstTurn = false
                     playersScene[index].job = Mahasiswa.init()
+                    playersScene[index].money -= 8000
                     playersScene[index].isCollege = true
                     print("index:\(index)")
                     if playersScene.count > 2{
@@ -342,6 +355,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     
                     playersScene[index].isFirstTurn = false
                     playersScene[index].job = Mahasiswa.init()
+                    playersScene[index].money -= 8000
                     playersScene[index].isCollege = true
                     print("index:\(index)")
                     if playersScene.count > 3{
@@ -352,6 +366,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 }else if index == 3 {
                     playersScene[index].isFirstTurn = false
                     playersScene[index].job = Mahasiswa.init()
+                    playersScene[index].money -= 8000
                     playersScene[index].isCollege = true
                     print("index:\(index)")
                     index = 0
@@ -509,8 +524,117 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 //                careerChosen += 1
 
                 
-            }else{
                 
+            }else if node == job5{
+                            print("job1")
+                            
+                            if index == 0 {
+                                
+                                
+                                playersScene[index].job = SoftwareEngineer.init()
+                                
+                                
+                                
+                            }else if index == 1 {
+                                
+                                
+                                playersScene[index].job = SoftwareEngineer.init()
+                                
+                                
+                                
+                            }else if index == 2 {
+                                
+                                
+                                playersScene[index].job = SoftwareEngineer.init()
+                                
+                                
+                            }else if index == 3 {
+                                playersScene[index].job = SoftwareEngineer.init()
+                                
+                                
+                            }
+                            self.isDisable = false
+                            jobLabel.removeFromParent()
+                            job5.removeFromParent()
+                            job6.removeFromParent()
+                            job7.removeFromParent()
+            //                careerChosen += 1
+                            
+                            }else if node == job6{
+                                            
+                                            
+                                            if index == 0 {
+                                                
+                                                
+                                                playersScene[index].job = Lawyer.init()
+                                                
+                                                
+                                                
+                                            }else if index == 1 {
+                                                
+                                                
+                                                playersScene[index].job = Lawyer.init()
+                                                
+                                                
+                                                
+                                            }else if index == 2 {
+                                                
+                                                
+                                                playersScene[index].job = Lawyer.init()
+                                                
+                                                
+                                            }else if index == 3 {
+                                                
+                                                playersScene[index].job = Lawyer.init()
+                                                
+                                                
+                                            }
+                                            self.isDisable = false
+                                            jobLabel.removeFromParent()
+                                            job5.removeFromParent()
+                                            job6.removeFromParent()
+                                            job7.removeFromParent()
+                    }else if node == job7{
+                        
+                            
+                            if index == 0 {
+                                
+                                
+                                playersScene[index].job = Doctor.init()
+                                
+                                
+                                
+                            }else if index == 1 {
+                                
+                                
+                                playersScene[index].job = Doctor.init()
+                                
+                                
+                                
+                            }else if index == 2 {
+                                
+                                
+                                playersScene[index].job = Doctor.init()
+                                
+                                
+                            }else if index == 3 {
+                                
+                                playersScene[index].job = Doctor.init()
+                                
+                                
+                            }
+                            self.isDisable = false
+                            jobLabel.removeFromParent()
+                            job5.removeFromParent()
+                            job6.removeFromParent()
+                            job7.removeFromParent()
+            //                careerChosen += 1
+                
+                //                careerChosen += 1
+            }else{
+                if isDisable == true{
+                    
+                }else{
                 card.removeFromParent()
                         if playersScene[index].isFirstTurn == true{
                             jobLabel.removeFromParent()
@@ -622,7 +746,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                                 cameraNode.position.y = spinWheel?.position.y as! CGFloat
                             }
                         }
-                
+                }
             }
         }
         
@@ -845,6 +969,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                                         
         
         }else{
+            print("sini ????????")
                                         
             // jalan horizontal biasa dari floor 1-25
             if self.value == 1 && self.floor == 0{
@@ -869,6 +994,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 
                 if playersScene[index].floor == 25 {
                     //INSERT CARD HERE
+                    isDisable = true
+                    let timer = Timer.scheduledTimer(withTimeInterval: Double(duration) + 1.0, repeats: false) { (timer) in
+                        self.graduate()
+                    }
                 }
             }
         }
@@ -893,6 +1022,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                         stopAt15()
 
                     }else if self.floor == 15 {
+                        print("sini")
                         let newPositionX = 2570
                         let newPositionY = 705
                         let valueSubstract = self.value - 1
@@ -913,7 +1043,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                         playersScene[index].floor += self.value
                         
                         
-                        //INSERT CARD HERE
+//                        //INSERT CARD HERE
+//                        isDisable = true
+//                        let timer = Timer.scheduledTimer(withTimeInterval: Double(duration) + 1.0, repeats: false) { (timer) in
+//                            self.graduate()
+//                        }
+                        
                         
                     }
                 
@@ -936,7 +1071,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                         self.player?.run(SKAction.sequence([startMove, moveEnd]))
                         
                     }else{
-                        
+                        print("sini kedua")
                         
                         // jalan vertical dari 11 - 15
                         self.player?.run(SKAction.move(to: CGPoint(x: CGFloat((self.player?.position.x)! + CGFloat(self.value * 60)), y: CGFloat((self.player?.position.y)! + CGFloat(self.value * 100))), duration: TimeInterval(duration)))
@@ -946,6 +1081,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                         
                         if playersScene[index].floor == 15 {
                             //INSERT CARD HERE
+                            isDisable = true
+                            let timer = Timer.scheduledTimer(withTimeInterval: Double(duration) + 1.0, repeats: false) { (timer) in
+                                self.graduate()
+                            }
                         }
                     }
 
@@ -957,6 +1096,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 
                 if self.floor + self.value > 16{
                     //floor 9 dapet 8
+                    print("sini ketiga")
                     
                     let moveSpecific = 11 - self.floor
                     let newPositionX = 2260
@@ -1000,6 +1140,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     
                     
                     //INSERT CARD HERE
+                    isDisable = true
+                    let timer = Timer.scheduledTimer(withTimeInterval: Double(duration) + 1.0, repeats: false) { (timer) in
+                        self.graduate()
+                    }
                                                                                                                                                             
                 }else{
                     let moveSpecific = 11 - self.floor
@@ -1009,6 +1153,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                         let newPositionY = 205
                         
                         if self.floor + self.value >= 15{
+                            print("sini kedelapan")
                             let valueSubstract = 15 - 11
                             var duration2 = 1
                             var duration3 = 1
@@ -1035,7 +1180,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                             
                             
                             //INSERT CARD HERE
+                            isDisable = true
+                            let timer = Timer.scheduledTimer(withTimeInterval: Double(duration) + 1.0, repeats: false) { (timer) in
+                                self.graduate()
+                            }
                         }else{
+                            print("sini ketujuh")
                             let valueSubstract = self.value - moveSpecific
                             var duration2 = 1
                             var duration3 = 1
@@ -1063,6 +1213,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                         }
                 
                     }else{
+                        print("sini keenam")
                         //buat belokin di floor 11
                                                                                                                 
 //                        self.floor += self.value
@@ -1079,6 +1230,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                             self.player?.run(SKAction.sequence([startMove, moveEnd]))
                                                                                                                     
                         }else{
+                            print("sini kelima")
                             
                             self.player?.run(SKAction.moveTo(x: CGFloat((self.player?.position.x)! + CGFloat(self.value * 120)), duration: TimeInterval(self.duration)))
                                                                                                                     
@@ -1119,7 +1271,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func stopAt15(){
         //tilesnya < 15
         //ini buat berhenti di 15------------------------------
-        
+        print("lebih dari 15 SINI")
         let moveSpecific = 15 - self.floor
                                 
 //        if self.value > moveSpecific {
@@ -1143,6 +1295,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             playersScene[index].floor = 15
             
             //INSERT CARD HERE
+            isDisable = true
+            let timer = Timer.scheduledTimer(withTimeInterval: Double(duration) + 1.0, repeats: false) { (timer) in
+                self.graduate()
+            }
                                 
 //        }else{
 //
@@ -1205,29 +1361,276 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         
         //INSERT CARD HERE
-    }
-    
-    
-    func displayCard(){
-        let timer = Timer.scheduledTimer(withTimeInterval: Double(self.duration) + 1.0, repeats: false) { (timer) in
-            for (i,_) in self.mysteryTiles.enumerated() {
-                if self.playersScene[self.index].floor == self.mysteryTiles[i].floor
-                    && self.playersScene[self.index].job.name == self.mysteryTiles[i].job{
-                    self.card = SKSpriteNode(texture: SKTexture(image: UIImage(named: self.mysteryTiles[i].image)!))
-                        self.card.zPosition = 500
-                        self.card.position = CGPoint(x: CGFloat((self.player?.position.x)!), y: CGFloat((self.player?.position.y)!))
-                        self.addChild(self.card)
-                        print(self.mysteryTiles[i].name)
-                    
-                }
-            }
-            
-            
-            
+        isDisable = true
+        let timer = Timer.scheduledTimer(withTimeInterval: Double(duration) + 1.0, repeats: false) { (timer) in
+            self.married()
         }
     }
     
     
-
+    func displayCard(){
+        self.isDisable = true
+        let timer = Timer.scheduledTimer(withTimeInterval: Double(self.duration) + 1.0, repeats: false) { (timer) in
+            for (i,_) in self.mysteryTiles.enumerated() {
+                if self.playersScene[self.index].floor == self.mysteryTiles[i].floor
+                    && self.playersScene[self.index].job.name == self.mysteryTiles[i].job{
+//                    print(self.mysteryTiles[i].image)
+                        
+                        self.card = SKSpriteNode(texture: SKTexture(image: UIImage(named: self.mysteryTiles[i].image)!))
+                        self.card.zPosition = 502
+                        self.card.position = CGPoint(x: CGFloat((self.player?.position.x)!), y: CGFloat((self.player?.position.y)!))
+                        self.addChild(self.card)
+                    
+                        if self.mysteryTiles[i].isIncrease == true{
+                            self.playersScene[self.index].money += self.mysteryTiles[i].value
+                        }else{
+                            self.playersScene[self.index].money -= self.mysteryTiles[i].value
+                        }
+                        
+//                        self.isDisable = true
+                    
+                }else if self.playersScene[self.index].floor == self.mysteryTiles[i].floor && self.mysteryTiles[i].job == ""{
+                    if self.mysteryTiles[i].name == "Pandemic" {
+                        
+                        self.card = SKSpriteNode(texture: SKTexture(image: UIImage(named: self.mysteryTiles[i].image)!))
+                        self.card.zPosition = 502
+                        self.card.position = CGPoint(x: CGFloat((self.player?.position.x)!), y: CGFloat((self.player?.position.y)!))
+                        self.addChild(self.card)
+                        
+                        if self.playersScene[self.index].job.name == "Doctor" {
+                            self.playersScene[self.index].money += 30000
+                        }else{
+                            self.playersScene[self.index].money -= self.mysteryTiles[i].value
+                        }
+                        
+                    }else if self.mysteryTiles[i].name == "Social BreakOut" {
+                        
+                        self.card = SKSpriteNode(texture: SKTexture(image: UIImage(named: self.mysteryTiles[i].image)!))
+                        self.card.zPosition = 502
+                        self.card.position = CGPoint(x: CGFloat((self.player?.position.x)!), y: CGFloat((self.player?.position.y)!))
+                        self.addChild(self.card)
+                        
+                        if self.playersScene[self.index].job.name == "Police" {
+                            self.playersScene[self.index].money += 20000
+                        }else{
+                            self.playersScene[self.index].money -= self.mysteryTiles[i].value
+                        }
+                        
+                    }else if self.mysteryTiles[i].name == "Car Accident" {
+                        
+                        self.card = SKSpriteNode(texture: SKTexture(image: UIImage(named: self.mysteryTiles[i].image)!))
+                        self.card.zPosition = 502
+                        self.card.position = CGPoint(x: CGFloat((self.player?.position.x)!), y: CGFloat((self.player?.position.y)!))
+                        self.addChild(self.card)
+                        
+                        if self.playersScene[self.index].job.name == "Mekanik" {
+                            self.playersScene[self.index].money += 0
+                        }else{
+                            self.playersScene[self.index].money -= self.mysteryTiles[i].value
+                        }
+                        
+                    }else if self.mysteryTiles[i].name == "Baby" {
+                        
+                        self.card = SKSpriteNode(texture: SKTexture(image: UIImage(named: self.mysteryTiles[i].image)!))
+                        self.card.zPosition = 502
+                        self.card.position = CGPoint(x: CGFloat((self.player?.position.x)!), y: CGFloat((self.player?.position.y)!))
+                        self.addChild(self.card)
+                        
+                        self.playersScene[self.index].child += 1
+                    
+                    }else if self.mysteryTiles[i].name == "Children Education" && self.playersScene[self.index].child > 0{
+                        
+                        self.card = SKSpriteNode(texture: SKTexture(image: UIImage(named: self.mysteryTiles[i].image)!))
+                        self.card.zPosition = 502
+                        self.card.position = CGPoint(x: CGFloat((self.player?.position.x)!), y: CGFloat((self.player?.position.y)!))
+                        self.addChild(self.card)
+                        
+                        if self.mysteryTiles[i].isIncrease == true{
+                            self.playersScene[self.index].money += self.mysteryTiles[i].value
+                        }else{
+                            self.playersScene[self.index].money -= self.mysteryTiles[i].value
+                        }
+                        
+                    }else{
+                        
+                        self.card = SKSpriteNode(texture: SKTexture(image: UIImage(named: self.mysteryTiles[i].image)!))
+                        self.card.zPosition = 502
+                        self.card.position = CGPoint(x: CGFloat((self.player?.position.x)!), y: CGFloat((self.player?.position.y)!))
+                        self.addChild(self.card)
+                        
+                        if self.mysteryTiles[i].isIncrease == true{
+                            self.playersScene[self.index].money += self.mysteryTiles[i].value
+                        }else{
+                            self.playersScene[self.index].money -= self.mysteryTiles[i].value
+                        }
+                    }
+                    
+//                    self.isDisable = true
+                    
+                }
+   
+            }
+                
+            if self.playersScene[self.index].floor >= 4 && self.playersScene[self.index].isPayyed == 0{
+                self.playersScene[self.index].money += self.playersScene[self.index].job.salary
+                self.playersScene[self.index].isPayyed += 1
+                
+                
+            }
+            
+            if self.playersScene[self.index].floor >= 8 && self.playersScene[self.index].isPayyed == 1{ //gajian kedua
+                self.playersScene[self.index].money += self.playersScene[self.index].job.salary
+                self.playersScene[self.index].isPayyed += 1
+            
+            }
+            
+            if self.playersScene[self.index].floor >= 12 && self.playersScene[self.index].isPayyed == 2{
+                self.playersScene[self.index].money += self.playersScene[self.index].job.salary
+                self.playersScene[self.index].isPayyed += 1
+            
+            }
+            
+            if self.playersScene[self.index].floor >= 16 && self.playersScene[self.index].isPayyed == 3{
+                self.playersScene[self.index].money += self.playersScene[self.index].job.salary
+                self.playersScene[self.index].isPayyed += 1
+                
+            }
+            
+            if self.playersScene[self.index].floor >= 20 && self.playersScene[self.index].isPayyed == 4{
+                self.playersScene[self.index].money += self.playersScene[self.index].job.salary
+                self.playersScene[self.index].isPayyed += 1
+                
+            }
+            
+            if self.playersScene[self.index].floor >= 24 && self.playersScene[self.index].isPayyed == 5{
+                self.playersScene[self.index].money += self.playersScene[self.index].job.salary
+                self.playersScene[self.index].isPayyed += 1
+                
+            }
+            
+            if self.playersScene[self.index].floor >= 28 && self.playersScene[self.index].isPayyed == 6{
+                self.playersScene[self.index].money += self.playersScene[self.index].job.salary
+                self.playersScene[self.index].isPayyed += 1
+                
+            }
+            
+            if self.playersScene[self.index].floor >= 32 && self.playersScene[self.index].isPayyed == 7{
+                self.playersScene[self.index].money += self.playersScene[self.index].job.salary
+                self.playersScene[self.index].isPayyed += 1
+                
+            }
+            
+            if self.playersScene[self.index].floor >= 36 && self.playersScene[self.index].isPayyed == 8{
+                self.playersScene[self.index].money += self.playersScene[self.index].job.salary
+                self.playersScene[self.index].isPayyed += 1
+            
+            }
+            
+            if self.playersScene[self.index].floor >= 40 && self.playersScene[self.index].isPayyed == 9{
+                self.playersScene[self.index].money += self.playersScene[self.index].job.salary
+                self.playersScene[self.index].isPayyed += 1
+            
+            }
+            
+            if self.playersScene[self.index].floor >= 44 && self.playersScene[self.index].isPayyed == 10{
+                self.playersScene[self.index].money += self.playersScene[self.index].job.salary
+                self.playersScene[self.index].isPayyed += 1
+            
+            }
+            
+            if self.playersScene[self.index].floor >= 48 && self.playersScene[self.index].isPayyed == 11{
+                self.playersScene[self.index].money += self.playersScene[self.index].job.salary
+                self.playersScene[self.index].isPayyed += 1
+            
+            }
+            
+            if self.playersScene[self.index].floor >= 52 && self.playersScene[self.index].isPayyed == 12{
+                self.playersScene[self.index].money += self.playersScene[self.index].job.salary
+                self.playersScene[self.index].isPayyed += 1
+            
+            }
+            
+            if self.playersScene[self.index].floor >= 56 && self.playersScene[self.index].isPayyed == 13{
+                self.playersScene[self.index].money += self.playersScene[self.index].job.salary
+                self.playersScene[self.index].isPayyed += 1
+            
+            }
+            
+            if self.playersScene[self.index].floor >= 60 && self.playersScene[self.index].isPayyed == 14{
+                self.playersScene[self.index].money += self.playersScene[self.index].job.salary
+                self.playersScene[self.index].isPayyed += 1
+            }
+            
+            
+            
+            
+            
+        }
+        _ = Timer.scheduledTimer(withTimeInterval: 15, repeats: false) { (timer) in
+            self.isDisable = false
+            self.card.removeFromParent()
+        }
+    }
     
+    
+    
+    func displayJob2(){
+                                    jobLabel.removeFromParent()
+                                    job5.removeFromParent()
+                                    job6.removeFromParent()
+                                    job7.removeFromParent()
+                                    
+                                    jobLabel = SKLabelNode(text: playersScene[index].name + " please choose your next Career : ")
+                                    jobLabel.position = CGPoint(x: CGFloat((self.player?.position.x)!), y: CGFloat((self.player?.position.y)! + 300))
+                                    jobLabel.fontSize = 60
+                                    jobLabel.fontName = kGameFont
+        //                            jobLabel.fontColor = UIColor.black
+                                    jobLabel.zPosition = 501
+                                    addChild(jobLabel)
+                                    
+                                    job5 = SKSpriteNode(texture: SKTexture(image: UIImage(named: "SoftwareEngineer(1)")!))
+                                    job5.zPosition = 502
+                                    job5.setScale(0.7)
+                                    job5.position = CGPoint(x: CGFloat((self.player?.position.x)! - 500), y: CGFloat((self.player?.position.y)!))
+                                    addChild(job5)
+                                    
+                                    job6 = SKSpriteNode(texture: SKTexture(image: UIImage(named: "Lawyer(1)")!))
+                                    job6.zPosition = 502
+                                    job6.setScale(0.7)
+                                    job6.position = CGPoint(x: CGFloat((self.player?.position.x)! - 100), y: CGFloat((self.player?.position.y)!))
+                                    addChild(job6)
+                                    
+                                    
+                                    job7 = SKSpriteNode(texture: SKTexture(image: UIImage(named: "Doctor(1)")!))
+                                    job7.zPosition = 502
+                                    job7.setScale(0.7)
+                                    job7.position = CGPoint(x: CGFloat((self.player?.position.x)! + 300), y: CGFloat((self.player?.position.y)!))
+                                    addChild(job7)
+                                    
+                                    self.isDisable = true
+    }
+
+    func graduate(){
+            graduation = SKSpriteNode(texture: SKTexture(image: UIImage(named: "CollegeStudent(3)")!))
+            graduation.zPosition = 502
+            graduation.position = CGPoint(x: CGFloat((self.player?.position.x)!), y: CGFloat((self.player?.position.y)!))
+            addChild(graduation)
+        
+            
+            
+//            self.isDisable = true
+    }
+    
+    func married(){
+            card = SKSpriteNode(texture: SKTexture(image: UIImage(named: "Married")!))
+            card.zPosition = 502
+            card.position = CGPoint(x: CGFloat((self.player?.position.x)!), y: CGFloat((self.player?.position.y)!))
+            addChild(card)
+            self.playersScene[self.index].isMarried = true
+        
+            
+            
+//            self.isDisable = true
+        
+    }
 }

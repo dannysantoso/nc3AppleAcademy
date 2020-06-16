@@ -34,7 +34,7 @@ class AddPlayerViewController: UIViewController {
         else {
             tempName = nameTextArea.text!
         }
-        let player = Players.init(name: tempName, money: 10000, House: "", isMarried: false, child: 0, color: tempColor, insurance: [insurancePlayer](), isFinish: false, isCollege: false, floor: 0, isFirstTurn: true)
+        let player = Players.init(name: tempName, money: 10000, House: "", isMarried: false, child: 0, color: tempColor, insurance: [insurancePlayer](), isFinish: false, isCollege: false, floor: 0, isFirstTurn: true, isPayyed: 0)
         
         players.append(player)
         print(player.color)
