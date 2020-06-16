@@ -188,7 +188,7 @@ let surprise = [
     SupriseTiles(name: "Good", job: "Mekanik", image: "Mechanic(3)", isSkipped: false, isIncrease: true, value: 10000, floor: 11, isCollege: false),
     SupriseTiles(name: "Good", job: "Mekanik", image: "Mechanic(3)", isSkipped: false, isIncrease: true, value: 10000, floor: 19, isCollege: false),
     SupriseTiles(name: "Good", job: "Mekanik", image: "Mechanic(3)", isSkipped: false, isIncrease: true, value: 10000, floor: 21, isCollege: false),
-    SupriseTiles(name: "Good", job: "Mekanik", image: "Mechanic(4)", isSkipped: false, isIncrease: true, value: 10000, floor: 22, isCollege: false),
+    SupriseTiles(name: "Good", job: "Mekanik", image: "Mechanic(3)", isSkipped: false, isIncrease: true, value: 10000, floor: 22, isCollege: false),
     SupriseTiles(name: "Good", job: "Mekanik", image: "Mechanic(3)", isSkipped: false, isIncrease: true, value: 10000, floor: 41, isCollege: false),
     SupriseTiles(name: "Good", job: "Mekanik", image: "Mechanic(3)", isSkipped: false, isIncrease: true, value: 10000, floor: 42, isCollege: false),
     SupriseTiles(name: "Good", job: "Mekanik", image: "Mechanic(3)", isSkipped: false, isIncrease: true, value: 10000, floor: 46, isCollege: false),
