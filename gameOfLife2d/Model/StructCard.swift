@@ -121,6 +121,7 @@ let surprise = [
 //    SupriseTiles(name: "Happy Payday", job: "Youtuber", image: "Youtuber(2)", isSkipped: false, isIncrease: true, value: 5000, floor: 60, isCollege: false),
     //mystery youtuber
     // 3 7 11 19 21 22 41 42 46 59
+    //check youtuber
     SupriseTiles(name: "Amazing", job: "Youtuber", image: "Youtuber(3)", isSkipped: false, isIncrease: true, value: 50000, floor: 3, isCollege: false),
     SupriseTiles(name: "Good", job: "Youtuber", image: "Youtuber(4)", isSkipped: false, isIncrease: true, value: 10000, floor: 7, isCollege: false),
     SupriseTiles(name: "Bad One", job: "Youtuber", image: "Youtuber(5)", isSkipped: false, isIncrease: false, value: 2000, floor: 11, isCollege: false),
