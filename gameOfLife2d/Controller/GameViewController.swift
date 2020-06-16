@@ -33,6 +33,7 @@ class GameViewController: UIViewController, reloadData {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        MusicHelper.sharedHelper.playBackgroundMusic()
         
         playerCollectionView.dataSource = self
         playerCollectionView.delegate = self
@@ -108,6 +109,7 @@ extension GameViewController: UICollectionViewDataSource {
         cell.namePlayer.text = players[indexPath.row].name
         cell.jobPlayer.text = players[indexPath.row].job.name
         cell.moneyPlayer.text = String(players[indexPath.row].money)
+        colorCollection(color: players[indexPath.row].color, cell: cell)
         
         //ini buat ngetes doang kalo datanya masuk apa kaga
         //cell.moneyPlayer.text = String(players[indexPath.row].floor)
@@ -131,6 +133,21 @@ extension GameViewController: UICollectionViewDataSource {
         playerView.childTemp = "\(players[indexPath.row].child)"
         
         self.present(playerView, animated: true, completion: nil)
+    }
+    
+    func colorCollection(color: String, cell: CollectionViewCell){
+        switch color {
+        case "Green":
+            cell.bgColor.backgroundColor = UIColor(red: 0.596, green: 0.816, blue: 0.369, alpha: 1)
+        case "Red" :
+            cell.bgColor.backgroundColor = UIColor(red: 0.220, green: 0.20, blue: 0.60, alpha: 1)
+        case "Yellow" :
+            cell.bgColor.backgroundColor = UIColor(red: 0.992, green: 0.753, blue: 0.333, alpha: 1)
+        case "Blue" :
+            cell.bgColor.backgroundColor = UIColor(red: 0.486, green: 0.784, blue: 1, alpha: 1)
+        default:
+            cell.bgColor.backgroundColor = UIColor(red: 0.486, green: 0.784, blue: 1, alpha: 1)
+        }
     }
 }
 

@@ -24,6 +24,8 @@ struct Players{
     var isFinish: Bool
     var isCollege: Bool
     var floor: Int
+    var isFirstTurn: Bool
+    var isPayyed: Int
 }
 
 
@@ -40,3 +42,9 @@ struct Players{
 //    self.isCollege = isCollege
 //    self.floor = floor
 //}
+
+
+struct House{
+    var name: String
+    var price: Int
+}
