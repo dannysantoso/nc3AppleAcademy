@@ -14,10 +14,10 @@ class FinishViewController: UIViewController {
     var players = [Players]()
     
     //dummy
-    var p1 = Players.init(name: "Alvian", money: 20000, House: "", isMarried: true, child: 3, color: "", insurance: [insurancePlayer](), isFinish: true, isCollege: true, floor: 0)
-    var p2 = Players.init(name: "Alvian2", money: 20000, House: "", isMarried: true, child: 2, color: "", insurance: [insurancePlayer](), isFinish: true, isCollege: true, floor: 0)
-    var p3 = Players.init(name: "Alvian3", money: 20000, House: "", isMarried: true, child: 1, color: "", insurance: [insurancePlayer](), isFinish: true, isCollege: true, floor: 0)
-    var p4 = Players.init(name: "Alvian4", money: 20000, House: "", isMarried: true, child: 0, color: "", insurance: [insurancePlayer](), isFinish: true, isCollege: true, floor: 0)
+//    var p1 = Players.init(name: "Alvian", money: 20000, House: "", isMarried: true, child: 3, color: "", insurance: [insurancePlayer](), isFinish: true, isCollege: true, floor: 0)
+//    var p2 = Players.init(name: "Alvian2", money: 20000, House: "", isMarried: true, child: 2, color: "", insurance: [insurancePlayer](), isFinish: true, isCollege: true, floor: 0)
+//    var p3 = Players.init(name: "Alvian3", money: 20000, House: "", isMarried: true, child: 1, color: "", insurance: [insurancePlayer](), isFinish: true, isCollege: true, floor: 0)
+//    var p4 = Players.init(name: "Alvian4", money: 20000, House: "", isMarried: true, child: 0, color: "", insurance: [insurancePlayer](), isFinish: true, isCollege: true, floor: 0)
     
     var winnerTotal = 0
     var winnerName = ""
@@ -25,10 +25,10 @@ class FinishViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //append dummy
-        players.append(p1)
-        players.append(p2)
-        players.append(p3)
-        players.append(p4)
+//        players.append(p1)
+//        players.append(p2)
+//        players.append(p3)
+ //       players.append(p4)
         // Do any additional setup after loading the view.
     }
     
