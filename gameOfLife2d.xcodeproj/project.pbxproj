@@ -38,6 +38,9 @@
 		E1EF1D2A2494E4E200CBEB0E /* PlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1EF1D282494E4E200CBEB0E /* PlayerViewController.xib */; };
 		E1EF1D312494F70500CBEB0E /* player.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EF1D302494F70500CBEB0E /* player.swift */; };
 		EB1E7D2A24978E4600EC0B05 /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1E7D2924978E4600EC0B05 /* Job.swift */; };
+		EB1E7D2C2497D38C00EC0B05 /* FinishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1E7D2B2497D38C00EC0B05 /* FinishViewController.swift */; };
+		EB1E7D2E2497E2CC00EC0B05 /* FinishScreenStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB1E7D2D2497E2CC00EC0B05 /* FinishScreenStoryboard.storyboard */; };
+		EB1E7D302497F6CA00EC0B05 /* FinishTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1E7D2F2497F6CA00EC0B05 /* FinishTableViewCell.swift */; };
 		EB9E9FAA2496480200B45C26 /* StartScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9E9FA72496480200B45C26 /* StartScreenViewController.swift */; };
 		EB9E9FAB2496480200B45C26 /* AddPlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9E9FA82496480200B45C26 /* AddPlayerTableViewCell.swift */; };
 		EB9E9FAC2496480200B45C26 /* AddPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9E9FA92496480200B45C26 /* AddPlayerViewController.swift */; };
@@ -78,6 +81,9 @@
 		E1EF1D282494E4E200CBEB0E /* PlayerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerViewController.xib; sourceTree = "<group>"; };
 		E1EF1D302494F70500CBEB0E /* player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = player.swift; sourceTree = "<group>"; };
 		EB1E7D2924978E4600EC0B05 /* Job.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
+		EB1E7D2B2497D38C00EC0B05 /* FinishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishViewController.swift; sourceTree = "<group>"; };
+		EB1E7D2D2497E2CC00EC0B05 /* FinishScreenStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FinishScreenStoryboard.storyboard; sourceTree = "<group>"; };
+		EB1E7D2F2497F6CA00EC0B05 /* FinishTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishTableViewCell.swift; sourceTree = "<group>"; };
 		EB9E9FA72496480200B45C26 /* StartScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartScreenViewController.swift; sourceTree = "<group>"; };
 		EB9E9FA82496480200B45C26 /* AddPlayerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPlayerTableViewCell.swift; sourceTree = "<group>"; };
 		EB9E9FA92496480200B45C26 /* AddPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPlayerViewController.swift; sourceTree = "<group>"; };
@@ -196,6 +202,7 @@
 				E1EF1D1E2494D3F800CBEB0E /* ShopViewController.xib */,
 				E1EF1D2D2494E72700CBEB0E /* Collection Cell */,
 				E1EF1D2C2494E71400CBEB0E /* Table Cell */,
+				EB1E7D2D2497E2CC00EC0B05 /* FinishScreenStoryboard.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -227,6 +234,8 @@
 				E1EF1D232494DAE600CBEB0E /* InsuranceTableViewCell.swift */,
 				E1EF1D1D2494D3F800CBEB0E /* ShopViewController.swift */,
 				E1EF1D192494C18100CBEB0E /* CollectionViewCell.swift */,
+				EB1E7D2B2497D38C00EC0B05 /* FinishViewController.swift */,
+				EB1E7D2F2497F6CA00EC0B05 /* FinishTableViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -310,6 +319,7 @@
 				E129506A24910FAE008E8B05 /* GameScene.sks in Resources */,
 				E129511224917DF2008E8B05 /* woosh.aac in Resources */,
 				E1EF1D262494DAE600CBEB0E /* InsuranceTableViewCell.xib in Resources */,
+				EB1E7D2E2497E2CC00EC0B05 /* FinishScreenStoryboard.storyboard in Resources */,
 				E129507524910FB0008E8B05 /* Assets.xcassets in Resources */,
 				E129507824910FB0008E8B05 /* LaunchScreen.storyboard in Resources */,
 				EB9E9FAE2496482100B45C26 /* StartScreen.storyboard in Resources */,
@@ -327,6 +337,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E129506E24910FAE008E8B05 /* GameScene.swift in Sources */,
+				EB1E7D302497F6CA00EC0B05 /* FinishTableViewCell.swift in Sources */,
 				E129507024910FAE008E8B05 /* GameViewController.swift in Sources */,
 				E1EF1D1F2494D3F800CBEB0E /* ShopViewController.swift in Sources */,
 				E1EF1D1B2494C18100CBEB0E /* CollectionViewCell.swift in Sources */,
@@ -338,6 +349,7 @@
 				E1EF1D292494E4E200CBEB0E /* PlayerViewController.swift in Sources */,
 				E1EF1D222494D8DB00CBEB0E /* Insurance.swift in Sources */,
 				E129511E24917E1F008E8B05 /* CGFloat+Extensions.swift in Sources */,
+				EB1E7D2C2497D38C00EC0B05 /* FinishViewController.swift in Sources */,
 				E1EF1D312494F70500CBEB0E /* player.swift in Sources */,
 				E1EF1D252494DAE600CBEB0E /* InsuranceTableViewCell.swift in Sources */,
 				EB9E9FAC2496480200B45C26 /* AddPlayerViewController.swift in Sources */,

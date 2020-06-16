@@ -46,7 +46,7 @@ class ShopViewController: UIViewController, reloadShop{
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: "GameViewController") as! GameViewController
         vc.players = players
-        self.delegate?.reloadPlayer(players: players)
+        self.delegate?.onReload(index: playerIndex, players: players)
         print(vc.players)
         dismiss(animated: true, completion: nil)
     }

@@ -92,9 +92,18 @@ class GameViewController: UIViewController, reloadData {
         self.index = index
         self.players = players
         playerCollectionView.reloadData()
+        onFinish()
     }
     func reloadPlayer(players: [Players]) {
         self.players = players
+    }
+    
+    func onFinish() {
+        if players[index].floor >= 60 {
+            let storyboard = UIStoryboard(name: "FinishScreenStoryboard", bundle: nil)
+            let vc = storyboard.instantiateViewController(identifier: "FinishViewController") as! FinishViewController
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
 }
 
@@ -112,7 +121,7 @@ extension GameViewController: UICollectionViewDataSource {
         colorCollection(color: players[indexPath.row].color, cell: cell)
         
         //ini buat ngetes doang kalo datanya masuk apa kaga
-//        cell.moneyPlayer.text = String(players[indexPath.row].floor)
+        //cell.moneyPlayer.text = String(players[indexPath.row].floor)
         
         
         return cell
