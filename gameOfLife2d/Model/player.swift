@@ -42,3 +42,9 @@ struct Players{
 //    self.isCollege = isCollege
 //    self.floor = floor
 //}
+
+
+struct House{
+    var name: String
+    var price: Int
+}

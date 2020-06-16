@@ -26,6 +26,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var job5 = SKSpriteNode()
     var job6 = SKSpriteNode()
     var job7 = SKSpriteNode()
+    var house1 = SKSpriteNode()
+    var house2 = SKSpriteNode()
+    var house3 = SKSpriteNode()
     var isTouched2 = false
     var turn = 1
     var player : SKSpriteNode?
@@ -38,6 +41,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var mysteryTiles = surprise
     var careerChosen = 0
     var isDisable = false
+    var houseList: [House] = [House(name: "House(1)", price: 100000),
+                          House(name: "House(2)", price: 200000),
+                          House(name: "House(3)", price: 300000),
+                        ]
     
     
 //    var gameVC = GameViewController()
@@ -326,6 +333,30 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 isDisable = false
                 graduation.removeFromParent()
                 displayJob2()
+            }else if node == house1 {
+                isDisable = false
+                playersScene[index].House = houseList[0].name
+                playersScene[index].money -= houseList[0].price
+                jobLabel.removeFromParent()
+                house1.removeFromParent()
+                house2.removeFromParent()
+                house3.removeFromParent()
+            }else if node == house2 {
+                isDisable = false
+                playersScene[index].House = houseList[1].name
+                playersScene[index].money -= houseList[1].price
+                jobLabel.removeFromParent()
+                house1.removeFromParent()
+                house2.removeFromParent()
+                house3.removeFromParent()
+            }else if node == house3 {
+                isDisable = false
+                playersScene[index].House = houseList[2].name
+                playersScene[index].money -= houseList[2].price
+                jobLabel.removeFromParent()
+                house1.removeFromParent()
+                house2.removeFromParent()
+                house3.removeFromParent()
             }else if node == job1{
                 print("job1")
                 
@@ -920,6 +951,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 playersScene[index].floor = 35
                     
                     //INSERT CARD HERE
+                self.isDisable = true
+                let timer = Timer.scheduledTimer(withTimeInterval: Double(duration) + 1.0, repeats: false) { (timer) in
+                    self.buyHouse()
+                }
+                
             }
                 
         }else{
@@ -996,7 +1032,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     //INSERT CARD HERE
                     isDisable = true
                     let timer = Timer.scheduledTimer(withTimeInterval: Double(duration) + 1.0, repeats: false) { (timer) in
-                        self.graduate()
+                        self.married()
                     }
                 }
             }
@@ -1369,7 +1405,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     
     func displayCard(){
-        self.isDisable = true
+        
         let timer = Timer.scheduledTimer(withTimeInterval: Double(self.duration) + 1.0, repeats: false) { (timer) in
             for (i,_) in self.mysteryTiles.enumerated() {
                 if self.playersScene[self.index].floor == self.mysteryTiles[i].floor
@@ -1387,7 +1423,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                             self.playersScene[self.index].money -= self.mysteryTiles[i].value
                         }
                         
-//                        self.isDisable = true
+                        self.isDisable = true
                     
                 }else if self.playersScene[self.index].floor == self.mysteryTiles[i].floor && self.mysteryTiles[i].job == ""{
                     if self.mysteryTiles[i].name == "Pandemic" {
@@ -1465,7 +1501,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                         }
                     }
                     
-//                    self.isDisable = true
+                    self.isDisable = true
                     
                 }
    
@@ -1581,7 +1617,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                                     job7.removeFromParent()
                                     
                                     jobLabel = SKLabelNode(text: playersScene[index].name + " please choose your next Career : ")
-                                    jobLabel.position = CGPoint(x: CGFloat((self.player?.position.x)!), y: CGFloat((self.player?.position.y)! + 300))
+                                    jobLabel.position = CGPoint(x: CGFloat((self.player?.position.x)!), y: CGFloat((self.player?.position.y)! - 200))
                                     jobLabel.fontSize = 60
                                     jobLabel.fontName = kGameFont
         //                            jobLabel.fontColor = UIColor.black
@@ -1591,20 +1627,20 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                                     job5 = SKSpriteNode(texture: SKTexture(image: UIImage(named: "SoftwareEngineer(1)")!))
                                     job5.zPosition = 502
                                     job5.setScale(0.7)
-                                    job5.position = CGPoint(x: CGFloat((self.player?.position.x)! - 500), y: CGFloat((self.player?.position.y)!))
+                                    job5.position = CGPoint(x: CGFloat((self.player?.position.x)! - 400), y: CGFloat((self.player?.position.y)! - 200))
                                     addChild(job5)
                                     
                                     job6 = SKSpriteNode(texture: SKTexture(image: UIImage(named: "Lawyer(1)")!))
                                     job6.zPosition = 502
                                     job6.setScale(0.7)
-                                    job6.position = CGPoint(x: CGFloat((self.player?.position.x)! - 100), y: CGFloat((self.player?.position.y)!))
+                                    job6.position = CGPoint(x: CGFloat((self.player?.position.x)!), y: CGFloat((self.player?.position.y)! - 200))
                                     addChild(job6)
                                     
                                     
                                     job7 = SKSpriteNode(texture: SKTexture(image: UIImage(named: "Doctor(1)")!))
                                     job7.zPosition = 502
                                     job7.setScale(0.7)
-                                    job7.position = CGPoint(x: CGFloat((self.player?.position.x)! + 300), y: CGFloat((self.player?.position.y)!))
+                                    job7.position = CGPoint(x: CGFloat((self.player?.position.x)! + 200), y: CGFloat((self.player?.position.y)! - 200))
                                     addChild(job7)
                                     
                                     self.isDisable = true
@@ -1632,5 +1668,41 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
 //            self.isDisable = true
         
+    }
+    
+    func buyHouse(){
+                                    jobLabel.removeFromParent()
+                                    job5.removeFromParent()
+                                    job6.removeFromParent()
+                                    job7.removeFromParent()
+                                    
+                                    jobLabel = SKLabelNode(text: "hey it's time for you to choose your comfy place ")
+                                    jobLabel.position = CGPoint(x: CGFloat((self.player?.position.x)!), y: CGFloat((self.player?.position.y)! - 200))
+                                    jobLabel.fontSize = 60
+                                    jobLabel.fontName = kGameFont
+        //                            jobLabel.fontColor = UIColor.black
+                                    jobLabel.zPosition = 501
+                                    addChild(jobLabel)
+                                    
+                                    house1 = SKSpriteNode(texture: SKTexture(image: UIImage(named: "House(1)")!))
+                                    house1.zPosition = 502
+                                    house1.setScale(0.7)
+                                    house1.position = CGPoint(x: CGFloat((self.player?.position.x)! - 400), y: CGFloat((self.player?.position.y)! - 200))
+                                    addChild(house1)
+                                    
+                                    house2 = SKSpriteNode(texture: SKTexture(image: UIImage(named: "House(2)")!))
+                                    house2.zPosition = 502
+                                    house2.setScale(0.7)
+                                    house2.position = CGPoint(x: CGFloat((self.player?.position.x)!), y: CGFloat((self.player?.position.y)! - 200))
+                                    addChild(house2)
+                                    
+                                    
+                                    house3 = SKSpriteNode(texture: SKTexture(image: UIImage(named: "House(3)")!))
+                                    house3.zPosition = 502
+                                    house3.setScale(0.7)
+                                    house3.position = CGPoint(x: CGFloat((self.player?.position.x)! + 200), y: CGFloat((self.player?.position.y)! - 200))
+                                    addChild(house3)
+                                    
+//                                    self.isDisable = true
     }
 }
