@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E10D591E2498AAC600F55940 /* money.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E10D591D2498AAC600F55940 /* money.mp3 */; };
 		E129506824910FAE008E8B05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E129506724910FAE008E8B05 /* AppDelegate.swift */; };
 		E129506A24910FAE008E8B05 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = E129506924910FAE008E8B05 /* GameScene.sks */; };
 		E129506E24910FAE008E8B05 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E129506D24910FAE008E8B05 /* GameScene.swift */; };
@@ -44,6 +45,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E10D591D2498AAC600F55940 /* money.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = money.mp3; sourceTree = "<group>"; };
 		E129506424910FAE008E8B05 /* gameOfLife2d.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gameOfLife2d.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E129506724910FAE008E8B05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E129506924910FAE008E8B05 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 		E129510A24917DF2008E8B05 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				E10D591D2498AAC600F55940 /* money.mp3 */,
 				E129510B24917DF2008E8B05 /* victory.aac */,
 				E129510C24917DF2008E8B05 /* woosh.aac */,
 				E129510D24917DF2008E8B05 /* bubble_pop.aac */,
@@ -312,6 +315,7 @@
 				EB9E9FAE2496482100B45C26 /* StartScreen.storyboard in Resources */,
 				E129511324917DF2008E8B05 /* bubble_pop.aac in Resources */,
 				E129511124917DF2008E8B05 /* victory.aac in Resources */,
+				E10D591E2498AAC600F55940 /* money.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

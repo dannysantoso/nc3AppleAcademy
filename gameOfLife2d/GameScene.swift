@@ -1510,6 +1510,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             if self.playersScene[self.index].floor >= 4 && self.playersScene[self.index].isPayyed == 0{
                 self.playersScene[self.index].money += self.playersScene[self.index].job.salary
                 self.playersScene[self.index].isPayyed += 1
+                if self.playersScene[self.index].isCollege == false{
+                    self.run(SKAction.playSoundFileNamed("money.mp3", waitForCompletion: false))
+                }
+                
                 
                 
             }
@@ -1517,84 +1521,102 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             if self.playersScene[self.index].floor >= 8 && self.playersScene[self.index].isPayyed == 1{ //gajian kedua
                 self.playersScene[self.index].money += self.playersScene[self.index].job.salary
                 self.playersScene[self.index].isPayyed += 1
+                if self.playersScene[self.index].isCollege == false{
+                    self.run(SKAction.playSoundFileNamed("money.mp3", waitForCompletion: false))
+                }
             
             }
             
             if self.playersScene[self.index].floor >= 12 && self.playersScene[self.index].isPayyed == 2{
                 self.playersScene[self.index].money += self.playersScene[self.index].job.salary
                 self.playersScene[self.index].isPayyed += 1
+                if self.playersScene[self.index].isCollege == false{
+                    self.run(SKAction.playSoundFileNamed("money.mp3", waitForCompletion: false))
+                }
             
             }
             
             if self.playersScene[self.index].floor >= 16 && self.playersScene[self.index].isPayyed == 3{
                 self.playersScene[self.index].money += self.playersScene[self.index].job.salary
                 self.playersScene[self.index].isPayyed += 1
+                self.run(SKAction.playSoundFileNamed("money.mp3", waitForCompletion: false))
                 
             }
             
             if self.playersScene[self.index].floor >= 20 && self.playersScene[self.index].isPayyed == 4{
                 self.playersScene[self.index].money += self.playersScene[self.index].job.salary
                 self.playersScene[self.index].isPayyed += 1
+                self.run(SKAction.playSoundFileNamed("money.mp3", waitForCompletion: false))
                 
             }
             
             if self.playersScene[self.index].floor >= 24 && self.playersScene[self.index].isPayyed == 5{
                 self.playersScene[self.index].money += self.playersScene[self.index].job.salary
                 self.playersScene[self.index].isPayyed += 1
+                self.run(SKAction.playSoundFileNamed("money.mp3", waitForCompletion: false))
                 
             }
             
             if self.playersScene[self.index].floor >= 28 && self.playersScene[self.index].isPayyed == 6{
                 self.playersScene[self.index].money += self.playersScene[self.index].job.salary
                 self.playersScene[self.index].isPayyed += 1
+                self.run(SKAction.playSoundFileNamed("money.mp3", waitForCompletion: false))
                 
             }
             
             if self.playersScene[self.index].floor >= 32 && self.playersScene[self.index].isPayyed == 7{
                 self.playersScene[self.index].money += self.playersScene[self.index].job.salary
                 self.playersScene[self.index].isPayyed += 1
+                self.run(SKAction.playSoundFileNamed("money.mp3", waitForCompletion: false))
                 
             }
             
             if self.playersScene[self.index].floor >= 36 && self.playersScene[self.index].isPayyed == 8{
                 self.playersScene[self.index].money += self.playersScene[self.index].job.salary
                 self.playersScene[self.index].isPayyed += 1
+                self.run(SKAction.playSoundFileNamed("money.mp3", waitForCompletion: false))
             
             }
             
             if self.playersScene[self.index].floor >= 40 && self.playersScene[self.index].isPayyed == 9{
                 self.playersScene[self.index].money += self.playersScene[self.index].job.salary
                 self.playersScene[self.index].isPayyed += 1
+                self.run(SKAction.playSoundFileNamed("money.mp3", waitForCompletion: false))
             
             }
             
             if self.playersScene[self.index].floor >= 44 && self.playersScene[self.index].isPayyed == 10{
                 self.playersScene[self.index].money += self.playersScene[self.index].job.salary
                 self.playersScene[self.index].isPayyed += 1
+                self.run(SKAction.playSoundFileNamed("money.mp3", waitForCompletion: false))
             
             }
             
             if self.playersScene[self.index].floor >= 48 && self.playersScene[self.index].isPayyed == 11{
                 self.playersScene[self.index].money += self.playersScene[self.index].job.salary
                 self.playersScene[self.index].isPayyed += 1
+                self.run(SKAction.playSoundFileNamed("money.mp3", waitForCompletion: false))
             
             }
             
             if self.playersScene[self.index].floor >= 52 && self.playersScene[self.index].isPayyed == 12{
                 self.playersScene[self.index].money += self.playersScene[self.index].job.salary
                 self.playersScene[self.index].isPayyed += 1
+                self.run(SKAction.playSoundFileNamed("money.mp3", waitForCompletion: false))
             
             }
             
             if self.playersScene[self.index].floor >= 56 && self.playersScene[self.index].isPayyed == 13{
                 self.playersScene[self.index].money += self.playersScene[self.index].job.salary
                 self.playersScene[self.index].isPayyed += 1
+                self.run(SKAction.playSoundFileNamed("money.mp3", waitForCompletion: false))
             
             }
             
             if self.playersScene[self.index].floor >= 60 && self.playersScene[self.index].isPayyed == 14{
                 self.playersScene[self.index].money += self.playersScene[self.index].job.salary
                 self.playersScene[self.index].isPayyed += 1
+                self.run(SKAction.playSoundFileNamed("money.mp3", waitForCompletion: false))
             }
             
             
