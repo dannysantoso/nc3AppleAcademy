@@ -12,13 +12,31 @@ class PlayerViewController: UIViewController {
 
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var money: UILabel!
+    @IBOutlet weak var status: UILabel!
+    @IBOutlet weak var currJob: UILabel!
+    @IBOutlet weak var child: UILabel!
+    
+    var nameTemp: String = ""
+    var moneyTemp: String = ""
+    var statusTemp: String = ""
+    var currJobtemp: String = ""
+    var childTemp: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        name.text = nameTemp
+        money.text = moneyTemp
+        status.text = statusTemp
+        currJob.text = currJobtemp
+        child.text = childTemp
         // Do any additional setup after loading the view.
     }
-
+    
+    @IBAction func backBtnAction(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
 
     /*
     // MARK: - Navigation

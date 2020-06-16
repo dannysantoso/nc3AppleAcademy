@@ -14,7 +14,7 @@ struct insurancePlayer{
 
 struct Players{
     var name: String
-    var job: String
+    var job: Job = Job.init()
     var money: Int
     var House: String
     var isMarried: Bool
@@ -24,6 +24,8 @@ struct Players{
     var isFinish: Bool
     var isCollege: Bool
     var floor: Int
+    var isFirstTurn: Bool
+    var isPayyed: Int
 }
 
 
@@ -40,3 +42,9 @@ struct Players{
 //    self.isCollege = isCollege
 //    self.floor = floor
 //}
+
+
+struct House{
+    var name: String
+    var price: Int
+}

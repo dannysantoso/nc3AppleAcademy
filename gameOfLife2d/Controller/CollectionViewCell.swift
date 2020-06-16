@@ -13,6 +13,7 @@ class CollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var namePlayer: UILabel!
     @IBOutlet weak var jobPlayer: UILabel!
     @IBOutlet weak var moneyPlayer: UILabel!
+    @IBOutlet weak var bgColor: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
