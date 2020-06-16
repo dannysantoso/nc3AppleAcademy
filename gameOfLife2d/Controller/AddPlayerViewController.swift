@@ -14,6 +14,10 @@ class AddPlayerViewController: UIViewController {
     var tempColor: String = "Blue"
     var tempName: String = "No Name"
     
+    @IBOutlet weak var green: UIButton!
+    @IBOutlet weak var yellow: UIButton!
+    @IBOutlet weak var red: UIButton!
+    @IBOutlet weak var blue: UIButton!
     @IBOutlet weak var playerTable: UITableView!
     @IBOutlet weak var nameTextArea: UITextField!
     @IBOutlet weak var addBtn: UIButton!
@@ -21,6 +25,18 @@ class AddPlayerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        addBtn.layer.cornerRadius = 10
+        startBtn.layer.cornerRadius = 10
+        
+        let buttonColor:[UIButton] = [blue, green, yellow, red]
+        
+        for item in buttonColor {
+            item.layer.cornerRadius = item.bounds.size.width/2
+            item.layer.borderWidth = 4
+            item.layer.borderColor = UIColor.clear.cgColor
+        }
+        
         startBtn.isHidden = true
         //let player = Player.init(name: "No Name", color: tempColor)
         //players.append(player)
@@ -60,21 +76,37 @@ class AddPlayerViewController: UIViewController {
     
     @IBAction func blueBtnAction(_ sender: Any) {
         tempColor = "Blue"
+        blue.layer.borderColor = UIColor.black.cgColor
+        red.layer.borderColor = UIColor.clear.cgColor
+        green.layer.borderColor = UIColor.clear.cgColor
+        yellow.layer.borderColor = UIColor.clear.cgColor
     }
     
     @IBAction func redBtnAction(_ sender: Any) {
         tempColor = "Red"
+        red.layer.borderColor = UIColor.black.cgColor
+        blue.layer.borderColor = UIColor.clear.cgColor
+        green.layer.borderColor = UIColor.clear.cgColor
+        yellow.layer.borderColor = UIColor.clear.cgColor
     }
     
     @IBAction func yellowBtnAction(_ sender: Any) {
         tempColor = "Yellow"
+        yellow.layer.borderColor = UIColor.black.cgColor
+        red.layer.borderColor = UIColor.clear.cgColor
+        green.layer.borderColor = UIColor.clear.cgColor
+        blue.layer.borderColor = UIColor.clear.cgColor
     }
     
     @IBAction func greenBtnAction(_ sender: Any) {
         tempColor = "Green"
+        green.layer.borderColor = UIColor.black.cgColor
+        red.layer.borderColor = UIColor.clear.cgColor
+        blue.layer.borderColor = UIColor.clear.cgColor
+        yellow.layer.borderColor = UIColor.clear.cgColor
     }
     
-    
+
 }
 
 //hide nav bar

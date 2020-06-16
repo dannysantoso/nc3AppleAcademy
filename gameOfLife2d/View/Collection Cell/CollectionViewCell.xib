@@ -21,25 +21,25 @@
                 <rect key="frame" x="0.0" y="0.0" width="139" height="80"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <view alpha="0.75" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rht-j8-BiQ">
+                    <view alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rht-j8-BiQ">
                         <rect key="frame" x="0.0" y="0.0" width="139" height="80"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Job" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DzC-1F-TfE">
-                                <rect key="frame" x="20" y="34" width="109" height="14"/>
-                                <fontDescription key="fontDescription" name="ContextRoundedBlackSSiBlack" family="Context Rounded Black SSi" pointSize="14"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="20" y="33" width="109" height="13"/>
+                                <fontDescription key="fontDescription" name="ContextRoundedBlackSSiBlack" family="Context Rounded Black SSi" pointSize="13"/>
+                                <color key="textColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KGN-0P-rC8">
-                                <rect key="frame" x="20" y="10" width="109" height="14"/>
-                                <fontDescription key="fontDescription" name="ContextRoundedBlackSSiBlack" family="Context Rounded Black SSi" pointSize="14"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="20" y="10" width="109" height="13"/>
+                                <fontDescription key="fontDescription" name="ContextRoundedBlackSSiBlack" family="Context Rounded Black SSi" pointSize="13"/>
+                                <color key="textColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Money" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Wa-eB-IFL">
-                                <rect key="frame" x="20" y="58" width="109" height="14"/>
-                                <fontDescription key="fontDescription" name="ContextRoundedBlackSSiBlack" family="Context Rounded Black SSi" pointSize="14"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="20" y="56" width="109" height="13"/>
+                                <fontDescription key="fontDescription" name="ContextRoundedBlackSSiBlack" family="Context Rounded Black SSi" pointSize="13"/>
+                                <color key="textColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>

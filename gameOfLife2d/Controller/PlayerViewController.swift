@@ -22,6 +22,7 @@ class PlayerViewController: UIViewController {
     var statusTemp: String = ""
     var currJobtemp: String = ""
     var childTemp: String = ""
+    var color: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +31,20 @@ class PlayerViewController: UIViewController {
         status.text = statusTemp
         currJob.text = currJobtemp
         child.text = childTemp
+        
+        
+        switch color {
+        case "Green":
+            view.layer.backgroundColor = UIColor(red: 0.596, green: 0.816, blue: 0.369, alpha: 1).cgColor
+        case "Red" :
+            view.layer.backgroundColor = UIColor(red: 0.994, green: 0.584, blue: 0.576, alpha: 1).cgColor
+        case "Yellow" :
+            view.layer.backgroundColor = UIColor(red: 0.992, green: 0.753, blue: 0.333, alpha: 1).cgColor
+        case "Blue" :
+            view.layer.backgroundColor = UIColor(red: 0.486, green: 0.784, blue: 1, alpha: 1).cgColor
+        default:
+            view.layer.backgroundColor = UIColor(red: 0.486, green: 0.784, blue: 1, alpha: 1).cgColor
+        }
         // Do any additional setup after loading the view.
     }
     

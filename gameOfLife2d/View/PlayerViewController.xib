@@ -6,6 +6,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Context Rounded Black SSi Black.ttf">
+            <string>ContextRoundedBlackSSiBlack</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PlayerViewController" customModule="gameOfLife2d" customModuleProvider="target">
             <connections>
@@ -23,97 +28,115 @@
             <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mQA-ye-Ka1">
-                    <rect key="frame" x="95" y="61" width="46" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Button"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mQA-ye-Ka1">
+                    <rect key="frame" x="94" y="30" width="46" height="29"/>
+                    <fontDescription key="fontDescription" name="ContextRoundedBlackSSiBlack" family="Context Rounded Black SSi" pointSize="17"/>
+                    <state key="normal" title="Back"/>
                     <connections>
                         <action selector="backBtnAction:" destination="-1" eventType="touchUpInside" id="rj5-vW-evI"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qjn-ZC-JBA">
-                    <rect key="frame" x="95" y="152" width="55" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qjn-ZC-JBA">
+                    <rect key="frame" x="94" y="119" width="66" height="17"/>
+                    <fontDescription key="fontDescription" name="ContextRoundedBlackSSiBlack" family="Context Rounded Black SSi" pointSize="17"/>
+                    <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Money :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tW9-oF-dQF">
-                    <rect key="frame" x="95" y="197" width="61" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Money :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tW9-oF-dQF">
+                    <rect key="frame" x="94" y="171" width="71" height="17"/>
+                    <fontDescription key="fontDescription" name="ContextRoundedBlackSSiBlack" family="Context Rounded Black SSi" pointSize="17"/>
+                    <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Player 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z1M-B3-LJb">
-                    <rect key="frame" x="195" y="151" width="148" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player 1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z1M-B3-LJb">
+                    <rect key="frame" x="200" y="119" width="65" height="15"/>
+                    <fontDescription key="fontDescription" name="ContextRoundedBlackSSiBlack" family="Context Rounded Black SSi" pointSize="15"/>
+                    <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$ 1000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="34e-i6-LUr">
-                    <rect key="frame" x="195" y="196" width="148" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 1000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="34e-i6-LUr">
+                    <rect key="frame" x="200" y="172" width="53" height="15"/>
+                    <fontDescription key="fontDescription" name="ContextRoundedBlackSSiBlack" family="Context Rounded Black SSi" pointSize="15"/>
+                    <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Married" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z8I-BT-8Ix">
-                    <rect key="frame" x="195" y="249" width="148" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Married" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z8I-BT-8Ix">
+                    <rect key="frame" x="200" y="224" width="63.5" height="15"/>
+                    <fontDescription key="fontDescription" name="ContextRoundedBlackSSiBlack" family="Context Rounded Black SSi" pointSize="15"/>
+                    <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hBJ-3G-mhh">
-                    <rect key="frame" x="193" y="349" width="125" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hBJ-3G-mhh">
+                    <rect key="frame" x="200" y="328" width="10.5" height="15"/>
+                    <fontDescription key="fontDescription" name="ContextRoundedBlackSSiBlack" family="Context Rounded Black SSi" pointSize="15"/>
+                    <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Doctor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q4O-uU-8zf">
-                    <rect key="frame" x="195" y="294" width="148" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Doctor" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q4O-uU-8zf">
+                    <rect key="frame" x="200" y="276" width="54.5" height="15"/>
+                    <fontDescription key="fontDescription" name="ContextRoundedBlackSSiBlack" family="Context Rounded Black SSi" pointSize="15"/>
+                    <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="House :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6KU-0G-IeB">
-                    <rect key="frame" x="419" y="141" width="59" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="House :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6KU-0G-IeB">
+                    <rect key="frame" x="405" y="119" width="70" height="17"/>
+                    <fontDescription key="fontDescription" name="ContextRoundedBlackSSiBlack" family="Context Rounded Black SSi" pointSize="17"/>
+                    <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Job :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="27I-tx-Ehc">
-                    <rect key="frame" x="95" y="296" width="38" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Job :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="27I-tx-Ehc">
+                    <rect key="frame" x="94" y="275" width="46" height="17"/>
+                    <fontDescription key="fontDescription" name="ContextRoundedBlackSSiBlack" family="Context Rounded Black SSi" pointSize="17"/>
+                    <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Status :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ovn-z4-B80">
-                    <rect key="frame" x="95" y="249" width="59" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ovn-z4-B80">
+                    <rect key="frame" x="94" y="223" width="71" height="17"/>
+                    <fontDescription key="fontDescription" name="ContextRoundedBlackSSiBlack" family="Context Rounded Black SSi" pointSize="17"/>
+                    <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Child :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eq5-wo-WLP">
-                    <rect key="frame" x="95" y="350" width="49" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Child :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eq5-wo-WLP">
+                    <rect key="frame" x="94" y="327" width="58" height="17"/>
+                    <fontDescription key="fontDescription" name="ContextRoundedBlackSSiBlack" family="Context Rounded Black SSi" pointSize="17"/>
+                    <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1GV-Jq-dPT">
-                    <rect key="frame" x="531" y="141" width="238" height="180"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1GV-Jq-dPT">
+                    <rect key="frame" x="535" y="119" width="237" height="224"/>
                 </imageView>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="mQA-ye-Ka1" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="50" id="03g-bw-SGw"/>
+                <constraint firstItem="tW9-oF-dQF" firstAttribute="top" secondItem="qjn-ZC-JBA" secondAttribute="bottom" constant="35" id="6kd-GJ-K57"/>
+                <constraint firstItem="Z8I-BT-8Ix" firstAttribute="leading" secondItem="Z1M-B3-LJb" secondAttribute="leading" id="72p-KZ-W1C"/>
+                <constraint firstItem="qjn-ZC-JBA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="50" id="B2r-PX-40u"/>
+                <constraint firstItem="mQA-ye-Ka1" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="CFA-CY-WIL"/>
+                <constraint firstItem="qjn-ZC-JBA" firstAttribute="top" secondItem="mQA-ye-Ka1" secondAttribute="bottom" constant="60" id="HgE-wN-nzp"/>
+                <constraint firstItem="eq5-wo-WLP" firstAttribute="leading" secondItem="qjn-ZC-JBA" secondAttribute="leading" id="IbG-nG-GfI"/>
+                <constraint firstItem="tW9-oF-dQF" firstAttribute="leading" secondItem="qjn-ZC-JBA" secondAttribute="leading" id="NhQ-Cz-OpO"/>
+                <constraint firstItem="6KU-0G-IeB" firstAttribute="top" secondItem="qjn-ZC-JBA" secondAttribute="top" id="QI7-ts-rNJ"/>
+                <constraint firstItem="Ovn-z4-B80" firstAttribute="leading" secondItem="qjn-ZC-JBA" secondAttribute="leading" id="V2Y-Nh-QbR"/>
+                <constraint firstItem="Q4O-uU-8zf" firstAttribute="centerY" secondItem="27I-tx-Ehc" secondAttribute="centerY" id="Z8B-U2-SNB"/>
+                <constraint firstItem="Ovn-z4-B80" firstAttribute="top" secondItem="tW9-oF-dQF" secondAttribute="bottom" constant="35" id="ZvF-4K-uGD"/>
+                <constraint firstItem="hBJ-3G-mhh" firstAttribute="centerY" secondItem="eq5-wo-WLP" secondAttribute="centerY" id="aWb-XA-yxZ"/>
+                <constraint firstItem="Z1M-B3-LJb" firstAttribute="top" secondItem="qjn-ZC-JBA" secondAttribute="top" id="bQS-nr-KV2"/>
+                <constraint firstItem="Z1M-B3-LJb" firstAttribute="leading" secondItem="qjn-ZC-JBA" secondAttribute="trailing" constant="40" id="cAk-nh-pXg"/>
+                <constraint firstItem="Q4O-uU-8zf" firstAttribute="leading" secondItem="Z1M-B3-LJb" secondAttribute="leading" id="crq-mN-qOV"/>
+                <constraint firstItem="1GV-Jq-dPT" firstAttribute="leading" secondItem="6KU-0G-IeB" secondAttribute="trailing" constant="60" id="dkg-6a-nec"/>
+                <constraint firstItem="Z8I-BT-8Ix" firstAttribute="centerY" secondItem="Ovn-z4-B80" secondAttribute="centerY" id="epz-WD-p70"/>
+                <constraint firstItem="1GV-Jq-dPT" firstAttribute="bottom" secondItem="hBJ-3G-mhh" secondAttribute="bottom" id="hIS-k1-rik"/>
+                <constraint firstItem="27I-tx-Ehc" firstAttribute="top" secondItem="Ovn-z4-B80" secondAttribute="bottom" constant="35" id="mB3-Ca-b10"/>
+                <constraint firstItem="1GV-Jq-dPT" firstAttribute="top" secondItem="Z1M-B3-LJb" secondAttribute="top" id="mdq-gj-NEP"/>
+                <constraint firstItem="eq5-wo-WLP" firstAttribute="top" secondItem="27I-tx-Ehc" secondAttribute="bottom" constant="35" id="omX-sM-14f"/>
+                <constraint firstItem="27I-tx-Ehc" firstAttribute="leading" secondItem="qjn-ZC-JBA" secondAttribute="leading" id="pYx-WJ-br1"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="1GV-Jq-dPT" secondAttribute="trailing" constant="80" id="qMQ-eG-1zs"/>
+                <constraint firstItem="34e-i6-LUr" firstAttribute="centerY" secondItem="tW9-oF-dQF" secondAttribute="centerY" id="rVs-cZ-Tef"/>
+                <constraint firstItem="6KU-0G-IeB" firstAttribute="leading" secondItem="Z1M-B3-LJb" secondAttribute="trailing" constant="140" id="yAt-vJ-mSI"/>
+                <constraint firstItem="hBJ-3G-mhh" firstAttribute="leading" secondItem="Z1M-B3-LJb" secondAttribute="leading" id="z3k-gk-L3z"/>
+                <constraint firstItem="34e-i6-LUr" firstAttribute="leading" secondItem="Z1M-B3-LJb" secondAttribute="leading" id="z81-8p-pfo"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="134.59821428571428" y="115.94202898550725"/>
         </view>

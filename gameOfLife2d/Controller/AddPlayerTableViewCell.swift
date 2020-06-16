@@ -18,6 +18,7 @@ class AddPlayerTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         nameTextArea.isUserInteractionEnabled = false
+        colorBtn.layer.cornerRadius = 10
         // Initialization code
     }
 

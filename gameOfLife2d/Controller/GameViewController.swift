@@ -34,6 +34,7 @@ class GameViewController: UIViewController, reloadData {
     override func viewDidLoad() {
         super.viewDidLoad()
 //        MusicHelper.sharedHelper.playBackgroundMusic()
+        shopBtn.isHidden = true //belum dibuat fitur ini
         
         playerCollectionView.dataSource = self
         playerCollectionView.delegate = self
@@ -140,6 +141,7 @@ extension GameViewController: UICollectionViewDataSource {
         }
         playerView.currJobtemp = players[indexPath.row].job.name
         playerView.childTemp = "\(players[indexPath.row].child)"
+        playerView.color = players[indexPath.row].color
         
         self.present(playerView, animated: true, completion: nil)
     }
@@ -149,7 +151,7 @@ extension GameViewController: UICollectionViewDataSource {
         case "Green":
             cell.bgColor.backgroundColor = UIColor(red: 0.596, green: 0.816, blue: 0.369, alpha: 1)
         case "Red" :
-            cell.bgColor.backgroundColor = UIColor(red: 0.220, green: 0.20, blue: 0.60, alpha: 1)
+            cell.bgColor.backgroundColor = UIColor(red: 0.994, green: 0.584, blue: 0.576, alpha: 1)
         case "Yellow" :
             cell.bgColor.backgroundColor = UIColor(red: 0.992, green: 0.753, blue: 0.333, alpha: 1)
         case "Blue" :
