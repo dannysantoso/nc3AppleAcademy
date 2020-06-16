@@ -121,16 +121,16 @@ let surprise = [
 //    SupriseTiles(name: "Happy Payday", job: "Youtuber", image: "Youtouber(2)", isSkipped: false, isIncrease: true, value: 5000, floor: 60, isCollege: false),
     //mystery youtuber
     // 3 7 11 19 21 22 41 42 46 59
-    SupriseTiles(name: "Amazing", job: "Youtuber", image: "Youtouber(3)", isSkipped: false, isIncrease: true, value: 50000, floor: 3, isCollege: false),
-    SupriseTiles(name: "Good", job: "Youtuber", image: "Youtouber(4)", isSkipped: false, isIncrease: true, value: 10000, floor: 7, isCollege: false),
-    SupriseTiles(name: "Bad One", job: "Youtuber", image: "Youtouber(5)", isSkipped: false, isIncrease: false, value: 2000, floor: 11, isCollege: false),
-    SupriseTiles(name: "Amazing", job: "Youtuber", image: "Youtouber(4)", isSkipped: false, isIncrease: true, value: 10000, floor: 19, isCollege: false),
-    SupriseTiles(name: "Amazing", job: "Youtuber", image: "Youtouber(6)", isSkipped: false, isIncrease: true, value: 20000, floor: 21, isCollege: false),
-    SupriseTiles(name: "Bad One", job: "Youtuber", image: "Youtouber(5)", isSkipped: false, isIncrease: false, value: 2000, floor: 22, isCollege: false),
-    SupriseTiles(name: "Amazing", job: "Youtuber", image: "Youtouber(4)", isSkipped: false, isIncrease: true, value: 10000, floor: 41, isCollege: false),
-    SupriseTiles(name: "Bad One", job: "Youtuber", image: "Youtouber(5)", isSkipped: false, isIncrease: true, value: 2000, floor: 42, isCollege: false),
-    SupriseTiles(name: "Worst", job: "Youtuber", image: "Youtouber(6)", isSkipped: false, isIncrease: false, value: 20000, floor: 46, isCollege: false),
-    SupriseTiles(name: "Amazing", job: "Youtuber", image: "Youtouber(3)", isSkipped: false, isIncrease: true, value: 50000, floor: 59, isCollege: false),
+    SupriseTiles(name: "Amazing", job: "Youtuber", image: "Youtuber(3)", isSkipped: false, isIncrease: true, value: 50000, floor: 3, isCollege: false),
+    SupriseTiles(name: "Good", job: "Youtuber", image: "Youtuber(4)", isSkipped: false, isIncrease: true, value: 10000, floor: 7, isCollege: false),
+    SupriseTiles(name: "Bad One", job: "Youtuber", image: "Youtuber(5)", isSkipped: false, isIncrease: false, value: 2000, floor: 11, isCollege: false),
+    SupriseTiles(name: "Amazing", job: "Youtuber", image: "Youtuber(4)", isSkipped: false, isIncrease: true, value: 10000, floor: 19, isCollege: false),
+    SupriseTiles(name: "Amazing", job: "Youtuber", image: "Youtuber(6)", isSkipped: false, isIncrease: true, value: 20000, floor: 21, isCollege: false),
+    SupriseTiles(name: "Bad One", job: "Youtuber", image: "Youtuber(5)", isSkipped: false, isIncrease: false, value: 2000, floor: 22, isCollege: false),
+    SupriseTiles(name: "Amazing", job: "Youtuber", image: "Youtober(4)", isSkipped: false, isIncrease: true, value: 10000, floor: 41, isCollege: false),
+    SupriseTiles(name: "Bad One", job: "Youtuber", image: "Youtober(5)", isSkipped: false, isIncrease: true, value: 2000, floor: 42, isCollege: false),
+    SupriseTiles(name: "Worst", job: "Youtuber", image: "Youtober(6)", isSkipped: false, isIncrease: false, value: 20000, floor: 46, isCollege: false),
+    SupriseTiles(name: "Amazing", job: "Youtuber", image: "Youtober(3)", isSkipped: false, isIncrease: true, value: 50000, floor: 59, isCollege: false),
     
     //Police
     //gajian
